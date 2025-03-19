@@ -222,15 +222,18 @@
         <li class="first-level active"><a href="#3">Лабораторная работа 3</a></li>
             <li class="second-level"><a href="#_1">Вступление</a></li>
                 
-            <li class="second-level"><a href="#_2">Классы, события, свойства</a></li>
+            <li class="second-level"><a href="#1">Часть 1: Классы, события, свойства</a></li>
                 
-                <li class="third-level"><a href="#1">Задание 1. Создание класса с конструктором и свойствами</a></li>
+                <li class="third-level"><a href="#1_1">Задание 1. Создание класса с конструктором и свойствами</a></li>
                 <li class="third-level"><a href="#2">Задание 2. Использование модификаторов доступа</a></li>
                 <li class="third-level"><a href="#3_1">Задание 3. Реализация методов для управления состоянием</a></li>
-                <li class="third-level"><a href="#4">Задание 4. Введение событий для отслеживания изменений состояния Задачи:</a></li>
+                <li class="third-level"><a href="#4">Задание 4. Введение событий для отслеживания изменений состояния</a></li>
                 <li class="third-level"><a href="#5">Задание 5. Добавление метода для получения информации о комнате</a></li>
-                <li class="third-level"><a href="#6">Задание 6: Добавление элементов управления Задачи:</a></li>
-                <li class="third-level"><a href="#_3">Пример графического интерфейса программы</a></li>
+                <li class="third-level"><a href="#6">Задание 6: Добавление элементов управления</a></li>
+                <li class="third-level"><a href="#_2">Пример графического интерфейса программы</a></li>
+            <li class="second-level"><a href="#2_1">Часть 2</a></li>
+                
+                <li class="third-level"><a href="#1_2">Задание 1. Создание класса с конструктором и свойствами</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -238,9 +241,9 @@
 <h1 id="3">Лабораторная работа 3</h1>
 <h3 id="_1">Вступление</h3>
 <p>Эта лабораторная работа посвящена разработке системы управления комнатой "Умный дом" с использованием C#. Основная цель - продемонстрировать принципы объектно-ориентированного программирования, такие как классы, свойства, модификаторы доступа, события и методы.</p>
-<h2 id="_2"><strong>Классы, события, свойства</strong></h2>
+<h2 id="1"><strong>Часть 1: Классы, события, свойства</strong></h2>
 <p>Создание системы управления комнатой с возможностью контроля освещения и температуры.</p>
-<h3 id="1"><strong>Задание 1. Создание класса с конструктором и свойствами</strong></h3>
+<h3 id="1_1"><strong>Задание 1. Создание класса с конструктором и свойствами</strong></h3>
 <p><strong>Задачи:</strong></p>
 <ol>
 <li>
@@ -248,8 +251,8 @@
 <ul>
 <li>Поле <code>name</code> комнаты;</li>
 <li>Поле <code>temperature</code> комнаты;</li>
-<li>Свойством <code>Name</code> комнаты только для чтения (get).</li>
-<li>Свойством <code>Temperature</code> — температура в комнате (public get; private set; ).</li>
+<li>Свойством <code>Name</code> комнаты только для чтения (<code>public get; private set;</code> ).</li>
+<li>Свойством <code>Temperature</code> — температура в комнате (<code>public get; private set</code>).</li>
 </ul>
 </li>
 <li>
@@ -259,7 +262,8 @@
 <p>В       главном      окне  (программе) создать     объект класса      (например, с именем «Кухня») и вывести его имя и температуру в <code>TextBlock</code>. </p>
 </li>
 </ol>
-<pre><code class="language-csharp">string.IsNullOrWhiteSpace(&quot;строка&quot;) // – возвращает true или false.
+<pre><code class="language-csharp">string.IsNullOrWhiteSpace(&quot;строка&quot;) // – вернет false
+string.IsNullOrWhiteSpace(&quot;&quot;) // – вернет true
 </code></pre>
 <h3 id="2"><strong>Задание 2. Использование модификаторов доступа</strong></h3>
 <p><strong>Задачи:</strong></p>
@@ -271,7 +275,7 @@
 <p>Реализовать <strong>публичное        свойство,</strong> которое        предоставляет     доступ к <strong>полю</strong> состояния света (<code>bool IsLightOn</code>).</p>
 </li>
 <li>
-<p>Реализовать <strong>публичное        свойство,</strong> которое        предоставляет     строковое представление состояния (например, <code>string LightState</code>).</p>
+<p>Реализовать <strong>публичное        свойство,</strong> которое        предоставляет     строковое представление состояния (например, <code>string LightState {get;}{set;}</code>).</p>
 </li>
 <li>
 <p>В главном окне напрямую изменить <code>isLightOn</code> и <code>IsLightOn</code>, чтобы продемонстрировать работу модификаторов доступа. </p>
@@ -295,12 +299,13 @@
 <blockquote>
 <p><em><strong>Дополнительно:</strong> добавить проверку в SetTemperature, чтобы температура была в диапазоне от 15 до 30 градусов.</em></p>
 </blockquote>
-<h3 id="4"><strong>Задание 4. Введение событий для отслеживания изменений состояния Задачи:</strong></h3>
+<h3 id="4"><strong>Задание 4. Введение событий для отслеживания изменений состояния</strong></h3>
+<p><strong>Задачи:</strong></p>
 <ol>
-<li>В классе «Комната» объявить публичное событие изменения состоянияосвещения (пример: <code>public event Action&lt;string&gt; OnLightStateChanged</code>). </li>
+<li>В классе «Комната» объявить публичное событие изменения состояния освещения (пример: <code>public event Action&lt;string&gt; OnLightStateChanged</code>). </li>
 <li>В       методах включения      и       выключения        света вызывать <code>OnLightStateChanged</code>, передавая сообщение о новом состоянии света или использовать свойство состояния света.</li>
 <li>В главном окне подписаться на событие <code>OnLightStateChanged</code> и выводить полученное сообщение в элемент интерфейса.</li>
-<li>Аналогично реализовать событие для изменения температуры.</li>
+<li>Аналогично реализовать событие для изменения температуры и названия.</li>
 </ol>
 <h3 id="5"><strong>Задание 5. Добавление метода для получения информации о комнате</strong></h3>
 <p><strong>Задачи:</strong></p>
@@ -308,15 +313,29 @@
 <li>В классе «Комната» создать метод public string <code>GetRoomInfo()</code>, который возвращает строку с информацией о названии комнаты, состоянии света и текущей температуре. </li>
 <li>В главном окне вызвать <code>GetRoomInfo()</code> и вывести результат на экран.</li>
 </ol>
-<h3 id="6"><strong>Задание 6: Добавление элементов управления</strong> <strong>Задачи:</strong></h3>
+<h3 id="6"><strong>Задание 6: Добавление элементов управления</strong></h3>
+<p><strong>Задачи:</strong></p>
 <p>В главном окне реализовать элементы управления:</p>
 <ol>
 <li>Состоянием света (<code>CheckBox</code> или <code>RadioButton</code>);</li>
 <li>Температурой (<code>Slider</code>);</li>
 <li>Название комнаты (<code>TextBlock</code> или <code>ComboBox</code>).</li>
 </ol>
-<h3 id="_3"><strong>Пример графического интерфейса программы</strong></h3>
-<p><img alt="" src="../../img/3laba-prog-sample.png" /></p></div>
+<h3 id="_2"><strong>Пример графического интерфейса программы</strong></h3>
+<p><img alt="" src="../../img/3laba-prog-sample.png" /></p>
+<hr />
+<h2 id="2_1"><strong>Часть 2</strong></h2>
+<h3 id="1_2"><strong>Задание 1. Создание класса с конструктором и свойствами</strong></h3>
+<p><strong>Задачи:</strong></p>
+<ol>
+<li>Добавить в главное окно программы <code>ListBox</code> или <code>TextBlock</code> для логирования происходящих событий.</li>
+<li>Реализовать обработчик для вывода в поле лога информации о изменении свойств класса <code>Room</code>в формате <code>[Текущее время]-[Название команы]: свойство [назание свойства] изменено на [новое значение свойства]</code></li>
+</ol>
+<p><strong>Дополнительно:</strong> изменить сигнатуру событий в классе <code>Room</code> с <code>Action&lt;Type&gt;</code> на собственный делегат. </p>
+<p>Пример:</p>
+<pre><code class="language-csharp">delegate void LightStateChanged(Room room, string propertyName, string newValue, DateTime eventTime);
+event LightStateChanged Notify;
+</code></pre></div>
         
         
     </div>
