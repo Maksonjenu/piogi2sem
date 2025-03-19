@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Лекция 3 - Списки, привязка данных - Документация по предмету</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Документация по предмету</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Список лабораторных работ <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../main-pages/1-laba/">1 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../main-pages/2-laba/">2 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../main-pages/3-laba/">3 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../main-pages/4-laba/">4 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../main-pages/5-laba/">5 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../main-pages/6-laba/">6 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../main-pages/7-laba/">7 Лаба</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Sname</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../main-pages/6-laba/">6 Лаба</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../main-pages/7-laba/">7 Лаба</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Список заданий <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../tasks/task1/">1 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task2/">2 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task3/">3 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task4/">4 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task5/">5 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task6/">6 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task7/">7 Лаба</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#_1">Списки</a></li>
+            <li class="second-level"><a href="#_2">Определение списков</a></li>
+                
+        <li class="first-level "><a href="#_3">Значения О</a></li>
+        <li class="first-level "><a href="#_4">Особенности работы списков</a></li>
+        <li class="first-level "><a href="#list">Списки (List)</a></li>
+        <li class="first-level "><a href="#stack">Стек (Stack)</a></li>
+        <li class="first-level "><a href="#queue">Очередь (Queue)</a></li>
+        <li class="first-level "><a href="#-dictionaryhashtable">Словарь/Хеш-таблица (Dictionary/Hashtable)</a></li>
+        <li class="first-level "><a href="#sethashset">Множество (Set/HashSet)</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="_1">Списки</h2>
+<h3 id="_2">Определение списков</h3>
+<p><strong>Списки</strong> — это <strong>динамическая структура данных, которая позволяет хранить элементы разных типов</strong>. Списки помогают удобно работать с группами данных, выполняя различные операции — добавление, удаление или изменение элементов.</p>
+<p>Для сравнения производительности алгоритмов используется грубое измерение средней производительности и производительности в худшем случае, для обозначения которых используется термин <strong>«О»</strong> большое.</p>
+<h2 id="_3">Значения О</h2>
+<table>
+<thead>
+<tr>
+<th>Имя</th>
+<th>Нотация</th>
+<th>Описание</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Константная</td>
+<td>O(1)</td>
+<td>Алгоритм выполняет фиксированное количество операций, независимо от входных данных.</td>
+<td>Вычисление суммы двух констант.</td>
+</tr>
+<tr>
+<td>Логарифмическая</td>
+<td>O(log N)</td>
+<td>Алгоритм выполняет количество операций, которое растет логарифмически с ростом входных данных. Часто встречается в алгоритмах поиска в отсортированных массивах.</td>
+<td>Бинарный поиск элемента в отсортированном массиве.</td>
+</tr>
+<tr>
+<td>Линейная</td>
+<td>O(N)</td>
+<td>Алгоритм выполняет количество операций, пропорциональное количеству входных данных.</td>
+<td>Проход по массиву и суммирование всех элементов.</td>
+</tr>
+<tr>
+<td>Линейно-логарифмическая</td>
+<td>O(N log N)</td>
+<td>Алгоритм выполняет количество операций, которое растет как произведение количества входных данных и логарифма от этого числа. Часто встречается в алгоритмах сортировки.</td>
+<td>Быстрая сортировка массива.</td>
+</tr>
+<tr>
+<td>Полиномиальная</td>
+<td>O(N ^ 2)</td>
+<td>Алгоритм выполняет количество операций, которое растет как степень квадрата количества входных данных.</td>
+<td>Вставка элемента в несортированный массив с использованием перестановки.</td>
+</tr>
+<tr>
+<td>Экспоненциальная</td>
+<td>O(2 ^ N)</td>
+<td>Алгоритм выполняет количество операций, которое растет экспоненциально с ростом входных данных.</td>
+<td>Рекурсивное перечисление всех подмножеств набора.</td>
+</tr>
+<tr>
+<td>Факториальная</td>
+<td>O(N!)</td>
+<td>Алгоритм выполняет количество операций, которое растет как факториал от количества входных данных.</td>
+<td>Вычисление всех перестановок элементов массива.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Вставка в конец</strong> - обычно быстрая операция O(1), если не требуется расширение</li>
+<li><strong>Вставка в середину</strong> - требует сдвига всех последующих элементов, O(n)</li>
+<li><strong>Удаление</strong> - также может требовать сдвига элементов для сохранения непрерывности, O(n)</li>
+</ul>
+<h2 id="_4">Особенности работы списков</h2>
+<p><strong>Упорядоченная коллекция</strong> — это структура данных, в которой элементы расположены в определённом порядке.</p>
+<blockquote>
+<p><strong>Упорядоченная коллекция</strong> означает, что элементы коллекции имеют определённый порядок. Порядок не зависит от значения. Пример - список.</p>
+<p><strong>Отсортированная коллекция</strong> означает, что в ней не только есть порядок, но и порядок зависит от значения элемента.</p>
+<p><strong>Коллекция без какого-либо порядка</strong> может сохранять элементы в любом порядке. Пример - множество.</p>
+</blockquote>
+<p><strong>Гомогенность</strong> означает, что все значения в наборе имеют одинаковый тип, что обеспечивает структурное единообразие.</p>
+<p><strong>Динамическая длина</strong>. В зависимости от контекста приложения, списки могут быть заранее определённой длины или изменяемыми в процессе выполнения программы.</p>
+<h2 id="list">Списки (List)</h2>
+<p><strong>Принцип работы:</strong> Упорядоченная коллекция с прямым доступом по индексу.</p>
+<p><strong>Особенности:</strong></p>
+<ul>
+<li>Динамический размер</li>
+<li>Быстрый доступ к элементам по индексу O(1)</li>
+<li>Относительно медленные вставка/удаление в середине O(n)</li>
+<li>Быстрое добавление в конец (амортизированное O(1))</li>
+</ul>
+<p><strong>Применение:</strong></p>
+<ul>
+<li>Хранение последовательностей элементов с частым доступом по позиции</li>
+<li>Когда важен порядок элементов</li>
+<li>Для множественных операций просмотра и изменения</li>
+</ul>
+<p><strong>Пример в C#:</strong></p>
+<pre><code class="language-csharp">List&lt;string&gt; names = new List&lt;string&gt;();
+names.Add(&quot;Алексей&quot;);
+names.Add(&quot;Мария&quot;);
+string secondName = names[1]; //Доступ по индексу
+</code></pre>
+<h2 id="stack">Стек (Stack)</h2>
+<p><strong>Принцип работы:</strong> LIFO (Last In, First Out) - "последним пришёл, первым ушёл".</p>
+<p><strong>Особенности:</strong></p>
+<ul>
+<li>Доступ только к верхнему элементу</li>
+<li>Операции Push (добавление) и Pop (извлечение) выполняются за O(1)</li>
+<li>Нет произвольного доступа к элементам</li>
+</ul>
+<p><strong>Применение:</strong></p>
+<ul>
+<li>Отслеживание вызовов функций</li>
+<li>Реализация алгоритмов с обратным порядком обработки</li>
+<li>Проверка корректности скобочных выражений</li>
+<li>История операций (с возможностью отмены)</li>
+</ul>
+<p><strong>Пример в C#:</strong></p>
+<pre><code class="language-csharp">Stack&lt;int&gt; stack = new Stack&lt;int&gt;();
+stack.Push(10);
+stack.Push(20);
+int lastElement = stack.Pop(); //20
+</code></pre>
+<h2 id="queue">Очередь (Queue)</h2>
+<p><strong>Принцип работы:</strong> FIFO (First In, First Out) - "первым пришёл, первым ушёл".</p>
+<p><strong>Особенности:</strong></p>
+<ul>
+<li>Добавление в конец (Enqueue), извлечение из начала (Dequeue)</li>
+<li>Операции выполняются за O(1)</li>
+<li>Нет произвольного доступа к элементам</li>
+</ul>
+<p><strong>Применение:</strong></p>
+<ul>
+<li>Буферизация данных</li>
+<li>Обработка запросов в порядке поступления</li>
+<li>Алгоритмы поиска в ширину (BFS)</li>
+<li>Моделирование реальных очередей</li>
+</ul>
+<p><strong>Пример в C#:</strong></p>
+<pre><code class="language-csharp">Queue&lt;string&gt; queue = new Queue&lt;string&gt;();
+queue.Enqueue(&quot;Первый клиент&quot;);
+queue.Enqueue(&quot;Второй клиент&quot;);
+string nextClient = queue.Dequeue(); //&quot;Первый клиент&quot;
+</code></pre>
+<h2 id="-dictionaryhashtable">Словарь/Хеш-таблица (Dictionary/Hashtable)</h2>
+<p><strong>Принцип работы:</strong> Хранение пар "ключ-значение", где доступ по ключу оптимизирован с помощью хеш-функции.</p>
+<p><strong>Особенности:</strong></p>
+<ul>
+<li>Быстрый поиск, вставка и удаление (в среднем O(1))</li>
+<li>Ключи должны быть уникальными</li>
+<li>Отсутствие гарантированного порядка элементов</li>
+</ul>
+<p><strong>Применение:</strong></p>
+<ul>
+<li>Кеширование данных</li>
+<li>Быстрый поиск по идентификатору</li>
+<li>Подсчёт частоты элементов</li>
+<li>Реализация ассоциативных массивов</li>
+</ul>
+<p><strong>Пример в C#:</strong></p>
+<pre><code class="language-csharp">Dictionary&lt;string, int&gt; ages = new Dictionary&lt;string, int&gt;();
+ages[&quot;Иван&quot;] = 30;
+ages[&quot;Мария&quot;] = 25;
+int mariasAge = ages[&quot;Мария&quot;]; //25
+</code></pre>
+<h2 id="sethashset">Множество (Set/HashSet)</h2>
+<p><strong>Принцип работы:</strong> Коллекция уникальных элементов без определенного порядка.</p>
+<p><strong>Особенности:</strong></p>
+<ul>
+<li>Отсутствие дубликатов</li>
+<li>Быстрые операции проверки существования O(1)</li>
+<li>Эффективные операции объединения, пересечения, разности</li>
+</ul>
+<p><strong>Применение:</strong></p>
+<ul>
+<li>Устранение дубликатов</li>
+<li>Проверка наличия элемента</li>
+<li>Реализация математических операций над множествами</li>
+</ul>
+<p><strong>Пример в C#:</strong></p>
+<pre><code class="language-csharp">HashSet&lt;int&gt; uniqueNumbers = new HashSet&lt;int&gt;();
+uniqueNumbers.Add(5);
+uniqueNumbers.Add(10);
+uniqueNumbers.Add(5); //Игнорируется, т.к. 5 уже есть
+bool contains = uniqueNumbers.Contains(10); //true
+</code></pre></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
