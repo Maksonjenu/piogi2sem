@@ -69,74 +69,8 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Список лабораторных работ <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../main-pages/1-laba/">1 Лаба</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../main-pages/2-laba/">2 Лаба</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../main-pages/3-laba/">3 Лаба</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../main-pages/4-laba/">4 Лаба</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../main-pages/5-laba/">5 Лаба</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../main-pages/6-laba/">6 Лаба</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../main-pages/7-laba/">7 Лаба</a>
-</li>
-
-                        
-                            
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Sname</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../../main-pages/6-laba/">6 Лаба</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../main-pages/7-laba/">7 Лаба</a>
-</li>
-
-        
-    </ul>
-  </li>
-
-                        
-                        </ul>
+                    <li >
+                        <a href="/topics/">Список тем</a>
                     </li>
                 
                 
@@ -219,11 +153,59 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#4">Лабораторная работа 4</a></li>
+            <li class="second-level"><a href="#1">Задание 1. Реализовать структуру для хранения комнат.</a></li>
+                
+            <li class="second-level"><a href="#2">Задание 2. Привязка списка к элементу на окне.</a></li>
+                
+            <li class="second-level"><a href="#3">Задание 3. Реализация функционала для добавления и изменения объектов (комнат).</a></li>
+                
+            <li class="second-level"><a href="#_1">Дополнительные задания.</a></li>
+                
+                <li class="third-level"><a href="#_2">Логирование событий.</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-</div>
+<h1 id="4">Лабораторная работа 4</h1>
+<h3 id="1"><strong>Задание 1. Реализовать структуру для хранения комнат.</strong></h3>
+<p><strong>Задачи:</strong></p>
+<ol>
+<li>В основной программе объявить <code>List&lt;Room&gt;</code> для хранения пользовательских комнат.</li>
+</ol>
+<h3 id="2"><strong>Задание 2. Привязка списка к элементу на окне.</strong></h3>
+<p><strong>Задачи:</strong></p>
+<ol>
+<li>Используя свойство <code>ItemsSource</code> у <code>ListBox \ ComboBox</code>  назначить источник данных для <code>ListBox</code> список для хранения <code>List&lt;Room&gt;</code>.</li>
+<li>С помощью свойства <code>DisplayMemberPath</code> указать название свойства для отображения в <code>ListBox \ ComboBox</code>.</li>
+</ol>
+<h3 id="3"><strong>Задание 3. Реализация функционала для добавления и изменения объектов (комнат).</strong></h3>
+<p><strong>Задачи:</strong></p>
+<ol>
+<li>Реализовать функционал добавления новой комнаты. <em>Пример:</em><ol>
+<li>Создание временного объекта <code>Room</code>.</li>
+<li>Привязка этого объекта через свойство <code>DataContext</code> в окно редактора комнаты.</li>
+<li>Привязка свойств объекта к графическим элементам окна в двухстороннем режиме.</li>
+<li>Закрытие окна после изменения значений.</li>
+</ol>
+</li>
+<li>Реализовать функционал удаления выбранной комнаты.</li>
+<li>Реализовать функционал для редактирования данных выбранной комнаты комнаты.</li>
+</ol>
+<blockquote>
+<p>Использовать <code>Menu</code> и <code>MenuItem</code> для кнопок <a href="../../topics/menuitem">пример</a></p>
+</blockquote>
+<hr />
+<h3 id="_1"><strong>Дополнительные задания.</strong></h3>
+<h4 id="_2">Логирование событий.</h4>
+<p><strong>Задачи:</strong>
+1. Добавить в главное окно программы <code>ListBox</code> или <code>TextBlock</code> для логирования происходящих событий.
+2. Реализовать обработчик для вывода в поле лога информации о изменении свойств класса <code>Room</code>в формате <code>[Текущее время]-[Название команы]: свойство [назание свойства] изменено на [новое значение свойства]</code></p>
+<p><strong>Дополнительно:</strong> изменить сигнатуру событий в классе <code>Room</code> с <code>Action&lt;Type&gt;</code> на собственный делегат. </p>
+<p>Пример:</p>
+<pre><code class="language-csharp">delegate void SomePropertyChanged(Room room, string propertyName, string newValue, DateTime eventTime);
+event SomePropertyChanged Notify;
+</code></pre></div>
         
         
     </div>
