@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Datacontext - Документация по предмету</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Документация по предмету</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="/topics/">Список тем</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Список заданий <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../tasks/task1/">1 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task2/">2 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task3/">3 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task4/">4 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task5/">5 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task6/">6 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task7/">7 Лаба</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#datacontext">Как работает DataContext?</a></li>
+        <li class="first-level "><a href="#datacontext_1">Простой пример установки DataContext</a></li>
+            <li class="second-level"><a href="#1">Шаг 1: Создаем класс с данными</a></li>
+                
+            <li class="second-level"><a href="#2-datacontext">Шаг 2: Устанавливаем DataContext в коде</a></li>
+                
+            <li class="second-level"><a href="#3-xaml">Шаг 3: Используем привязки в XAML</a></li>
+                
+        <li class="first-level "><a href="#datacontext_2">Наследование DataContext</a></li>
+        <li class="first-level "><a href="#datacontext_3">DataContext и списки элементов</a></li>
+            <li class="second-level"><a href="#1_1">Шаг 1: Создаем список комнат в коде</a></li>
+                
+            <li class="second-level"><a href="#2-itemssource">Шаг 2: Используем ItemsSource и привязки</a></li>
+                
+        <li class="first-level "><a href="#datacontext-xaml">Установка DataContext в XAML</a></li>
+        <li class="first-level "><a href="#datacontext_4">Один из главных принципов DataContext</a></li>
+        <li class="first-level "><a href="#_1">Простой пример работы со свойствами элементов</a></li>
+        <li class="first-level "><a href="#_2">Вывод</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<blockquote>
+<p><code>DataContext</code> — это свойство, которое указывает, откуда берутся данные для привязок в элементах интерфейса. Это как корзина с фруктами, из которой элементы UI берут нужные им данные.</p>
+</blockquote>
+<h2 id="datacontext">Как работает DataContext?</h2>
+<ol>
+<li><code>DataContext</code> задается для элемента (например, для окна) и автоматически передается всем дочерним элементам</li>
+<li>Когда мы используем привязку <code>{Binding Name}</code>, WPF ищет свойство <code>Name</code> в объекте, который хранится в <code>DataContext</code></li>
+</ol>
+<h2 id="datacontext_1">Простой пример установки DataContext</h2>
+<h3 id="1">Шаг 1: Создаем класс с данными</h3>
+<pre><code class="language-csharp">public class Room
+{
+    public string Name { get; set; }
+    public double Temperature { get; set; }
+}
+</code></pre>
+<h3 id="2-datacontext">Шаг 2: Устанавливаем DataContext в коде</h3>
+<pre><code class="language-csharp">public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+
+        // Создаем комнату
+        Room livingRoom = new Room 
+        { 
+            Name = &quot;Гостиная&quot;, 
+            Temperature = 22.5 
+        };
+
+        // Устанавливаем DataContext для окна
+        this.DataContext = livingRoom;
+    }
+}
+</code></pre>
+<p>Пояснение:
+1. Создается новый объект класса <code>Room</code> с именем <code>livingRoom</code>. Ему присваиваются начальные значения для имени ("Гостиная") и температуры (22.5).
+2. <strong>Установка <code>DataContext</code>:</strong> <code>DataContext</code> окна <code>MainWindow</code> устанавливается равным созданному объекту <code>livingRoom</code>. Это связывает данные, содержащиеся в объекте <code>livingRoom</code>, с элементами управления в окне, позволяя им отображать и редактировать эти данные. В дальнейшем, изменения в <code>livingRoom</code> будут автоматически отражаться в интерфейсе, и наоборот.</p>
+<h3 id="3-xaml">Шаг 3: Используем привязки в XAML</h3>
+<pre><code class="language-xml">&lt;Window x:Class=&quot;WpfApp.MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        Title=&quot;Информация о комнате&quot; Height=&quot;200&quot; Width=&quot;300&quot;&gt;
+    &lt;StackPanel Margin=&quot;10&quot;&gt;
+        &lt;TextBlock Text=&quot;Название комнаты:&quot; FontWeight=&quot;Bold&quot;/&gt;
+        &lt;TextBlock Text=&quot;{Binding Name}&quot; Margin=&quot;0,0,0,10&quot;/&gt;
+
+        &lt;TextBlock Text=&quot;Температура:&quot; FontWeight=&quot;Bold&quot;/&gt;
+        &lt;TextBlock Text=&quot;{Binding Temperature, StringFormat={0}°C}&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>В этом примере:</p>
+<ul>
+<li>Мы создали объект <code>Room</code> в коде</li>
+<li>Установили его как <code>DataContext</code> для окна</li>
+<li>В XAML используем привязки к свойствам <code>Name</code> и <code>Temperature</code></li>
+</ul>
+<h2 id="datacontext_2">Наследование DataContext</h2>
+<p>Важно понимать, что <code>DataContext</code> наследуется от родительских элементов к дочерним:</p>
+<pre><code class="language-xml">&lt;Grid&gt;
+    &lt;!-- Эти TextBlock наследуют DataContext от Window --&gt;
+    &lt;TextBlock Text=&quot;{Binding Name}&quot; HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot; Margin=&quot;10&quot;/&gt;
+    &lt;TextBlock Text=&quot;{Binding Temperature}&quot; HorizontalAlignment=&quot;Right&quot; VerticalAlignment=&quot;Top&quot; Margin=&quot;10&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="datacontext_3">DataContext и списки элементов</h2>
+<p>Рассмотрим пример со списком комнат:</p>
+<h3 id="1_1">Шаг 1: Создаем список комнат в коде</h3>
+<pre><code class="language-csharp">public partial class MainWindow : Window
+{
+    public List&lt;Room&gt; Rooms { get; set; }
+
+    public MainWindow()
+    {
+        InitializeComponent();
+
+        // Создаем список комнат
+        Rooms = new List&lt;Room&gt;
+        {
+            new Room { Name = &quot;Гостиная&quot;, Temperature = 22.5 },
+            new Room { Name = &quot;Спальня&quot;, Temperature = 20.0 },
+            new Room { Name = &quot;Кухня&quot;, Temperature = 24.5 }
+        };
+
+        // Устанавливаем DataContext для окна
+        this.DataContext = this;  // this - это сам класс MainWindow
+    }
+}
+</code></pre>
+<h3 id="2-itemssource">Шаг 2: Используем ItemsSource и привязки</h3>
+<pre><code class="language-xml">&lt;Window x:Class=&quot;WpfApp.MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        Title=&quot;Список комнат&quot; Height=&quot;300&quot; Width=&quot;400&quot;&gt;
+    &lt;Grid Margin=&quot;10&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+
+        &lt;TextBlock Text=&quot;Выберите комнату:&quot; Grid.Row=&quot;0&quot; Margin=&quot;0,0,0,5&quot;/&gt;
+
+        &lt;ListBox Grid.Row=&quot;1&quot; ItemsSource=&quot;{Binding Rooms}&quot;&gt;
+            &lt;ListBox.ItemTemplate&gt;
+                &lt;DataTemplate&gt;
+                    &lt;!-- Внутри DataTemplate DataContext автоматически меняется 
+                         на текущий элемент списка (Room) --&gt;
+                    &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+                        &lt;TextBlock Text=&quot;{Binding Name}&quot; FontWeight=&quot;Bold&quot; Margin=&quot;0,0,5,0&quot;/&gt;
+                        &lt;TextBlock Text=&quot;{Binding Temperature, StringFormat={0}°C}&quot;/&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ListBox.ItemTemplate&gt;
+        &lt;/ListBox&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>В этом примере:</p>
+<ul>
+<li><code>DataContext</code> окна установлен на сам класс <code>MainWindow</code></li>
+<li><code>ListBox</code> использует привязку <code>ItemsSource="{Binding Rooms}"</code> для отображения списка комнат</li>
+<li>Внутри <code>DataTemplate</code> контекст данных автоматически меняется на текущий элемент из списка <code>Rooms</code></li>
+</ul>
+<h2 id="datacontext-xaml">Установка DataContext в XAML</h2>
+<p>Можно установить <code>DataContext</code> прямо в XAML:</p>
+<pre><code class="language-xml">&lt;Window x:Class=&quot;WpfApp.MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:local=&quot;clr-namespace:WpfApp&quot;
+        Title=&quot;Комнаты&quot; Height=&quot;300&quot; Width=&quot;400&quot;&gt;
+
+    &lt;!-- Создаем экземпляр класса Room прямо в XAML --&gt;
+    &lt;Window.DataContext&gt;
+        &lt;local:Room Name=&quot;Гостиная&quot; Temperature=&quot;22.5&quot;/&gt;
+    &lt;/Window.DataContext&gt;
+
+    &lt;StackPanel Margin=&quot;10&quot;&gt;
+        &lt;TextBlock Text=&quot;{Binding Name}&quot; FontSize=&quot;18&quot; FontWeight=&quot;Bold&quot;/&gt;
+        &lt;TextBlock Text=&quot;{Binding Temperature, StringFormat=Температура: {0}°C}&quot; Margin=&quot;0,10,0,0&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Window&gt;
+</code></pre>
+<h2 id="datacontext_4">Один из главных принципов DataContext</h2>
+<p><strong>Важно запомнить:</strong> <code>DataContext</code> определяет, где WPF будет искать свойства, указанные в привязках <code>{Binding ...}</code>.</p>
+<h2 id="_1">Простой пример работы со свойствами элементов</h2>
+<p>Иногда нужно привязаться к свойствам других элементов UI, а не к <code>DataContext</code>. Для этого используется <code>ElementName</code>:</p>
+<pre><code class="language-xml">&lt;StackPanel Margin=&quot;10&quot;&gt;
+    &lt;Slider x:Name=&quot;temperatureSlider&quot; Minimum=&quot;15&quot; Maximum=&quot;30&quot; Value=&quot;22&quot; Margin=&quot;0,0,0,10&quot;/&gt;
+    &lt;TextBlock Text=&quot;{Binding Value, ElementName=temperatureSlider, StringFormat=Выбранная температура: {0}°C}&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>В этом примере <code>TextBlock</code> привязан к значению <code>Slider</code> через <code>ElementName</code>, а не через <code>DataContext</code>.</p>
+<h2 id="_2">Вывод</h2>
+<p><code>DataContext</code> — это:</p>
+<ul>
+<li>Контейнер с данными, который определяет, где WPF ищет свойства для привязок</li>
+<li>Он наследуется от родителя к дочерним элементам</li>
+<li>Можно установить как в коде, так и в XAML</li>
+<li>Внутри шаблонов данных (<code>DataTemplate</code>) он автоматически меняется на текущий элемент списка</li>
+</ul></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

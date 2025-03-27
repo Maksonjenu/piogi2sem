@@ -70,7 +70,7 @@
                 
                 
                     <li >
-                        <a href="../../topics/">Список тем</a>
+                        <a href="/topics/">Список тем</a>
                     </li>
                 
                 
@@ -159,12 +159,14 @@
             <li class="second-level"><a href="#_2">Классы, события, свойства</a></li>
                 
                 <li class="third-level"><a href="#1">Задание 1. Создание класса с конструктором и свойствами</a></li>
-                <li class="third-level"><a href="#2">Задание 2. Использование модификаторов доступа</a></li>
-                <li class="third-level"><a href="#3_1">Задание 3. Реализация методов для управления состоянием</a></li>
-                <li class="third-level"><a href="#4">Задание 4. Введение событий для отслеживания изменений состояния</a></li>
-                <li class="third-level"><a href="#5">Задание 5. Добавление метода для получения информации о комнате</a></li>
-                <li class="third-level"><a href="#6">Задание 6: Добавление элементов управления</a></li>
-                <li class="third-level"><a href="#_3">Пример графического интерфейса программы</a></li>
+                <li class="third-level"><a href="#2">Задание 2. Реализация методов для управления состоянием</a></li>
+                <li class="third-level"><a href="#3_1">Задание 3. Введение событий для отслеживания изменений состояния</a></li>
+                <li class="third-level"><a href="#4">Задание 4. Добавление метода обработчика событий в основной программе</a></li>
+            <li class="second-level"><a href="#_3">Графический интерфейс</a></li>
+                
+                <li class="third-level"><a href="#_4">Пример графического интерфейса программы</a></li>
+            <li class="second-level"><a href="#uml">UML диаграмма класса</a></li>
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -180,82 +182,102 @@
 <li>
 <p>Создать <a href="../../topics/class">класс</a> <code>Room</code>, включающий в себя:</p>
 <ul>
-<li>Поле <code>name</code> комнаты;</li>
-<li>Поле <code>temperature</code> комнаты;</li>
-<li>Свойством <code>Name</code> комнаты только для чтения (<code>public get; private set;</code> ).</li>
-<li>Свойством <code>Temperature</code> — температура в комнате (<code>public get; private set</code>).</li>
+<li>Приватное поле <code>string name</code> комнаты;</li>
+<li>Приватное поле <code>double temperature</code> комнаты;</li>
+<li>Приватное поле <code>bool lightState</code> для состояния света;</li>
+<li>Публичное свойство <code>Name</code> комнаты, связанное с <code>name</code> через ( <code>get; set;</code> );</li>
+<li>Публичное свойство <code>Temperature</code> комнаты, связанное с <code>temperature</code> через (<code>get; set;</code>);</li>
+<li>Публичное свойство <code>LightState</code> комнаты, связанное с <code>lightState</code> через  (<code>get; set;</code>).</li>
 </ul>
 </li>
 <li>
-<p>Реализовать <strong>конструктор</strong>,    принимающий     строковый параметр для инициализации свойства «Названия комнаты». Реализовать проверку корректности значения (не пустая строка).</p>
-</li>
-<li>
-<p>В       главном      окне  (программе) создать     объект класса      (например, с именем «Кухня») и вывести его имя и температуру в <code>TextBlock</code>. </p>
+<p>Реализовать <strong>конструктор</strong>,    принимающий     аргумент <code>string</code> для инициализации свойства <code>Name</code>. Реализовать проверку корректности значения (не пустая строка).</p>
 </li>
 </ol>
 <p>Пример проверки строки:</p>
 <pre><code class="language-csharp">string.IsNullOrWhiteSpace(&quot;строка&quot;) // – вернет false
 string.IsNullOrWhiteSpace(&quot;&quot;) // – вернет true
 </code></pre>
-<h3 id="2"><strong>Задание 2. Использование модификаторов доступа</strong></h3>
+<h3 id="2"><strong>Задание 2. Реализация методов для управления состоянием</strong></h3>
 <p><strong>Задачи:</strong></p>
 <ol>
-<li>
-<p>Добавить <strong>приватное поле</strong> в класс «Комната», отвечающее за состояние света (например, <code>bool isLighOn</code>).</p>
-</li>
-<li>
-<p>Реализовать <strong>публичное        свойство,</strong> которое        предоставляет     доступ к <strong>полю</strong> состояния света (<code>bool IsLightOn</code>).</p>
-</li>
-<li>
-<p>Реализовать <strong>публичное        свойство,</strong> которое        предоставляет     строковое представление состояния (например, <code>string LightState {get;}{set;}</code>).</p>
-</li>
-<li>
-<p>В главном окне напрямую изменить <code>isLightOn</code> и <code>IsLightOn</code>, чтобы продемонстрировать работу модификаторов доступа. </p>
-</li>
-</ol>
-<h3 id="3_1"><strong>Задание 3. Реализация методов для управления состоянием</strong></h3>
-<p><strong>Задачи:</strong></p>
-<ol>
-<li>
-<p>В классе «Комната» реализовать методы:</p>
-<ul>
-<li>Публичный метод,        который     «включает  свет» (пример: <code>TurnLightOn()</code>).</li>
-<li>Публичный метод,        который     «выключает         свет» (пример: <code>TurnLightOff()</code>).</li>
-<li>Публичный метод, который изменяет значение свойства <code>Temperature</code> (пример: <code>SetTemperature(int newTemperature)</code>).</li>
+<li>В классе <code>Room</code> реализовать методы:<ul>
+<li>Публичный метод, который «включает свет» (пример: <code>TurnLightOn()</code>).</li>
+<li>Публичный метод, который «выключает свет» (пример: <code>TurnLightOff()</code>).</li>
+<li>Публичный метод, который «переключает свет» (пример: <code>LightSwitch()</code>).</li>
+<li>Публичный метод, который изменяет значение свойства <code>Temperature</code> (пример: <code>SetTemperature(double newTemperature)</code>).</li>
+<li>Публичный метод, который добавляет значение к свойству <code>Temperature</code> (пример: <code>AddTemperature(double value)</code>, <code>value</code> может быть отрицательным).</li>
 </ul>
 </li>
-<li>
-<p>В главном окне протестировать эти методы, изменяя состояние света и температуры, и выводить результаты в текстовый блок.</p>
-</li>
 </ol>
+<h3 id="3_1"><strong>Задание 3. Введение событий для отслеживания изменений состояния</strong></h3>
+<p><strong>Задачи:</strong></p>
+<p>В классе <code>Room</code>:</p>
+<ol>
+<li>объявить публичное событие изменения состояния освещения (пример: <code>public event Action&lt;bool&gt; OnLightStateChanged</code>). </li>
+<li>объявить публичное событие изменения температуры (пример: <code>public event Action&lt;double&gt; OnTemperatureChanged</code>). </li>
+<li>объявить публичное событие изменения имени (пример: <code>public event Action&lt;string&gt; OnNameChanged</code>). </li>
+</ol>
+<hr />
+<ol>
+<li>В соответствующем событию свойстве вызывать это событие. </li>
+<li>Аналогично реализовать событие для <code>OnLightStateChanged</code> и <code>OnNameChanged</code>.</li>
+</ol>
+<p>Пример: в свойстве <code>Temperature</code> в методе <code>set</code> вызывается событие <code>OnTemperatureChanged</code></p>
+<pre><code class="language-csharp">//Объявление события для изменения температуры. Подписчики будут уведомлены при изменении температуры.
+public Event Action&lt;double&gt; OnTemperatureChanged
+
+//Приватное поле для хранения значения температуры.
+double temperature
+
+//Публичное свойство для доступа к значению температуры.
+public double Temperature
+{
+    get
+    {
+        //Возвращает текущее значение температуры из ПОЛЯ.
+        return temperature;
+    }
+    set
+    {
+    //Присваивает новое значение полю temperature.
+    temperature = value;
+
+    //Вызывает событие OnTemperatureChanged, передавая новое значение температуры подписчикам.
+    //?. - оператор null-conditional, гарантирует, что событие будет вызвано только если есть подписчики-обработчики. Без знака ? и при отсутствии подписчиков события - программа выдаст Exception.
+    //Как аргумент в обработчик передается значение.
+    OnTemperatureChanged?.Invoke(value);
+    }
+}
+</code></pre>
+<p><strong>Почему лучше вызывать события в свойствах:</strong></p>
+<ul>
+<li><strong>Инкапсуляция:</strong> События тесно связаны с изменением состояния объекта. Размещение логики вызова событий внутри свойств обеспечивает инкапсуляцию этой логики, скрывая детали реализации от внешнего мира.</li>
+<li><strong>Удобство:</strong> Вам, как разработчикам, использующим класс, не нужно помнить о вызове события отдельно. Они просто устанавливают значение свойства, и событие вызывается автоматически.</li>
+<li><strong>Согласованность:</strong> Гарантирует, что событие вызывается всегда, когда изменяется значение свойства, что помогает поддерживать согласованность состояния объекта.</li>
+<li><strong>Упрощение кода:</strong> Уменьшает количество кода, необходимого для отслеживания изменений состояния объекта и уведомления подписчиков.</li>
+</ul>
+<h3 id="4"><strong>Задание 4. Добавление метода обработчика событий в основной программе</strong></h3>
+<p><strong>Задачи:</strong></p>
+<p>В основной программе <code>MainWindow</code> (или ваше название окна) реализовать обработчики для событий <code>OnLightStateChanged</code>, <code>OnTemperatureChanged</code> и <code>OnNameChanged</code>.
+1. <code>OnLightStateChanged</code> - обработчик должен изменять значение <code>CheckBox</code> или <code>RadioButton</code> на соответствующее значение свойства.
+2. <code>OnTemperatureChanged</code> - обработчик должен изменять значение <code>Slider</code> на соответствующее значение свойства.
+3. <code>OnNameChanged</code> - обработчик должен изменять значение <code>TextBlock</code> на соответствующее значение свойства.</p>
 <blockquote>
-<p><em><strong>Дополнительно:</strong> добавить проверку в SetTemperature, чтобы температура была в диапазоне от 15 до 30 градусов.</em></p>
+<p><em><strong>Дополнительно:</strong> добавить проверку в обработчик температуры предупреждение о высокой или низкой температуре.</em></p>
 </blockquote>
-<h3 id="4"><strong>Задание 4. Введение событий для отслеживания изменений состояния</strong></h3>
-<p><strong>Задачи:</strong></p>
-<ol>
-<li>В классе «Комната» объявить публичное событие изменения состояния освещения (пример: <code>public event Action&lt;string&gt; OnLightStateChanged</code>). </li>
-<li>В       методах включения      и       выключения        света вызывать <code>OnLightStateChanged</code>, передавая сообщение о новом состоянии света или использовать свойство состояния света.</li>
-<li>В главном окне подписаться на событие <code>OnLightStateChanged</code> и выводить полученное сообщение в элемент интерфейса.</li>
-<li>Аналогично реализовать событие для изменения температуры и названия.</li>
-</ol>
-<h3 id="5"><strong>Задание 5. Добавление метода для получения информации о комнате</strong></h3>
-<p><strong>Задачи:</strong></p>
-<ol>
-<li>В классе «Комната» создать метод public string <code>GetRoomInfo()</code>, который возвращает строку с информацией о названии комнаты, состоянии света и текущей температуре. </li>
-<li>В главном окне вызвать <code>GetRoomInfo()</code> и вывести результат на экран.</li>
-</ol>
-<h3 id="6"><strong>Задание 6: Добавление элементов управления</strong></h3>
-<p><strong>Задачи:</strong></p>
+<h2 id="_3"><strong>Графический интерфейс</strong></h2>
 <p>В главном окне реализовать элементы управления:</p>
 <ol>
 <li>Состоянием света (<code>CheckBox</code> или <code>RadioButton</code>);</li>
 <li>Температурой (<code>Slider</code>);</li>
 <li>Название комнаты (<code>TextBlock</code> или <code>ComboBox</code>).</li>
 </ol>
-<h3 id="_3"><strong>Пример графического интерфейса программы</strong></h3>
+<h3 id="_4"><strong>Пример графического интерфейса программы</strong></h3>
 <p><img alt="" src="../../img/3laba-prog-sample.png" /></p>
-<hr /></div>
+<h2 id="uml">UML диаграмма класса</h2>
+<p>Пример диаграммы класса <code>Room</code>:</p>
+<p><img alt="Kroki" src="https://kroki.io/mermaid/svg/eNptkE0KgzAQRveeYpaW0guUUpB2WSpULxBj1EBMSpzURenda9T8gGY33zweX4YKMgx3TlpN-gSA2hFeSvXwnUb7TgNqLluQpGcuqpWpBANk_Ztpgkb7TaWUAMHbDgsk6OLj6nhODnDZKimDxK9my8NbfG6LpVGfg1uURsuZz2W6EzZNSBftyJF2ISwYRj3StZpkY5R6OKvrHfhDhAlMLkP9W0dky2o4Q0aRK3mx37sGMpJt0EUewfaEG2o5iaV-yR8Z746O?"></p></div>
         
         
     </div>

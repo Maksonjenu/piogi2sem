@@ -70,7 +70,7 @@
                 
                 
                     <li >
-                        <a href="../">Список тем</a>
+                        <a href="/topics/">Список тем</a>
                     </li>
                 
                 
@@ -146,15 +146,13 @@
         <li class="first-level active"><a href="#1-itemssource">1. ItemsSource</a></li>
             <li class="second-level"><a href="#itemssource">Пример использования ItemsSource:</a></li>
                 
-        <li class="first-level "><a href="#2-displaymemberpath">2. DisplayMemberPath</a></li>
-            <li class="second-level"><a href="#displaymemberpath">Пример использования DisplayMemberPath:</a></li>
-                
-        <li class="first-level "><a href="#3">3. Дополнительные параметры</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
+<blockquote>
 <p>В Windows Presentation Foundation (WPF), работа с данными и их отображение часто осуществляется через механизмы связывания данных (data binding). Два ключевых элемента в этом процессе — это <code>ItemsSource</code> и <code>DisplayMemberPath</code>.</p>
+</blockquote>
 <h3 id="1-itemssource">1. <code>ItemsSource</code></h3>
 <p><code>ItemsSource</code> — это свойство, которое используется для указания коллекции данных, которая будет отображаться в элементе управления (например, в <code>ComboBox</code>, <code>ListBox</code> и т.д.). Оно принимает коллекцию объектов, и каждый объект будет отображен как элемент в списке.</p>
 <h4 id="itemssource">Пример использования <code>ItemsSource</code>:</h4>
@@ -180,40 +178,7 @@
     }
 }
 </code></pre>
-<p>В данном примере, коллекция <code>Products</code> передается в свойство <code>ItemsSource</code> элемента <code>ComboBox</code>. В результате, каждый объект из коллекции будет отображен в списке.</p>
-<h3 id="2-displaymemberpath">2. <code>DisplayMemberPath</code></h3>
-<p><code>DisplayMemberPath</code> — это свойство, которое указывает, какое свойство объекта из коллекции будет отображаться в элементе управления. Это необходимо, когда вы хотите отобразить не весь объект, а только одно из его свойств.</p>
-<h4 id="displaymemberpath">Пример использования <code>DisplayMemberPath</code>:</h4>
-<p>Допустим, вы хотите отобразить в <code>ComboBox</code> только имена комнат, а не все их свойства.</p>
-<pre><code class="language-xml">&lt;ComboBox x:Name=&quot;comboBox&quot; DisplayMemberPath=&quot;Name&quot; /&gt;
-</code></pre>
-<p>или</p>
-<pre><code class="language-csharp">// Установка ItemsSource
-comboBox.ItemsSource = Rooms;
-
-comboBox.DisplayMemberPath = &quot;Name&quot;;
-</code></pre>
-<p>В этом примере свойство <code>Name</code> каждого объекта <code>Room</code> будет отображено в <code>ComboBox</code>.</p>
-<ol>
-<li><strong><code>ItemsSource</code></strong> — привязывает коллекцию данных (<code>Rooms</code>) к элементу управления (<code>ComboBox</code>).</li>
-<li><strong><code>DisplayMemberPath</code></strong> — указывает, что из каждого объекта в коллекции нужно отображать только свойство <code>Name</code>. В данном случае в <code>ComboBox</code> будут показаны только названия комнат (например, "Living Room", "Bedroom", "Kitchen").</li>
-</ol>
-<h3 id="3">3. Дополнительные параметры</h3>
-<ul>
-<li>Если вы хотите отображать несколько свойств объекта, можно использовать <code>ItemTemplate</code> для более гибкой настройки отображения. Например:</li>
-</ul>
-<pre><code class="language-xml">&lt;ComboBox x:Name=&quot;comboBox&quot; ItemsSource=&quot;{Binding Rooms}&quot;&gt;
-    &lt;ComboBox.ItemTemplate&gt;
-        &lt;DataTemplate&gt;
-            &lt;StackPanel&gt;
-                &lt;TextBlock Text=&quot;{Binding Name}&quot; /&gt;
-                &lt;TextBlock Text=&quot;{Binding Temperature}&quot; /&gt;
-            &lt;/StackPanel&gt;
-        &lt;/DataTemplate&gt;
-    &lt;/ComboBox.ItemTemplate&gt;
-&lt;/ComboBox&gt;
-</code></pre>
-<p>В этом случае в <code>ComboBox</code> будут отображены и название, и температура каждой комнаты.</p></div>
+<p>В данном примере, коллекция <code>Products</code> передается в свойство <code>ItemsSource</code> элемента <code>ComboBox</code>. В результате, каждый объект из коллекции будет отображен в списке.</p></div>
         
         
     </div>
