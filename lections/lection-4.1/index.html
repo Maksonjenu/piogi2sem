@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Lection 4.1 - Документация по предмету</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Документация по предмету</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../topics/">Список тем</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Список заданий <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../tasks/task1/">1 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task2/">2 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task3/">3 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task4/">4 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task5/">5 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task6/">6 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task7/">7 Лаба</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#_1">Концепция компонентного подхода</a></li>
+        <li class="first-level "><a href="#_2">Основные принципы компонентного подхода</a></li>
+            <li class="second-level"><a href="#1">1. Модульность</a></li>
+                
+            <li class="second-level"><a href="#2">2. Инкапсуляция</a></li>
+                
+            <li class="second-level"><a href="#3">3. Повторное использование</a></li>
+                
+            <li class="second-level"><a href="#4">4. Композиция</a></li>
+                
+            <li class="second-level"><a href="#5">5. Единая ответственность</a></li>
+                
+        <li class="first-level "><a href="#_3">Преимущества компонентного подхода</a></li>
+            <li class="second-level"><a href="#1_1">1. Эффективность разработки</a></li>
+                
+            <li class="second-level"><a href="#2_1">2. Поддерживаемость кода</a></li>
+                
+            <li class="second-level"><a href="#3_1">3. Согласованность интерфейса</a></li>
+                
+            <li class="second-level"><a href="#4_1">4. Адаптивность к изменениям</a></li>
+                
+        <li class="first-level "><a href="#_4">Уровни компонентов</a></li>
+            <li class="second-level"><a href="#1_2">1. Атомарные компоненты</a></li>
+                
+            <li class="second-level"><a href="#2_2">2. Молекулярные компоненты</a></li>
+                
+            <li class="second-level"><a href="#3_2">3. Организмы</a></li>
+                
+            <li class="second-level"><a href="#4-templates">4. Шаблоны (Templates)</a></li>
+                
+            <li class="second-level"><a href="#5-pages">5. Страницы (Pages)</a></li>
+                
+        <li class="first-level "><a href="#xamlwpf">Технические аспекты реализации в XAML/WPF</a></li>
+            <li class="second-level"><a href="#1_3">1. Создание пользовательских элементов управления</a></li>
+                
+            <li class="second-level"><a href="#2-genericxaml">2. Определение внешнего вида в Generic.xaml</a></li>
+                
+            <li class="second-level"><a href="#3-user-controls">3. Пользовательские элементы управления (User Controls)</a></li>
+                
+        <li class="first-level "><a href="#design-system">Подход Design System как эволюция компонентного подхода</a></li>
+        <li class="first-level "><a href="#_5">Проблемы и вызовы компонентного подхода</a></li>
+        <li class="first-level "><a href="#_6">Лучшие практики</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="_1">Концепция компонентного подхода</h2>
+<p>Компонентный подход (Component-Based Development, CBD) представляет собой методологию разработки программного обеспечения, при которой приложение строится из автономных, многоразовых компонентов. В контексте пользовательских интерфейсов компонентный подход предполагает разбиение интерфейса на независимые, самодостаточные блоки, которые можно комбинировать для создания сложных интерфейсов.</p>
+<h2 id="_2">Основные принципы компонентного подхода</h2>
+<h3 id="1">1. Модульность</h3>
+<p>Компоненты представляют собой логически завершенные модули, которые можно разрабатывать, тестировать и использовать независимо от остальной части приложения.</p>
+<h3 id="2">2. Инкапсуляция</h3>
+<p>Каждый компонент инкапсулирует:</p>
+<ul>
+<li>Внешний вид (стили)</li>
+<li>Внутреннюю структуру (разметка)</li>
+<li>Логику поведения (код)</li>
+<li>Состояние (данные)</li>
+</ul>
+<p>Компонент представляет собой "черный ящик" с четко определенным интерфейсом взаимодействия.</p>
+<h3 id="3">3. Повторное использование</h3>
+<p>Компоненты создаются с ориентацией на многократное использование в различных частях приложения или даже в разных проектах.</p>
+<h3 id="4">4. Композиция</h3>
+<p>Сложные интерфейсы создаются путем комбинирования более простых компонентов. Большие компоненты могут состоять из нескольких меньших компонентов.</p>
+<h3 id="5">5. Единая ответственность</h3>
+<p>Каждый компонент должен иметь одну четко определенную ответственность и решать одну конкретную задачу (принцип единственной ответственности из SOLID).</p>
+<h2 id="_3">Преимущества компонентного подхода</h2>
+<h3 id="1_1">1. Эффективность разработки</h3>
+<ul>
+<li><strong>Ускорение разработки</strong>: после создания набора базовых компонентов, новые экраны и функциональность можно создавать быстрее</li>
+<li><strong>Параллельная работа</strong>: разные разработчики могут работать над разными компонентами одновременно</li>
+<li><strong>Повторное использование</strong>: один раз созданный компонент используется многократно</li>
+</ul>
+<h3 id="2_1">2. Поддерживаемость кода</h3>
+<ul>
+<li><strong>Изолированное тестирование</strong>: компоненты можно тестировать независимо от остального приложения</li>
+<li><strong>Локализованные изменения</strong>: изменение внутри компонента не влияет на другие части приложения</li>
+<li><strong>Понятная структура</strong>: разбиение на компоненты делает структуру приложения более прозрачной</li>
+</ul>
+<h3 id="3_1">3. Согласованность интерфейса</h3>
+<ul>
+<li><strong>Единый внешний вид</strong>: компоненты гарантируют визуальную согласованность</li>
+<li><strong>Предсказуемое поведение</strong>: однотипные компоненты ведут себя одинаково в разных частях приложения</li>
+<li><strong>Контроль качества</strong>: отлаженные компоненты обеспечивают высокое качество всего интерфейса</li>
+</ul>
+<h3 id="4_1">4. Адаптивность к изменениям</h3>
+<ul>
+<li><strong>Гибкое обновление</strong>: можно обновить отдельные компоненты без перестройки всего приложения</li>
+<li><strong>Эволюционная разработка</strong>: легко добавлять новые версии компонентов с расширенной функциональностью</li>
+<li><strong>Совместимость</strong>: строгие интерфейсы помогают поддерживать обратную совместимость</li>
+</ul>
+<h2 id="_4">Уровни компонентов</h2>
+<p>В компонентном подходе часто выделяют несколько уровней компонентов:</p>
+<h3 id="1_2">1. Атомарные компоненты</h3>
+<p>Элементарные строительные блоки интерфейса, которые нельзя разбить на более мелкие компоненты:</p>
+<ul>
+<li>Кнопки</li>
+<li>Поля ввода</li>
+<li>Иконки</li>
+<li>Метки</li>
+<li>Переключатели</li>
+</ul>
+<h3 id="2_2">2. Молекулярные компоненты</h3>
+<p>Комбинации атомарных компонентов, формирующие функциональные группы:</p>
+<ul>
+<li>Формы поиска (поле ввода + кнопка)</li>
+<li>Карточки с информацией</li>
+<li>Панели инструментов</li>
+<li>Поля с валидацией</li>
+</ul>
+<h3 id="3_2">3. Организмы</h3>
+<p>Сложные компоненты, состоящие из молекул и атомов:</p>
+<ul>
+<li>Хедер сайта</li>
+<li>Навигационное меню</li>
+<li>Дэшборды</li>
+<li>Списки с фильтрацией</li>
+</ul>
+<h3 id="4-templates">4. Шаблоны (Templates)</h3>
+<p>Компоновка организмов для создания полных страниц или экранов:</p>
+<ul>
+<li>Шаблон страницы товара</li>
+<li>Шаблон личного кабинета</li>
+<li>Шаблон списка результатов</li>
+</ul>
+<h3 id="5-pages">5. Страницы (Pages)</h3>
+<p>Конкретные реализации шаблонов с фактическими данными.</p>
+<h2 id="xamlwpf">Технические аспекты реализации в XAML/WPF</h2>
+<h3 id="1_3">1. Создание пользовательских элементов управления</h3>
+<p>В WPF компоненты обычно реализуются через Custom Controls и User Controls:</p>
+<pre><code class="language-csharp">// CustomButton.cs
+public class CustomButton : Button
+{
+    static CustomButton()
+    {
+        // Переопределение стандартного шаблона
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(CustomButton), 
+            new FrameworkPropertyMetadata(typeof(CustomButton)));
+    }
+
+    public bool IsHighlighted
+    {
+        get { return (bool)GetValue(IsHighlightedProperty); }
+        set { SetValue(IsHighlightedProperty, value); }
+    }
+
+    public static readonly DependencyProperty IsHighlightedProperty =
+        DependencyProperty.Register(&quot;IsHighlighted&quot;, typeof(bool), typeof(CustomButton), 
+            new PropertyMetadata(false, OnIsHighlightedChanged));
+
+    private static void OnIsHighlightedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        // Логика изменения визуального состояния
+    }
+}
+</code></pre>
+<h3 id="2-genericxaml">2. Определение внешнего вида в Generic.xaml</h3>
+<pre><code class="language-xml">&lt;ResourceDictionary
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;clr-namespace:MyApp.Controls&quot;&gt;
+
+    &lt;Style TargetType=&quot;{x:Type local:CustomButton}&quot;&gt;
+        &lt;Setter Property=&quot;Template&quot;&gt;
+            &lt;Setter.Value&gt;
+                &lt;ControlTemplate TargetType=&quot;{x:Type local:CustomButton}&quot;&gt;
+                    &lt;Border Background=&quot;{TemplateBinding Background}&quot;
+                            BorderBrush=&quot;{TemplateBinding BorderBrush}&quot;
+                            BorderThickness=&quot;{TemplateBinding BorderThickness}&quot;
+                            CornerRadius=&quot;4&quot;&gt;
+                        &lt;ContentPresenter HorizontalAlignment=&quot;Center&quot; 
+                                         VerticalAlignment=&quot;Center&quot;/&gt;
+                    &lt;/Border&gt;
+                    &lt;ControlTemplate.Triggers&gt;
+                        &lt;Trigger Property=&quot;IsHighlighted&quot; Value=&quot;True&quot;&gt;
+                            &lt;Setter Property=&quot;Background&quot; Value=&quot;Gold&quot;/&gt;
+                        &lt;/Trigger&gt;
+                    &lt;/ControlTemplate.Triggers&gt;
+                &lt;/ControlTemplate&gt;
+            &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+    &lt;/Style&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<h3 id="3-user-controls">3. Пользовательские элементы управления (User Controls)</h3>
+<p>Для более сложных компонентов:</p>
+<pre><code class="language-xml">&lt;!-- SearchBox.xaml --&gt;
+&lt;UserControl x:Class=&quot;MyApp.Controls.SearchBox&quot;
+             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+    &lt;Grid&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition Width=&quot;*&quot;/&gt;
+            &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+
+        &lt;TextBox x:Name=&quot;SearchTextBox&quot; 
+                Text=&quot;{Binding SearchText, RelativeSource={RelativeSource AncestorType=UserControl}}&quot;
+                Grid.Column=&quot;0&quot;/&gt;
+
+        &lt;Button x:Name=&quot;SearchButton&quot; 
+                Content=&quot;Поиск&quot; 
+                Grid.Column=&quot;1&quot;
+                Click=&quot;SearchButton_Click&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/UserControl&gt;
+</code></pre>
+<pre><code class="language-csharp">// SearchBox.xaml.cs
+public partial class SearchBox : UserControl
+{
+    public SearchBox()
+    {
+        InitializeComponent();
+    }
+
+    public string SearchText
+    {
+        get { return (string)GetValue(SearchTextProperty); }
+        set { SetValue(SearchTextProperty, value); }
+    }
+
+    public static readonly DependencyProperty SearchTextProperty =
+        DependencyProperty.Register(&quot;SearchText&quot;, typeof(string), typeof(SearchBox), 
+            new PropertyMetadata(string.Empty));
+
+    public event EventHandler&lt;SearchEventArgs&gt; Search;
+
+    private void SearchButton_Click(object sender, RoutedEventArgs e)
+    {
+        Search?.Invoke(this, new SearchEventArgs(SearchText));
+    }
+}
+</code></pre>
+<h2 id="design-system">Подход Design System как эволюция компонентного подхода</h2>
+<p>Design System (система дизайна) представляет собой следующий уровень эволюции компонентного подхода, который включает:</p>
+<ol>
+<li><strong>Набор компонентов</strong> - стандартизированные UI-элементы</li>
+<li><strong>Правила использования</strong> - когда и как применять определенные компоненты</li>
+<li><strong>Принципы дизайна</strong> - общие руководящие принципы для всех элементов</li>
+<li><strong>Брендинг и визуальный язык</strong> - цвета, типографика, иконография</li>
+<li><strong>Документация</strong> - подробное описание каждого компонента</li>
+</ol>
+<p>Примеры Design Systems:</p>
+<ul>
+<li><strong>Material Design (Google)</strong> — целостная система для создания единообразных продуктов</li>
+<li><strong>Fluent Design (Microsoft)</strong> — система для создания адаптивных, интуитивно понятных интерфейсов</li>
+<li><strong>Human Interface Guidelines (Apple)</strong> — рекомендации по созданию приложений в стиле Apple</li>
+</ul>
+<h2 id="_5">Проблемы и вызовы компонентного подхода</h2>
+<ul>
+<li>Излишняя фрагментация: Создание слишком большого числа мелких компонентов может усложнить структуру проекта и затруднить понимание.</li>
+<li>Сложность интеграции: Компоненты, созданные разными разработчиками, могут иметь несовместимые интерфейсы.</li>
+<li>Баланс гибкости и специализации: Слишком универсальные компоненты сложны в использовании, слишком специализированные - имеют ограниченную сферу применения.</li>
+<li>Необходимость документации: Без хорошей документации команде сложно эффективно использовать существующие компоненты.</li>
+</ul>
+<h2 id="_6">Лучшие практики</h2>
+<ul>
+<li>Компонент должен выполнять одну конкретную функцию. </li>
+<li><strong>Разделяйте представление и логику</strong>. Визуальное представление должно быть отделено от бизнес-логики.</li>
+<li>Изменения в компонентах не должны ломать существующий код.</li>
+</ul></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

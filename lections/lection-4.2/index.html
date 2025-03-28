@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Lection 4.2 - Документация по предмету</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Документация по предмету</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../topics/">Список тем</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Список заданий <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../tasks/task1/">1 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task2/">2 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task3/">3 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task4/">4 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task5/">5 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task6/">6 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task7/">7 Лаба</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#xaml">Стили в XAML</a></li>
+            <li class="second-level"><a href="#_1">Основы работы со стилями</a></li>
+                
+            <li class="second-level"><a href="#_2">Применение стилей</a></li>
+                
+            <li class="second-level"><a href="#_3">Наследование стилей</a></li>
+                
+        <li class="first-level "><a href="#_4">Конверторы данных</a></li>
+            <li class="second-level"><a href="#_5">Создание конвертера</a></li>
+                
+            <li class="second-level"><a href="#xaml_1">Использование конвертера в XAML</a></li>
+                
+            <li class="second-level"><a href="#_6">Примеры полезных конверторов</a></li>
+                
+        <li class="first-level "><a href="#_7">Триггеры</a></li>
+            <li class="second-level"><a href="#_8">Типы триггеров</a></li>
+                
+            <li class="second-level"><a href="#property-trigger">Property Trigger (Триггер свойства)</a></li>
+                
+            <li class="second-level"><a href="#data-trigger">Data Trigger (Триггер данных)</a></li>
+                
+            <li class="second-level"><a href="#multitrigger-">MultiTrigger (Мульти-триггер)</a></li>
+                
+            <li class="second-level"><a href="#event-trigger">Event Trigger (Триггер событий)</a></li>
+                
+        <li class="first-level "><a href="#_9">Практические примеры</a></li>
+            <li class="second-level"><a href="#1">Пример 1: Создание собственной темы для приложения</a></li>
+                
+            <li class="second-level"><a href="#2">Пример 2: Конвертер для отображения статуса задачи</a></li>
+                
+            <li class="second-level"><a href="#3">Пример 3: Анимация с использованием триггеров</a></li>
+                
+        <li class="first-level "><a href="#_10">Заключение</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="xaml">Стили в XAML</h2>
+<p>Стили в XAML позволяют определять и повторно использовать оформление элементов интерфейса. Это помогает поддерживать единообразный внешний вид приложения и упрощает внесение изменений.</p>
+<h3 id="_1">Основы работы со стилями</h3>
+<p>Стиль в XAML определяется с помощью элемента <code>Style</code> и содержит набор <code>Setter</code>-ов, которые устанавливают значения свойств:</p>
+<pre><code class="language-xml">&lt;Style TargetType=&quot;Button&quot;&gt;
+    &lt;Setter Property=&quot;Background&quot; Value=&quot;Blue&quot;/&gt;
+    &lt;Setter Property=&quot;Foreground&quot; Value=&quot;White&quot;/&gt;
+    &lt;Setter Property=&quot;FontSize&quot; Value=&quot;14&quot;/&gt;
+    &lt;Setter Property=&quot;Padding&quot; Value=&quot;10,5&quot;/&gt;
+&lt;/Style&gt;
+</code></pre>
+<h3 id="_2">Применение стилей</h3>
+<p>Стили можно применять несколькими способами:</p>
+<ol>
+<li><strong>Неявно</strong> - через <code>TargetType</code>:</li>
+</ol>
+<pre><code class="language-xml">&lt;Window.Resources&gt;
+    &lt;Style TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;Blue&quot;/&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;White&quot;/&gt;
+    &lt;/Style&gt;
+&lt;/Window.Resources&gt;
+
+&lt;!-- Стиль применится автоматически ко всем кнопкам --&gt;
+&lt;Button Content=&quot;Кнопка с автоматическим стилем&quot;/&gt;
+</code></pre>
+<ol>
+<li><strong>Явно</strong> - через <code>x:Key</code> и свойство <code>Style</code>:</li>
+</ol>
+<pre><code class="language-xml">&lt;Window.Resources&gt;
+    &lt;Style x:Key=&quot;PrimaryButton&quot; TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;Blue&quot;/&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;White&quot;/&gt;
+    &lt;/Style&gt;
+&lt;/Window.Resources&gt;
+
+&lt;!-- Стиль применяется только к этой кнопке --&gt;
+&lt;Button Content=&quot;Основная кнопка&quot; Style=&quot;{StaticResource PrimaryButton}&quot;/&gt;
+</code></pre>
+<h3 id="_3">Наследование стилей</h3>
+<p>Стили могут наследоваться с помощью свойства <code>BasedOn</code>:</p>
+<pre><code class="language-xml">&lt;Window.Resources&gt;
+    &lt;Style x:Key=&quot;BaseButton&quot; TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;FontSize&quot; Value=&quot;14&quot;/&gt;
+        &lt;Setter Property=&quot;Padding&quot; Value=&quot;10,5&quot;/&gt;
+    &lt;/Style&gt;
+
+    &lt;Style x:Key=&quot;PrimaryButton&quot; TargetType=&quot;Button&quot; BasedOn=&quot;{StaticResource BaseButton}&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;Blue&quot;/&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;White&quot;/&gt;
+    &lt;/Style&gt;
+
+    &lt;Style x:Key=&quot;SecondaryButton&quot; TargetType=&quot;Button&quot; BasedOn=&quot;{StaticResource BaseButton}&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;Gray&quot;/&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Black&quot;/&gt;
+    &lt;/Style&gt;
+&lt;/Window.Resources&gt;
+</code></pre>
+<h2 id="_4">Конверторы данных</h2>
+<p>Конверторы данных позволяют преобразовывать значения при привязке данных. Они реализуют интерфейс <code>IValueConverter</code>.</p>
+<h3 id="_5">Создание конвертера</h3>
+<pre><code class="language-csharp">public class BooleanToVisibilityConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        bool boolValue = (bool)value;
+        return boolValue ? Visibility.Visible : Visibility.Collapsed;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        Visibility visibility = (Visibility)value;
+        return visibility == Visibility.Visible;
+    }
+}
+</code></pre>
+<h3 id="xaml_1">Использование конвертера в XAML</h3>
+<pre><code class="language-xml">&lt;Window.Resources&gt;
+    &lt;local:BooleanToVisibilityConverter x:Key=&quot;BoolToVis&quot;/&gt;
+&lt;/Window.Resources&gt;
+
+&lt;StackPanel&gt;
+    &lt;CheckBox x:Name=&quot;ShowPanelCheckBox&quot; Content=&quot;Показать панель&quot;/&gt;
+
+    &lt;StackPanel Visibility=&quot;{Binding IsChecked, ElementName=ShowPanelCheckBox, 
+                           Converter={StaticResource BoolToVis}}&quot;&gt;
+        &lt;TextBlock Text=&quot;Эта панель отображается только при включенном флажке&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<h3 id="_6">Примеры полезных конверторов</h3>
+<ol>
+<li><strong>Конвертер для инвертирования логического значения</strong>:</li>
+</ol>
+<pre><code class="language-csharp">public class InverseBooleanConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return !(bool)value;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return !(bool)value;
+    }
+}
+</code></pre>
+<ol>
+<li><strong>Конвертер для преобразования строки в верхний регистр</strong>:</li>
+</ol>
+<pre><code class="language-csharp">public class StringToUpperConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is string str)
+            return str.ToUpper();
+        return value;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return value; // обычно не нужно конвертировать обратно
+    }
+}
+</code></pre>
+<h2 id="_7">Триггеры</h2>
+<p>Триггеры позволяют динамически изменять внешний вид и поведение элементов в ответ на события, изменения свойств или данных.</p>
+<h3 id="_8">Типы триггеров</h3>
+<ol>
+<li><strong>Property Triggers</strong> - реагируют на изменения значений свойств</li>
+<li><strong>Data Triggers</strong> - реагируют на значения привязанных данных</li>
+<li><strong>Event Triggers</strong> - реагируют на события</li>
+<li><strong>MultiTriggers</strong> - комбинируют несколько условий</li>
+</ol>
+<h3 id="property-trigger">Property Trigger (Триггер свойства)</h3>
+<pre><code class="language-xml">&lt;Style TargetType=&quot;Button&quot;&gt;
+    &lt;Setter Property=&quot;Background&quot; Value=&quot;Blue&quot;/&gt;
+    &lt;Setter Property=&quot;Foreground&quot; Value=&quot;White&quot;/&gt;
+
+    &lt;Style.Triggers&gt;
+        &lt;!-- Срабатывает при наведении мыши (IsMouseOver = true) --&gt;
+        &lt;Trigger Property=&quot;IsMouseOver&quot; Value=&quot;True&quot;&gt;
+            &lt;Setter Property=&quot;Background&quot; Value=&quot;DarkBlue&quot;/&gt;
+            &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;Bold&quot;/&gt;
+        &lt;/Trigger&gt;
+
+        &lt;!-- Срабатывает при нажатии (IsPressed = true) --&gt;
+        &lt;Trigger Property=&quot;IsPressed&quot; Value=&quot;True&quot;&gt;
+            &lt;Setter Property=&quot;Background&quot; Value=&quot;Navy&quot;/&gt;
+        &lt;/Trigger&gt;
+
+        &lt;!-- Срабатывает когда кнопка отключена --&gt;
+        &lt;Trigger Property=&quot;IsEnabled&quot; Value=&quot;False&quot;&gt;
+            &lt;Setter Property=&quot;Opacity&quot; Value=&quot;0.5&quot;/&gt;
+        &lt;/Trigger&gt;
+    &lt;/Style.Triggers&gt;
+&lt;/Style&gt;
+</code></pre>
+<h3 id="data-trigger">Data Trigger (Триггер данных)</h3>
+<pre><code class="language-xml">&lt;Style TargetType=&quot;TextBlock&quot;&gt;
+    &lt;Style.Triggers&gt;
+        &lt;DataTrigger Binding=&quot;{Binding Status}&quot; Value=&quot;Error&quot;&gt;
+            &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Red&quot;/&gt;
+            &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;Bold&quot;/&gt;
+        &lt;/DataTrigger&gt;
+
+        &lt;DataTrigger Binding=&quot;{Binding Status}&quot; Value=&quot;Warning&quot;&gt;
+            &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Orange&quot;/&gt;
+        &lt;/DataTrigger&gt;
+
+        &lt;DataTrigger Binding=&quot;{Binding Status}&quot; Value=&quot;Success&quot;&gt;
+            &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Green&quot;/&gt;
+        &lt;/DataTrigger&gt;
+    &lt;/Style.Triggers&gt;
+&lt;/Style&gt;
+</code></pre>
+<h3 id="multitrigger-">MultiTrigger (Мульти-триггер)</h3>
+<pre><code class="language-xml">&lt;Style TargetType=&quot;Button&quot;&gt;
+    &lt;Style.Triggers&gt;
+        &lt;MultiTrigger&gt;
+            &lt;MultiTrigger.Conditions&gt;
+                &lt;Condition Property=&quot;IsMouseOver&quot; Value=&quot;True&quot;/&gt;
+                &lt;Condition Property=&quot;IsEnabled&quot; Value=&quot;True&quot;/&gt;
+            &lt;/MultiTrigger.Conditions&gt;
+            &lt;MultiTrigger.Setters&gt;
+                &lt;Setter Property=&quot;Background&quot; Value=&quot;Gold&quot;/&gt;
+                &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Black&quot;/&gt;
+            &lt;/MultiTrigger.Setters&gt;
+        &lt;/MultiTrigger&gt;
+    &lt;/Style.Triggers&gt;
+&lt;/Style&gt;
+</code></pre>
+<h3 id="event-trigger">Event Trigger (Триггер событий)</h3>
+<pre><code class="language-xml">&lt;Button Content=&quot;Анимированная кнопка&quot;&gt;
+    &lt;Button.Triggers&gt;
+        &lt;EventTrigger RoutedEvent=&quot;Button.MouseEnter&quot;&gt;
+            &lt;BeginStoryboard&gt;
+                &lt;Storyboard&gt;
+                    &lt;DoubleAnimation 
+                        Storyboard.TargetProperty=&quot;Width&quot;
+                        From=&quot;100&quot; To=&quot;150&quot; Duration=&quot;0:0:0.3&quot;/&gt;
+                &lt;/Storyboard&gt;
+            &lt;/BeginStoryboard&gt;
+        &lt;/EventTrigger&gt;
+
+        &lt;EventTrigger RoutedEvent=&quot;Button.MouseLeave&quot;&gt;
+            &lt;BeginStoryboard&gt;
+                &lt;Storyboard&gt;
+                    &lt;DoubleAnimation 
+                        Storyboard.TargetProperty=&quot;Width&quot;
+                        To=&quot;100&quot; Duration=&quot;0:0:0.3&quot;/&gt;
+                &lt;/Storyboard&gt;
+            &lt;/BeginStoryboard&gt;
+        &lt;/EventTrigger&gt;
+    &lt;/Button.Triggers&gt;
+&lt;/Button&gt;
+</code></pre>
+<h2 id="_9">Практические примеры</h2>
+<h3 id="1">Пример 1: Создание собственной темы для приложения</h3>
+<pre><code class="language-xml">&lt;Application.Resources&gt;
+    &lt;!-- Цветовая палитра --&gt;
+    &lt;Color x:Key=&quot;PrimaryColor&quot;&gt;#3498db&lt;/Color&gt;
+    &lt;Color x:Key=&quot;SecondaryColor&quot;&gt;#2ecc71&lt;/Color&gt;
+    &lt;Color x:Key=&quot;AccentColor&quot;&gt;#e74c3c&lt;/Color&gt;
+    &lt;Color x:Key=&quot;BackgroundColor&quot;&gt;#ecf0f1&lt;/Color&gt;
+    &lt;Color x:Key=&quot;TextColor&quot;&gt;#2c3e50&lt;/Color&gt;
+
+    &lt;!-- Кисти на основе цветов --&gt;
+    &lt;SolidColorBrush x:Key=&quot;PrimaryBrush&quot; Color=&quot;{StaticResource PrimaryColor}&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;SecondaryBrush&quot; Color=&quot;{StaticResource SecondaryColor}&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;AccentBrush&quot; Color=&quot;{StaticResource AccentColor}&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;BackgroundBrush&quot; Color=&quot;{StaticResource BackgroundColor}&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;TextBrush&quot; Color=&quot;{StaticResource TextColor}&quot;/&gt;
+
+    &lt;!-- Базовый стиль для кнопок --&gt;
+    &lt;Style TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;{StaticResource PrimaryBrush}&quot;/&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;White&quot;/&gt;
+        &lt;Setter Property=&quot;Padding&quot; Value=&quot;15,5&quot;/&gt;
+        &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;0&quot;/&gt;
+        &lt;Setter Property=&quot;FontSize&quot; Value=&quot;14&quot;/&gt;
+        &lt;Setter Property=&quot;Cursor&quot; Value=&quot;Hand&quot;/&gt;
+        &lt;Setter Property=&quot;Template&quot;&gt;
+            &lt;Setter.Value&gt;
+                &lt;ControlTemplate TargetType=&quot;Button&quot;&gt;
+                    &lt;Border Background=&quot;{TemplateBinding Background}&quot; 
+                            CornerRadius=&quot;4&quot;
+                            Padding=&quot;{TemplateBinding Padding}&quot;&gt;
+                        &lt;ContentPresenter HorizontalAlignment=&quot;Center&quot; 
+                                          VerticalAlignment=&quot;Center&quot;/&gt;
+                    &lt;/Border&gt;
+                &lt;/ControlTemplate&gt;
+            &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+        &lt;Style.Triggers&gt;
+            &lt;Trigger Property=&quot;IsMouseOver&quot; Value=&quot;True&quot;&gt;
+                &lt;Setter Property=&quot;Background&quot;&gt;
+                    &lt;Setter.Value&gt;
+                        &lt;SolidColorBrush Color=&quot;#2980b9&quot;/&gt;
+                    &lt;/Setter.Value&gt;
+                &lt;/Setter&gt;
+            &lt;/Trigger&gt;
+            &lt;Trigger Property=&quot;IsPressed&quot; Value=&quot;True&quot;&gt;
+                &lt;Setter Property=&quot;Background&quot;&gt;
+                    &lt;Setter.Value&gt;
+                        &lt;SolidColorBrush Color=&quot;#1a5276&quot;/&gt;
+                    &lt;/Setter.Value&gt;
+                &lt;/Setter&gt;
+            &lt;/Trigger&gt;
+            &lt;Trigger Property=&quot;IsEnabled&quot; Value=&quot;False&quot;&gt;
+                &lt;Setter Property=&quot;Opacity&quot; Value=&quot;0.5&quot;/&gt;
+            &lt;/Trigger&gt;
+        &lt;/Style.Triggers&gt;
+    &lt;/Style&gt;
+
+    &lt;!-- Другие стили для разных элементов... --&gt;
+&lt;/Application.Resources&gt;
+</code></pre>
+<h3 id="2">Пример 2: Конвертер для отображения статуса задачи</h3>
+<pre><code class="language-csharp">public class TaskStatusToColorConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is string status)
+        {
+            switch (status.ToLower())
+            {
+                case &quot;completed&quot;:
+                    return new SolidColorBrush(Colors.Green);
+                case &quot;in progress&quot;:
+                    return new SolidColorBrush(Colors.Blue);
+                case &quot;not started&quot;:
+                    return new SolidColorBrush(Colors.Gray);
+                case &quot;overdue&quot;:
+                    return new SolidColorBrush(Colors.Red);
+                default:
+                    return new SolidColorBrush(Colors.Black);
+            }
+        }
+        return new SolidColorBrush(Colors.Black);
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return DependencyProperty.UnsetValue;
+    }
+}
+</code></pre>
+<p>Использование:</p>
+<pre><code class="language-xml">&lt;Window.Resources&gt;
+    &lt;local:TaskStatusToColorConverter x:Key=&quot;StatusToColor&quot;/&gt;
+&lt;/Window.Resources&gt;
+
+&lt;ListView ItemsSource=&quot;{Binding Tasks}&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+                &lt;TextBlock Text=&quot;{Binding Name}&quot; FontWeight=&quot;Bold&quot;/&gt;
+                &lt;TextBlock Text=&quot;{Binding Status}&quot; 
+                           Foreground=&quot;{Binding Status, Converter={StaticResource StatusToColor}}&quot;
+                           Margin=&quot;10,0,0,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<h3 id="3">Пример 3: Анимация с использованием триггеров</h3>
+<pre><code class="language-xml">&lt;Button Content=&quot;Анимированная кнопка&quot; Width=&quot;150&quot; Height=&quot;40&quot;&gt;
+    &lt;Button.Style&gt;
+        &lt;Style TargetType=&quot;Button&quot;&gt;
+            &lt;Setter Property=&quot;Background&quot; Value=&quot;#3498db&quot;/&gt;
+            &lt;Setter Property=&quot;Foreground&quot; Value=&quot;White&quot;/&gt;
+            &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;0&quot;/&gt;
+            &lt;Setter Property=&quot;Cursor&quot; Value=&quot;Hand&quot;/&gt;
+            &lt;Style.Triggers&gt;
+                &lt;EventTrigger RoutedEvent=&quot;Button.MouseEnter&quot;&gt;
+                    &lt;EventTrigger.Actions&gt;
+                        &lt;BeginStoryboard&gt;
+                            &lt;Storyboard&gt;
+                                &lt;ColorAnimation 
+                                    Storyboard.TargetProperty=&quot;(Button.Background).(SolidColorBrush.Color)&quot; 
+                                    To=&quot;#2980b9&quot; 
+                                    Duration=&quot;0:0:0.2&quot;/&gt;
+                                &lt;DoubleAnimation 
+                                    Storyboard.TargetProperty=&quot;Width&quot; 
+                                    To=&quot;180&quot; 
+                                    Duration=&quot;0:0:0.2&quot;/&gt;
+                            &lt;/Storyboard&gt;
+                        &lt;/BeginStoryboard&gt;
+                    &lt;/EventTrigger.Actions&gt;
+                &lt;/EventTrigger&gt;
+                &lt;EventTrigger RoutedEvent=&quot;Button.MouseLeave&quot;&gt;
+                    &lt;EventTrigger.Actions&gt;
+                        &lt;BeginStoryboard&gt;
+                            &lt;Storyboard&gt;
+                                &lt;ColorAnimation 
+                                    Storyboard.TargetProperty=&quot;(Button.Background).(SolidColorBrush.Color)&quot; 
+                                    To=&quot;#3498db&quot; 
+                                    Duration=&quot;0:0:0.2&quot;/&gt;
+                                &lt;DoubleAnimation 
+                                    Storyboard.TargetProperty=&quot;Width&quot; 
+                                    To=&quot;150&quot; 
+                                    Duration=&quot;0:0:0.2&quot;/&gt;
+                            &lt;/Storyboard&gt;
+                        &lt;/BeginStoryboard&gt;
+                    &lt;/EventTrigger.Actions&gt;
+                &lt;/EventTrigger&gt;
+            &lt;/Style.Triggers&gt;
+        &lt;/Style&gt;
+    &lt;/Button.Style&gt;
+&lt;/Button&gt;
+</code></pre>
+<h2 id="_10">Заключение</h2>
+<ul>
+<li><strong>Стили</strong> позволяют унифицировать внешний вид элементов и сделать его легко изменяемым.</li>
+<li><strong>Конверторы</strong> обеспечивают трансформацию данных между источником и целевым элементом.</li>
+<li><strong>Триггеры</strong> отвечают за динамическое изменение свойств элементов в ответ на различные события и условия.</li>
+</ul>
+<p>Совместное использование этих инструментов позволяет создавать современные, интерактивные и эстетически привлекательные интерфейсы без необходимости писать большое количество кода на C#.</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
