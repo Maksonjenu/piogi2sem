@@ -153,11 +153,624 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#5">Лабораторная работа 5</a></li>
+            <li class="second-level"><a href="#_1">Вступление</a></li>
+                
+            <li class="second-level"><a href="#1">Задание 1: Создание компонента комнаты</a></li>
+                
+            <li class="second-level"><a href="#2">Задание 2: Стилизация компонентов</a></li>
+                
+            <li class="second-level"><a href="#3">Задание 3: Анимации в пользовательском интерфейсе</a></li>
+                
+            <li class="second-level"><a href="#4">Задание 4: Создание простого редактора комнат</a></li>
+                
+            <li class="second-level"><a href="#5_1">Задание 5: Визуализация данных</a></li>
+                
+            <li class="second-level"><a href="#_2">Примеры кода</a></li>
+                
+                <li class="third-level"><a href="#_3">Пример создания компонента комнаты</a></li>
+                <li class="third-level"><a href="#_4">Пример определения стилей</a></li>
+                <li class="third-level"><a href="#wpf-storyboard">Пример анимации через WPF Storyboard</a></li>
+                <li class="third-level"><a href="#_5">Пример анимации через код</a></li>
+                <li class="third-level"><a href="#_6">Пример создания графика температуры</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-</div>
+<h1 id="5">Лабораторная работа 5</h1>
+<h2 id="_1">Вступление</h2>
+<p>Данная лабораторная работа направлена на изучение компонентного подхода, стилей и анимаций в WPF. Эти концепции позволяют создавать более модульные, настраиваемые и визуально привлекательные пользовательские интерфейсы.</p>
+<hr />
+<h2 id="1">Задание 1: Создание компонента комнаты</h2>
+<p><strong>Цель:</strong> Разработка компонента интерфейса для отображения и управления комнатой в системе "Умный дом".</p>
+<p><strong>Требования:</strong></p>
+<ol>
+<li><strong>Создание компонента комнаты:</strong></li>
+<li>Разработать пользовательский элемент управления <code>RoomControl</code>, который будет отображать информацию о комнате и позволять управлять её параметрами.</li>
+<li>
+<p>Компонент должен содержать:</p>
+<ul>
+<li>Название комнаты</li>
+<li>Индикатор температуры</li>
+<li>Переключатель света (вкл/выкл)</li>
+<li>Изображение, соответствующее типу комнаты (гостиная, спальня, кухня и т.д.)</li>
+</ul>
+</li>
+<li>
+<p><strong>Простые свойства:</strong></p>
+</li>
+<li>
+<p>Реализовать следующие свойства для компонента:</p>
+<ul>
+<li><code>RoomName</code> (string) - название комнаты</li>
+<li><code>Temperature</code> (double) - температура в комнате</li>
+<li><code>IsLightOn</code> (bool) - состояние освещения (вкл/выкл)</li>
+<li><code>RoomImage</code> (string) - путь к изображению комнаты</li>
+</ul>
+</li>
+<li>
+<p><strong>Использование компонента:</strong></p>
+</li>
+<li>Создать главное окно приложения, в котором разместить несколько экземпляров созданного компонента для разных комнат (гостиная, спальня, кухня и т.д.).</li>
+<li>Продемонстрировать возможность изменения параметров комнаты через пользовательский интерфейс.</li>
+</ol>
+<hr />
+<h2 id="2">Задание 2: Стилизация компонентов</h2>
+<p><strong>Цель:</strong> Изучение механизма стилей в WPF для настройки внешнего вида компонентов.</p>
+<p><strong>Требования:</strong></p>
+<ol>
+<li><strong>Создание простых стилей:</strong></li>
+<li>Создать файл ресурсов <code>Styles.xaml</code> с определением стилей для компонентов приложения.</li>
+<li>
+<p>Определить стили для основных элементов управления (Button, TextBlock, Label и т.д.).</p>
+</li>
+<li>
+<p><strong>Темы оформления:</strong></p>
+</li>
+<li>Реализовать две простые темы оформления: светлую и темную.</li>
+<li>
+<p>Каждая тема должна определять:</p>
+<ul>
+<li>Основные цвета (фон, текст)</li>
+<li>Стили для элементов управления</li>
+</ul>
+</li>
+<li>
+<p><strong>Применение стилей:</strong></p>
+</li>
+<li>Применить созданные стили к компонентам главного окна и компоненту комнаты.</li>
+<li>
+<p>Реализовать кнопку для переключения между светлой и темной темой.</p>
+</li>
+<li>
+<p><strong>Стилизация компонента комнаты:</strong></p>
+</li>
+<li>Создать два варианта стилей для <code>RoomControl</code> для разных типов комнат (например, стиль для жилых комнат и стиль для служебных помещений).</li>
+<li>Реализовать возможность выбора стиля для каждого экземпляра компонента.</li>
+</ol>
+<hr />
+<h2 id="3">Задание 3: Анимации в пользовательском интерфейсе</h2>
+<p><strong>Цель:</strong> Изучение различных подходов к созданию анимаций в WPF.</p>
+<p><strong>Требования:</strong></p>
+<ol>
+<li><strong>Анимация через код:</strong></li>
+<li>Реализовать простую анимацию изменения цвета фона компонента комнаты при включении/выключении света с использованием потока и изменения свойств через код.</li>
+<li>
+<p>Пример реализации:
+     ```csharp
+     // Создание и запуск потока для анимации
+     Thread animationThread = new Thread(() =&gt; {
+         // Начальный и конечный цвета
+         Color startColor = Colors.Gray;
+         Color endColor = Colors.Yellow;</p>
+<pre><code> // Количество шагов и длительность анимации
+ int steps = 30;
+ int delay = 10; // миллисекунды
+
+ for (int i = 0; i &lt; steps; i++)
+ {
+     // Вычисление промежуточного цвета
+     byte r = (byte)(startColor.R + (endColor.R - startColor.R) * i / steps);
+     byte g = (byte)(startColor.G + (endColor.G - startColor.G) * i / steps);
+     byte b = (byte)(startColor.B + (endColor.B - startColor.B) * i / steps);
+
+     Color currentColor = Color.FromRgb(r, g, b);
+
+     // Обновление UI должно происходить в UI-потоке
+     Application.Current.Dispatcher.Invoke(() =&gt; {
+         backgroundElement.Background = new SolidColorBrush(currentColor);
+     });
+
+     Thread.Sleep(delay);
+ }
+</code></pre>
+<p>});</p>
+<p>animationThread.IsBackground = true;
+ animationThread.Start();
+ ```</p>
+</li>
+<li>
+<p><strong>Анимация с использованием WPF Storyboard:</strong></p>
+</li>
+<li>Реализовать анимацию с использованием встроенных средств WPF (Storyboard, Animation):<ul>
+<li>Анимация появления/исчезновения компонента комнаты</li>
+<li>Анимация изменения размера компонента при наведении курсора</li>
+</ul>
+</li>
+<li>
+<p>Пример реализации:
+     ```xml
+     <Storyboard x:Key="FadeInAnimation">
+         <DoubleAnimation 
+             Storyboard.TargetProperty="Opacity"
+             From="0" To="1" Duration="0:0:0.5"/>
+     </Storyboard></p>
+<p><Storyboard x:Key="ScaleUpAnimation">
+     <DoubleAnimation 
+         Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)"
+         From="1" To="1.1" Duration="0:0:0.2"/>
+     <DoubleAnimation 
+         Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)"
+         From="1" To="1.1" Duration="0:0:0.2"/>
+ </Storyboard>
+ ```</p>
+</li>
+<li>
+<p><strong>Триггеры анимаций:</strong></p>
+</li>
+<li>
+<p>Использовать простые триггеры для запуска анимаций:</p>
+<ul>
+<li>EventTrigger (по событию, например, при загрузке окна)</li>
+<li>Trigger (по изменению свойства, например, при наведении курсора)</li>
+</ul>
+</li>
+<li>
+<p><strong>Сравнение подходов:</strong></p>
+</li>
+<li>Создать страницу в приложении, демонстрирующую оба подхода к анимации.</li>
+<li>Добавить комментарии в код, объясняющие преимущества и недостатки каждого подхода.</li>
+</ol>
+<hr />
+<h2 id="4">Задание 4: Создание простого редактора комнат</h2>
+<p><strong>Цель:</strong> Разработка интерфейса для создания и редактирования комнат.</p>
+<p><strong>Требования:</strong></p>
+<ol>
+<li><strong>Интерфейс редактора:</strong></li>
+<li>
+<p>Создать окно редактора комнаты с полями для ввода:</p>
+<ul>
+<li>Название комнаты</li>
+<li>Тип комнаты (выбор из списка)</li>
+<li>Температура (с использованием Slider)</li>
+<li>Состояние освещения (с использованием CheckBox)</li>
+</ul>
+</li>
+<li>
+<p><strong>Функциональность:</strong></p>
+</li>
+<li>Реализовать возможность создания новой комнаты.</li>
+<li>Реализовать возможность редактирования существующей комнаты.</li>
+<li>
+<p>Реализовать возможность удаления комнаты.</p>
+</li>
+<li>
+<p><strong>Хранение данных:</strong></p>
+</li>
+<li>Хранить список комнат в памяти приложения.</li>
+<li>
+<p>При закрытии приложения выводить сообщение о том, что данные не будут сохранены.</p>
+</li>
+<li>
+<p><strong>Интеграция с компонентами:</strong></p>
+</li>
+<li>Обновлять отображение компонентов комнат при изменении данных в редакторе.</li>
+<li>Реализовать возможность открытия редактора при двойном клике на компоненте комнаты.</li>
+</ol>
+<hr />
+<h2 id="5_1">Задание 5: Визуализация данных</h2>
+<p><strong>Цель:</strong> Создание простых графиков для отображения данных о комнатах.</p>
+<p><strong>Требования:</strong></p>
+<ol>
+<li><strong>График температуры:</strong></li>
+<li>Создать простой график, отображающий температуру в разных комнатах.</li>
+<li>
+<p>Использовать Canvas или другие элементы WPF для рисования графика.</p>
+</li>
+<li>
+<p><strong>Диаграмма использования освещения:</strong></p>
+</li>
+<li>Создать круговую диаграмму, показывающую соотношение комнат с включенным и выключенным освещением.</li>
+<li>
+<p>Реализовать обновление диаграммы при изменении состояния освещения в комнатах.</p>
+</li>
+<li>
+<p><strong>Интерактивность:</strong></p>
+</li>
+<li>Добавить всплывающие подсказки при наведении на элементы графиков.</li>
+<li>Реализовать возможность выбора комнаты через график для её редактирования.</li>
+</ol>
+<hr />
+<h2 id="_2">Примеры кода</h2>
+<h3 id="_3">Пример создания компонента комнаты</h3>
+<pre><code class="language-xml">&lt;!-- RoomControl.xaml --&gt;
+&lt;UserControl x:Class=&quot;SmartHome.Controls.RoomControl&quot;
+             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; 
+             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; 
+             mc:Ignorable=&quot;d&quot; 
+             d:DesignHeight=&quot;150&quot; d:DesignWidth=&quot;200&quot;&gt;
+    &lt;Border BorderBrush=&quot;Gray&quot; BorderThickness=&quot;1&quot; CornerRadius=&quot;5&quot; Padding=&quot;10&quot;&gt;
+        &lt;Grid&gt;
+            &lt;Grid.RowDefinitions&gt;
+                &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+                &lt;RowDefinition Height=&quot;*&quot;/&gt;
+                &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;/Grid.RowDefinitions&gt;
+
+            &lt;!-- Название комнаты --&gt;
+            &lt;TextBlock x:Name=&quot;RoomNameTextBlock&quot; Grid.Row=&quot;0&quot; 
+                       Text=&quot;Гостиная&quot; FontWeight=&quot;Bold&quot; 
+                       HorizontalAlignment=&quot;Center&quot;/&gt;
+
+            &lt;!-- Изображение комнаты --&gt;
+            &lt;Image x:Name=&quot;RoomImageControl&quot; Grid.Row=&quot;1&quot; 
+                   Source=&quot;/Images/living_room.png&quot; 
+                   Margin=&quot;5&quot;/&gt;
+
+            &lt;!-- Панель управления --&gt;
+            &lt;StackPanel Grid.Row=&quot;2&quot; Orientation=&quot;Horizontal&quot; 
+                        HorizontalAlignment=&quot;Center&quot;&gt;
+                &lt;!-- Индикатор температуры --&gt;
+                &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;5,0&quot;&gt;
+                    &lt;TextBlock Text=&quot;t°:&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+                    &lt;TextBlock x:Name=&quot;TemperatureTextBlock&quot; 
+                               Text=&quot;22&quot; VerticalAlignment=&quot;Center&quot; 
+                               Margin=&quot;5,0,0,0&quot;/&gt;
+                &lt;/StackPanel&gt;
+
+                &lt;!-- Переключатель света --&gt;
+                &lt;CheckBox x:Name=&quot;LightCheckBox&quot; Content=&quot;Свет&quot; 
+                          Margin=&quot;10,0,0,0&quot; VerticalAlignment=&quot;Center&quot;
+                          Checked=&quot;LightCheckBox_CheckedChanged&quot;
+                          Unchecked=&quot;LightCheckBox_CheckedChanged&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/Grid&gt;
+    &lt;/Border&gt;
+&lt;/UserControl&gt;
+</code></pre>
+<pre><code class="language-csharp">// RoomControl.xaml.cs
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+
+namespace SmartHome.Controls
+{
+    public partial class RoomControl : UserControl
+    {
+        // Свойства
+        private string roomName = &quot;Комната&quot;;
+        private double temperature = 22.0;
+        private bool isLightOn = false;
+        private string roomImagePath = &quot;/Images/default_room.png&quot;;
+
+        // Публичные свойства с событиями изменения
+        public string RoomName
+        {
+            get { return roomName; }
+            set 
+            { 
+                roomName = value;
+                RoomNameTextBlock.Text = value;
+            }
+        }
+
+        public double Temperature
+        {
+            get { return temperature; }
+            set 
+            { 
+                temperature = value;
+                TemperatureTextBlock.Text = value.ToString(&quot;0.0&quot;);
+            }
+        }
+
+        public bool IsLightOn
+        {
+            get { return isLightOn; }
+            set 
+            { 
+                isLightOn = value;
+                LightCheckBox.IsChecked = value;
+
+                // Здесь можно добавить анимацию изменения цвета фона
+                // при включении/выключении света
+            }
+        }
+
+        public string RoomImagePath
+        {
+            get { return roomImagePath; }
+            set 
+            { 
+                roomImagePath = value;
+                try
+                {
+                    RoomImageControl.Source = new BitmapImage(new Uri(value, UriKind.Relative));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($&quot;Ошибка загрузки изображения: {ex.Message}&quot;);
+                }
+            }
+        }
+
+        public RoomControl()
+        {
+            InitializeComponent();
+        }
+
+        private void LightCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            isLightOn = LightCheckBox.IsChecked ?? false;
+
+            // Здесь можно запустить анимацию изменения цвета фона
+            // при включении/выключении света
+        }
+    }
+}
+</code></pre>
+<h3 id="_4">Пример определения стилей</h3>
+<pre><code class="language-xml">&lt;!-- Styles.xaml --&gt;
+&lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+                    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+
+    &lt;!-- Цвета для светлой темы --&gt;
+    &lt;SolidColorBrush x:Key=&quot;LightBackgroundBrush&quot; Color=&quot;#F5F5F5&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;LightForegroundBrush&quot; Color=&quot;#333333&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;LightBorderBrush&quot; Color=&quot;#CCCCCC&quot;/&gt;
+
+    &lt;!-- Цвета для темной темы --&gt;
+    &lt;SolidColorBrush x:Key=&quot;DarkBackgroundBrush&quot; Color=&quot;#333333&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;DarkForegroundBrush&quot; Color=&quot;#F5F5F5&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;DarkBorderBrush&quot; Color=&quot;#555555&quot;/&gt;
+
+    &lt;!-- Стиль для кнопок (светлая тема) --&gt;
+    &lt;Style x:Key=&quot;LightButtonStyle&quot; TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;#E0E0E0&quot;/&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;#333333&quot;/&gt;
+        &lt;Setter Property=&quot;Padding&quot; Value=&quot;10,5&quot;/&gt;
+        &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;1&quot;/&gt;
+        &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;#CCCCCC&quot;/&gt;
+    &lt;/Style&gt;
+
+    &lt;!-- Стиль для кнопок (темная тема) --&gt;
+    &lt;Style x:Key=&quot;DarkButtonStyle&quot; TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;#555555&quot;/&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;#F5F5F5&quot;/&gt;
+        &lt;Setter Property=&quot;Padding&quot; Value=&quot;10,5&quot;/&gt;
+        &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;1&quot;/&gt;
+        &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;#777777&quot;/&gt;
+    &lt;/Style&gt;
+
+    &lt;!-- Стиль для TextBlock (светлая тема) --&gt;
+    &lt;Style x:Key=&quot;LightTextBlockStyle&quot; TargetType=&quot;TextBlock&quot;&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;#333333&quot;/&gt;
+    &lt;/Style&gt;
+
+    &lt;!-- Стиль для TextBlock (темная тема) --&gt;
+    &lt;Style x:Key=&quot;DarkTextBlockStyle&quot; TargetType=&quot;TextBlock&quot;&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;#F5F5F5&quot;/&gt;
+    &lt;/Style&gt;
+
+    &lt;!-- Стиль для RoomControl (жилые комнаты) --&gt;
+    &lt;Style x:Key=&quot;LivingRoomStyle&quot; TargetType=&quot;local:RoomControl&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;#E6F2FF&quot;/&gt;
+        &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;#99CCFF&quot;/&gt;
+    &lt;/Style&gt;
+
+    &lt;!-- Стиль для RoomControl (служебные помещения) --&gt;
+    &lt;Style x:Key=&quot;UtilityRoomStyle&quot; TargetType=&quot;local:RoomControl&quot;&gt;
+        &lt;Setter Property=&quot;Background&quot; Value=&quot;#F2F2F2&quot;/&gt;
+        &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;#CCCCCC&quot;/&gt;
+    &lt;/Style&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<h3 id="wpf-storyboard">Пример анимации через WPF Storyboard</h3>
+<pre><code class="language-xml">&lt;!-- Анимация в XAML --&gt;
+&lt;Window.Resources&gt;
+    &lt;!-- Анимация появления --&gt;
+    &lt;Storyboard x:Key=&quot;FadeInAnimation&quot;&gt;
+        &lt;DoubleAnimation 
+            Storyboard.TargetProperty=&quot;Opacity&quot;
+            From=&quot;0&quot; To=&quot;1&quot; Duration=&quot;0:0:0.5&quot;/&gt;
+    &lt;/Storyboard&gt;
+
+    &lt;!-- Анимация увеличения при наведении --&gt;
+    &lt;Storyboard x:Key=&quot;MouseEnterAnimation&quot;&gt;
+        &lt;DoubleAnimation 
+            Storyboard.TargetProperty=&quot;RenderTransform.(ScaleTransform.ScaleX)&quot;
+            To=&quot;1.05&quot; Duration=&quot;0:0:0.2&quot;/&gt;
+        &lt;DoubleAnimation 
+            Storyboard.TargetProperty=&quot;RenderTransform.(ScaleTransform.ScaleY)&quot;
+            To=&quot;1.05&quot; Duration=&quot;0:0:0.2&quot;/&gt;
+    &lt;/Storyboard&gt;
+
+    &lt;!-- Анимация уменьшения при уходе курсора --&gt;
+    &lt;Storyboard x:Key=&quot;MouseLeaveAnimation&quot;&gt;
+        &lt;DoubleAnimation 
+            Storyboard.TargetProperty=&quot;RenderTransform.(ScaleTransform.ScaleX)&quot;
+            To=&quot;1.0&quot; Duration=&quot;0:0:0.2&quot;/&gt;
+        &lt;DoubleAnimation 
+            Storyboard.TargetProperty=&quot;RenderTransform.(ScaleTransform.ScaleY)&quot;
+            To=&quot;1.0&quot; Duration=&quot;0:0:0.2&quot;/&gt;
+    &lt;/Storyboard&gt;
+&lt;/Window.Resources&gt;
+
+&lt;!-- Применение анимации к элементу --&gt;
+&lt;local:RoomControl x:Name=&quot;LivingRoom&quot; RenderTransformOrigin=&quot;0.5,0.5&quot;&gt;
+    &lt;local:RoomControl.RenderTransform&gt;
+        &lt;ScaleTransform ScaleX=&quot;1&quot; ScaleY=&quot;1&quot;/&gt;
+    &lt;/local:RoomControl.RenderTransform&gt;
+    &lt;local:RoomControl.Triggers&gt;
+        &lt;EventTrigger RoutedEvent=&quot;local:RoomControl.Loaded&quot;&gt;
+            &lt;BeginStoryboard Storyboard=&quot;{StaticResource FadeInAnimation}&quot;/&gt;
+        &lt;/EventTrigger&gt;
+        &lt;EventTrigger RoutedEvent=&quot;local:RoomControl.MouseEnter&quot;&gt;
+            &lt;BeginStoryboard Storyboard=&quot;{StaticResource MouseEnterAnimation}&quot;/&gt;
+        &lt;/EventTrigger&gt;
+        &lt;EventTrigger RoutedEvent=&quot;local:RoomControl.MouseLeave&quot;&gt;
+            &lt;BeginStoryboard Storyboard=&quot;{StaticResource MouseLeaveAnimation}&quot;/&gt;
+        &lt;/EventTrigger&gt;
+    &lt;/local:RoomControl.Triggers&gt;
+&lt;/local:RoomControl&gt;
+</code></pre>
+<h3 id="_5">Пример анимации через код</h3>
+<pre><code class="language-csharp">// Анимация изменения цвета фона при включении/выключении света
+private void AnimateBackgroundColor(bool isLightOn)
+{
+    // Создаем и запускаем поток для анимации
+    Thread animationThread = new Thread(() =&gt; {
+        // Определяем начальный и конечный цвета
+        Color startColor = isLightOn ? Colors.Gray : Colors.Yellow;
+        Color endColor = isLightOn ? Colors.Yellow : Colors.Gray;
+
+        // Параметры анимации
+        int steps = 30;
+        int delay = 10; // миллисекунды
+
+        for (int i = 0; i &lt; steps; i++)
+        {
+            // Вычисляем промежуточный цвет
+            byte r = (byte)(startColor.R + (endColor.R - startColor.R) * i / steps);
+            byte g = (byte)(startColor.G + (endColor.G - startColor.G) * i / steps);
+            byte b = (byte)(startColor.B + (endColor.B - startColor.B) * i / steps);
+
+            Color currentColor = Color.FromRgb(r, g, b);
+
+            // Обновление UI должно происходить в UI-потоке
+            Application.Current.Dispatcher.Invoke(() =&gt; {
+                this.Background = new SolidColorBrush(currentColor);
+            });
+
+            Thread.Sleep(delay);
+        }
+    });
+
+    // Запускаем поток как фоновый
+    animationThread.IsBackground = true;
+    animationThread.Start();
+}
+</code></pre>
+<h3 id="_6">Пример создания графика температуры</h3>
+<pre><code class="language-csharp">// Создание простого графика температуры
+private void CreateTemperatureChart()
+{
+    // Очищаем Canvas
+    chartCanvas.Children.Clear();
+
+    // Параметры графика
+    double chartWidth = chartCanvas.ActualWidth;
+    double chartHeight = chartCanvas.ActualHeight;
+    double padding = 20;
+    double barWidth = (chartWidth - 2 * padding) / rooms.Count;
+
+    // Находим максимальную температуру для масштабирования
+    double maxTemperature = rooms.Max(r =&gt; r.Temperature);
+
+    // Рисуем оси
+    Line xAxis = new Line
+    {
+        X1 = padding,
+        Y1 = chartHeight - padding,
+        X2 = chartWidth - padding,
+        Y2 = chartHeight - padding,
+        Stroke = Brushes.Black,
+        StrokeThickness = 1
+    };
+
+    Line yAxis = new Line
+    {
+        X1 = padding,
+        Y1 = padding,
+        X2 = padding,
+        Y2 = chartHeight - padding,
+        Stroke = Brushes.Black,
+        StrokeThickness = 1
+    };
+
+    chartCanvas.Children.Add(xAxis);
+    chartCanvas.Children.Add(yAxis);
+
+    // Рисуем столбцы для каждой комнаты
+    for (int i = 0; i &lt; rooms.Count; i++)
+    {
+        Room room = rooms[i];
+
+        // Вычисляем высоту столбца
+        double barHeight = (room.Temperature / maxTemperature) * (chartHeight - 2 * padding);
+
+        // Создаем прямоугольник для столбца
+        Rectangle bar = new Rectangle
+        {
+            Width = barWidth - 5,
+            Height = barHeight,
+            Fill = new SolidColorBrush(Colors.Blue)
+        };
+
+        // Размещаем столбец на Canvas
+        Canvas.SetLeft(bar, padding + i * barWidth);
+        Canvas.SetTop(bar, chartHeight - padding - barHeight);
+
+        // Добавляем подпись
+        TextBlock label = new TextBlock
+        {
+            Text = room.RoomName,
+            Width = barWidth,
+            TextAlignment = TextAlignment.Center
+        };
+
+        Canvas.SetLeft(label, padding + i * barWidth);
+        Canvas.SetTop(label, chartHeight - padding + 5);
+
+        // Добавляем значение температуры
+        TextBlock tempValue = new TextBlock
+        {
+            Text = room.Temperature.ToString(&quot;0.0&quot;) + &quot;°C&quot;,
+            Width = barWidth,
+            TextAlignment = TextAlignment.Center
+        };
+
+        Canvas.SetLeft(tempValue, padding + i * barWidth);
+        Canvas.SetTop(tempValue, chartHeight - padding - barHeight - 20);
+
+        // Добавляем элементы на Canvas
+        chartCanvas.Children.Add(bar);
+        chartCanvas.Children.Add(label);
+        chartCanvas.Children.Add(tempValue);
+
+        // Добавляем обработчик событий для интерактивности
+        bar.MouseEnter += (sender, e) =&gt; {
+            bar.Fill = new SolidColorBrush(Colors.LightBlue);
+            ToolTip tooltip = new ToolTip();
+            tooltip.Content = $&quot;{room.RoomName}: {room.Temperature}°C&quot;;
+            bar.ToolTip = tooltip;
+        };
+
+        bar.MouseLeave += (sender, e) =&gt; {
+            bar.Fill = new SolidColorBrush(Colors.Blue);
+        };
+
+        bar.MouseDown += (sender, e) =&gt; {
+            // Открываем редактор для выбранной комнаты
+            OpenRoomEditor(room);
+        };
+    }
+}
+</code></pre></div>
         
         
     </div>
