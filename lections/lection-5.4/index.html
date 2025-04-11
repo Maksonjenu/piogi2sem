@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Lection 5.4 - Документация по предмету</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Документация по предмету</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../topics/">Список тем</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Список заданий <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../tasks/task1/">1 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task2/">2 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task3/">3 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task4/">4 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task5/">5 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task6/">6 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task7/">7 Лаба</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#1">1. Запрос на статический сайт</a></li>
+            <li class="second-level"><a href="#_1">Пример кода:</a></li>
+                
+        <li class="first-level "><a href="#_2">Объяснение:</a></li>
+        <li class="first-level "><a href="#2-api">2. Запрос к API</a></li>
+            <li class="second-level"><a href="#api">Пример кода для запроса к API:</a></li>
+                
+        <li class="first-level "><a href="#_3">Объяснение:</a></li>
+        <li class="first-level "><a href="#3">3. Как читать результаты</a></li>
+            <li class="second-level"><a href="#json">Пример десериализации JSON:</a></li>
+                
+        <li class="first-level "><a href="#_4">Итог</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h3 id="1">1. Запрос на статический сайт</h3>
+<p>Для начала, давайте отправим <strong>GET-запрос</strong> на обычный веб-сайт, чтобы получить HTML-контент страницы. Мы будем использовать класс <code>HttpClient</code> для отправки запроса и получения ответа.</p>
+<h4 id="_1">Пример кода:</h4>
+<pre><code class="language-csharp">using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        // Указываем URL сайта, с которого будем получать контент
+        string url = &quot;https://www.example.com&quot;;
+
+        // Создаем объект HttpClient
+        using (HttpClient client = new HttpClient())
+        {
+            try
+            {
+                // Отправляем GET-запрос и ждем ответа
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                // Проверяем, успешен ли запрос
+                if (response.IsSuccessStatusCode)
+                {
+                    // Читаем содержимое ответа как строку
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    // Выводим содержимое страницы
+                    Console.WriteLine(content);
+                }
+                else
+                {
+                    Console.WriteLine(&quot;Ошибка при запросе. Статус: &quot; + response.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(&quot;Произошла ошибка: &quot; + ex.Message);
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="_2">Объяснение:</h3>
+<ol>
+<li><strong>HttpClient</strong> — используется для отправки HTTP-запросов.</li>
+<li><strong>GetAsync(url)</strong> — отправляет асинхронный GET-запрос на указанный URL.</li>
+<li><strong>response.IsSuccessStatusCode</strong> — проверяет, был ли запрос успешным (статус 2xx).</li>
+<li><strong>response.Content.ReadAsStringAsync()</strong> — извлекает тело ответа как строку (в данном случае HTML-контент страницы).</li>
+<li>Если запрос не успешен, выводим код ошибки.</li>
+</ol>
+<h3 id="2-api">2. Запрос к API</h3>
+<p>Теперь давайте сделаем запрос к API, чтобы получить данные в формате <strong>JSON</strong>. В качестве примера возьмем публичное API, например, для получения информации о погоде с <strong>OpenWeatherMap</strong>.</p>
+<h4 id="api">Пример кода для запроса к API:</h4>
+<pre><code class="language-csharp">using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        // Ваш API-ключ для OpenWeatherMap
+        string apiKey = &quot;ваш_ключ_от_openweathermap&quot;;
+        // Город, для которого будем получать погоду
+        string city = &quot;Moscow&quot;;
+        // URL для запроса
+        string url = $&quot;http://api.openweathermap.org/data/2.5/weather?q={city}&amp;appid={apiKey}&quot;;
+
+        // Создаем объект HttpClient
+        using (HttpClient client = new HttpClient())
+        {
+            try
+            {
+                // Отправляем GET-запрос к API
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                // Проверяем успешность запроса
+                if (response.IsSuccessStatusCode)
+                {
+                    // Читаем ответ как строку (в формате JSON)
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    // Выводим полученный JSON (для демонстрации)
+                    Console.WriteLine(&quot;Ответ от API:&quot;);
+                    Console.WriteLine(jsonResponse);
+
+                    // Вы можете использовать JSON-библиотеку для десериализации (например, Newtonsoft.Json)
+                    // В этом примере просто выводим весь JSON как строку.
+                }
+                else
+                {
+                    Console.WriteLine(&quot;Ошибка при запросе. Статус: &quot; + response.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(&quot;Произошла ошибка: &quot; + ex.Message);
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="_3">Объяснение:</h3>
+<ol>
+<li>В коде мы подставляем <strong>API-ключ</strong> (который можно получить, зарегистрировавшись на OpenWeatherMap).</li>
+<li>Формируем <strong>URL</strong> для запроса к API с использованием названия города и ключа.</li>
+<li>Отправляем <strong>GET-запрос</strong> с помощью <code>client.GetAsync(url)</code>.</li>
+<li>Проверяем, успешен ли запрос с помощью <code>response.IsSuccessStatusCode</code>.</li>
+<li>Извлекаем ответ в формате JSON и выводим его на консоль с помощью <code>response.Content.ReadAsStringAsync()</code>.</li>
+</ol>
+<h3 id="3">3. Как читать результаты</h3>
+<p>В случае с <strong>статическим сайтом</strong>, результат — это HTML-контент страницы, который можно просто вывести на консоль.</p>
+<p>Пример:</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Example Domain&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Example Domain&lt;/h1&gt;
+  &lt;p&gt;This domain is established to be used for illustrative examples in documents.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>В случае с <strong>API</strong>, результат будет в формате <strong>JSON</strong>. Например, для запроса к OpenWeatherMap API вы получите ответ в таком виде:</p>
+<pre><code class="language-json">{
+  &quot;coord&quot;: { &quot;lon&quot;: 37.6173, &quot;lat&quot;: 55.7558 },
+  &quot;weather&quot;: [
+    {
+      &quot;id&quot;: 800,
+      &quot;main&quot;: &quot;Clear&quot;,
+      &quot;description&quot;: &quot;clear sky&quot;,
+      &quot;icon&quot;: &quot;01d&quot;
+    }
+  ],
+  &quot;base&quot;: &quot;stations&quot;,
+  &quot;main&quot;: {
+    &quot;temp&quot;: 296.69,
+    &quot;feels_like&quot;: 295.52,
+    &quot;temp_min&quot;: 296.69,
+    &quot;temp_max&quot;: 296.69,
+    &quot;pressure&quot;: 1015,
+    &quot;humidity&quot;: 51
+  },
+  &quot;visibility&quot;: 10000,
+  &quot;wind&quot;: {
+    &quot;speed&quot;: 3.09,
+    &quot;deg&quot;: 101
+  },
+  &quot;clouds&quot;: { &quot;all&quot;: 0 },
+  &quot;dt&quot;: 1617184065,
+  &quot;sys&quot;: {
+    &quot;type&quot;: 1,
+    &quot;id&quot;: 9026,
+    &quot;country&quot;: &quot;RU&quot;,
+    &quot;sunrise&quot;: 1617183125,
+    &quot;sunset&quot;: 1617230529
+  },
+  &quot;timezone&quot;: 10800,
+  &quot;id&quot;: 524901,
+  &quot;name&quot;: &quot;Moscow&quot;,
+  &quot;cod&quot;: 200
+}
+</code></pre>
+<p>Для чтения этого JSON-ответа и извлечения нужной информации (например, температуры), вам нужно <strong>десериализовать</strong> его в объект. Для этого в C# можно использовать библиотеку <strong>Newtonsoft.Json</strong>.</p>
+<h4 id="json">Пример десериализации JSON:</h4>
+<pre><code class="language-csharp">using Newtonsoft.Json;
+
+var weatherData = JsonConvert.DeserializeObject&lt;dynamic&gt;(jsonResponse);
+Console.WriteLine(&quot;Температура: &quot; + weatherData.main.temp);
+</code></pre>
+<p>Этот код извлекает температуру из полученного JSON-ответа.</p>
+<h3 id="_4">Итог</h3>
+<ol>
+<li><strong>HttpClient</strong> — основной инструмент для отправки HTTP-запросов в C#.</li>
+<li><strong>GET-запросы</strong> используются для получения данных с веб-сайтов или API.</li>
+<li>Ответы могут быть в виде HTML (страница сайта) или JSON (данные с API).</li>
+<li>Для работы с <strong>JSON</strong> в C# используется библиотека <strong>Newtonsoft.Json</strong>, которая позволяет легко преобразовывать строки JSON в объекты и обратно.</li>
+</ol></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

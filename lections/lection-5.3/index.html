@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>Lection 5.3 - Документация по предмету</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">Документация по предмету</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../topics/">Список тем</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Список заданий <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../tasks/task1/">1 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task2/">2 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task3/">3 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task4/">4 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task5/">5 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task6/">6 Лаба</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tasks/task7/">7 Лаба</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#1-json">1. Что такое JSON?</a></li>
+        <li class="first-level "><a href="#json">Почему JSON так популярен?</a></li>
+        <li class="first-level "><a href="#2-json">2. Структура JSON</a></li>
+        <li class="first-level "><a href="#3-json">3. Почему JSON так удобен?</a></li>
+        <li class="first-level "><a href="#4-json-c">4. Как работать с JSON в C#?</a></li>
+        <li class="first-level "><a href="#5-json">5. «Ближние родственники» JSON</a></li>
+            <li class="second-level"><a href="#xml-extensible-markup-language">XML (Extensible Markup Language)</a></li>
+                
+            <li class="second-level"><a href="#yaml-yaml-aint-markup-language">YAML (YAML Ain't Markup Language)</a></li>
+                
+            <li class="second-level"><a href="#protocol-buffers-protobuf">Protocol Buffers (protobuf)</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h3 id="1-json">1. Что такое JSON?</h3>
+<p><strong>JSON</strong> (JavaScript Object Notation) — это формат для обмена данными, который используется для передачи данных между сервером и клиентом (например, между веб-сервером и браузером) или между различными приложениями. JSON является текстовым форматом, который легко читается как людьми, так и программами. Он часто используется для отправки и получения данных в современных веб-приложениях.</p>
+<p>Пример JSON:</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Иван&quot;,
+  &quot;age&quot;: 22,
+  &quot;city&quot;: &quot;Москва&quot;,
+  &quot;skills&quot;: [&quot;C#&quot;, &quot;JavaScript&quot;, &quot;SQL&quot;]
+}
+</code></pre>
+<p>Здесь:</p>
+<ul>
+<li><strong>name</strong>: строка (строковое значение) "Иван".</li>
+<li><strong>age</strong>: число (целое число) 22.</li>
+<li><strong>city</strong>: строка (строковое значение) "Москва".</li>
+<li><strong>skills</strong>: массив (список) языков программирования.</li>
+</ul>
+<h3 id="json">Почему JSON так популярен?</h3>
+<ul>
+<li><strong>Легкий для человека</strong>: Читается как обычный текст, легко понять структуру данных.</li>
+<li><strong>Легкий для парсинга</strong>: JSON легко обрабатывается в большинстве языков программирования, включая C#.</li>
+<li><strong>Часто используется в API</strong>: Когда вы работаете с API (например, в веб-разработке), данные часто передаются в формате JSON.</li>
+</ul>
+<h3 id="2-json">2. Структура JSON</h3>
+<p>JSON состоит из:</p>
+<ul>
+<li><strong>Объектов</strong>: это набор пар "ключ-значение", который обрамлен фигурными скобками <code>{}</code>. В объекте ключ всегда является строкой, а значение может быть любым типом данных (строка, число, массив, булево значение и т.д.).</li>
+<li><strong>Массивов</strong>: это упорядоченные списки значений, которые обрамлены квадратными скобками <code>[]</code>. Элементы массива могут быть любого типа.</li>
+</ul>
+<p>Пример объекта и массива:</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Иван Баблти&quot;,
+  &quot;languages&quot;: [&quot;C#&quot;, &quot;JavaScript&quot;, &quot;Python&quot;]
+},
+{
+  &quot;name&quot;: &quot;Димка Фокин&quot;,
+  &quot;languages&quot;: [&quot;Рэп&quot;, &quot;JavaScript&quot;, &quot;Python&quot;]
+}
+
+</code></pre>
+<ul>
+<li><strong>"languages"</strong> — это массив, состоящий из строк.</li>
+</ul>
+<h3 id="3-json">3. Почему JSON так удобен?</h3>
+<p>JSON прост в использовании и универсален:</p>
+<ul>
+<li><strong>Читаемость</strong>: Для человека JSON — это просто текст, который легко воспринимать.</li>
+<li><strong>Простота парсинга</strong>: С помощью стандартных библиотек (например, в C#) можно легко преобразовать JSON в объекты, с которыми удобно работать в коде.</li>
+<li><strong>Широкая поддержка</strong>: JSON поддерживается большинством современных языков программирования и API.</li>
+</ul>
+<h3 id="4-json-c">4. Как работать с JSON в C#?</h3>
+<p>В C# для работы с JSON используется библиотека <strong>Newtonsoft.Json</strong> (или встроенные средства, начиная с .NET Core). Она позволяет легко сериализовать и десериализовать объекты в JSON и обратно.</p>
+<p>Пример:</p>
+<pre><code class="language-csharp">using Newtonsoft.Json;
+using System;
+
+class Program
+{
+    public class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string[] Skills { get; set; }
+    }
+
+    static void Main()
+    {
+        // Создаем объект
+        var person = new Person
+        {
+            Name = &quot;Иван&quot;,
+            Age = 22,
+            Skills = new string[] { &quot;C#&quot;, &quot;JavaScript&quot;, &quot;SQL&quot; }
+        };
+
+        // Сериализуем объект в JSON
+        string json = JsonConvert.SerializeObject(person);
+        Console.WriteLine(json);
+
+        // Десериализуем JSON обратно в объект
+        var deserializedPerson = JsonConvert.DeserializeObject&lt;Person&gt;(json);
+        Console.WriteLine(deserializedPerson.Name);
+    }
+}
+</code></pre>
+<p>Этот код создает объект, превращает его в строку JSON и затем снова восстанавливает объект из этой строки.</p>
+<h3 id="5-json">5. «Ближние родственники» JSON</h3>
+<p>JSON — это один из форматов для обмена данными, но есть и другие схожие форматы. Рассмотрим их:</p>
+<h4 id="xml-extensible-markup-language">XML (Extensible Markup Language)</h4>
+<p><strong>XML</strong> — это тоже формат для обмена данными, но он более громоздкий и сложный в использовании, чем JSON. XML использует теги для структурирования данных.</p>
+<p>Пример XML:</p>
+<pre><code class="language-xml">&lt;person&gt;
+  &lt;name&gt;Иван&lt;/name&gt;
+  &lt;age&gt;22&lt;/age&gt;
+  &lt;city&gt;Москва&lt;/city&gt;
+  &lt;skills&gt;
+    &lt;skill&gt;C#&lt;/skill&gt;
+    &lt;skill&gt;JavaScript&lt;/skill&gt;
+    &lt;skill&gt;SQL&lt;/skill&gt;
+  &lt;/skills&gt;
+&lt;/person&gt;
+</code></pre>
+<p><strong>Преимущества XML</strong>:</p>
+<ul>
+<li>Более гибкий, поскольку можно использовать атрибуты в тегах.</li>
+<li>Широко используется в старых системах.</li>
+</ul>
+<p><strong>Недостатки XML</strong>:</p>
+<ul>
+<li>Более сложен для чтения и записи, чем JSON.</li>
+<li>Требует больше пространства для хранения данных.</li>
+</ul>
+<h4 id="yaml-yaml-aint-markup-language">YAML (YAML Ain't Markup Language)</h4>
+<p><strong>YAML</strong> — это формат, который легче читать и писать по сравнению с JSON и XML. Он часто используется для конфигурационных файлов.</p>
+<p>Пример YAML:</p>
+<pre><code class="language-yaml">name: Иван
+age: 22
+city: Москва
+skills:
+  - C#
+  - JavaScript
+  - SQL
+</code></pre>
+<p><strong>Преимущества YAML</strong>:</p>
+<ul>
+<li>Очень читаем.</li>
+<li>Используется в конфигурационных файлах (например, в Kubernetes, Docker).</li>
+</ul>
+<p><strong>Недостатки YAML</strong>:</p>
+<ul>
+<li>Может быть не так безопасен, как JSON, из-за чувствительности к отступам.</li>
+</ul>
+<h4 id="protocol-buffers-protobuf">Protocol Buffers (protobuf)</h4>
+<p><strong>Protocol Buffers</strong> — это бинарный формат данных, разработанный Google. Он предназначен для более быстрого и компактного обмена данными, чем JSON или XML, и используется в ситуациях, когда важна скорость и эффективность.</p>
+<p>Пример протокола в Protocol Buffers:</p>
+<pre><code class="language-proto">message Person {
+  string name = 1;
+  int32 age = 2;
+  repeated string skills = 3;
+}
+</code></pre>
+<p><strong>Преимущества Protocol Buffers</strong>:</p>
+<ul>
+<li>Очень быстрый и компактный.</li>
+<li>Хорошо работает с большими объемами данных.</li>
+</ul>
+<p><strong>Недостатки</strong>:</p>
+<ul>
+<li>Не так легко читается человеком.</li>
+<li>Требует компиляции схемы.</li>
+</ul></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
