@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
       
 
@@ -106,13 +106,11 @@
     
     
     
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -144,7 +142,6 @@
     </div>
   </div>
 </div>
-      
     
     
   </nav>
@@ -193,7 +190,6 @@
       <a href="../" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Список тем
     
@@ -215,7 +211,6 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
         
@@ -225,7 +220,6 @@
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
-  
   
   <span class="md-ellipsis">
     Список заданий
@@ -253,7 +247,6 @@
       <a href="../../tasks/task1/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     1 Лаба
     
@@ -275,7 +268,6 @@
     <li class="md-nav__item">
       <a href="../../tasks/task2/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     2 Лаба
@@ -299,7 +291,6 @@
       <a href="../../tasks/task3/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     3 Лаба
     
@@ -321,7 +312,6 @@
     <li class="md-nav__item">
       <a href="../../tasks/task4/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     4 Лаба
@@ -345,7 +335,6 @@
       <a href="../../tasks/task5/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     5 Лаба
     
@@ -368,7 +357,6 @@
       <a href="../../tasks/task6/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     6 Лаба
     
@@ -390,7 +378,6 @@
     <li class="md-nav__item">
       <a href="../../tasks/task7/" class="md-nav__link">
         
-  
   
   <span class="md-ellipsis">
     7 Лаба
@@ -520,10 +507,46 @@
 <img alt="Шаг-5" src="../../img/usercontrol-step-5.png" /></li>
 </ul>
 <h3 id="usercontrol">Добавление элементов на UserControl</h3>
+<p>В <code>UserControl</code> разметка пишется по аналогии с главным окном. Пример разметки:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;UserControl</span><span class="w"> </span><span class="na">x:Class=</span><span class="s">&quot;lab3.RoomControl&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">             </span><span class="na">xmlns=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">             </span><span class="na">xmlns:x=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">             </span><span class="na">xmlns:mc=</span><span class="s">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span><span class="w"> </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">             </span><span class="na">xmlns:d=</span><span class="s">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span><span class="w"> </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">             </span><span class="na">xmlns:local=</span><span class="s">&quot;clr-namespace:lab3&quot;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">             </span><span class="na">mc:Ignorable=</span><span class="s">&quot;d&quot;</span><span class="w"> </span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">             </span><span class="na">d:DesignHeight=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">d:DesignWidth=</span><span class="s">&quot;200&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">             </span><span class="na">Height=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;300&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="cm">&lt;!-- Контейнер с бордером --&gt;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;Border</span><span class="w"> </span><span class="na">Background=</span><span class="s">&quot;Gray&quot;</span><span class="w"> </span><span class="na">BorderBrush=</span><span class="s">&quot;Black&quot;</span><span class="w"> </span><span class="na">CornerRadius=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">&lt;Grid&gt;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="cm">&lt;!-- Определение строк в Grid --&gt;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nt">&lt;Grid.RowDefinitions&gt;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">                </span><span class="nt">&lt;RowDefinition</span><span class="w"> </span><span class="na">Height=</span><span class="s">&quot;4*&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                </span><span class="nt">&lt;RowDefinition</span><span class="w"> </span><span class="na">Height=</span><span class="s">&quot;1.5*&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="nt">&lt;/Grid.RowDefinitions&gt;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="cm">&lt;!-- Панель с кнопкой --&gt;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="nt">&lt;StackPanel</span><span class="w"> </span><span class="na">Grid.Row=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">HorizontalAlignment=</span><span class="s">&quot;Center&quot;</span><span class="w"> </span><span class="na">VerticalAlignment=</span><span class="s">&quot;Center&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">                </span><span class="nt">&lt;TextBlock</span><span class="w"> </span><span class="na">Text=</span><span class="s">&quot;Название комнаты&quot;</span><span class="w"> </span><span class="na">FontSize=</span><span class="s">&quot;16&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">                </span><span class="nt">&lt;Button</span><span class="w"> </span><span class="na">Content=</span><span class="s">&quot;Button&quot;</span><span class="w"> </span><span class="na">Style=</span><span class="s">&quot;{StaticResource btnGreen}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">                </span><span class="nt">&lt;Button</span><span class="w"> </span><span class="na">Content=</span><span class="s">&quot;⚙️&quot;</span><span class="w"> </span><span class="na">Height=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">Style=</span><span class="s">&quot;{StaticResource RoundButton}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">            </span><span class="nt">&lt;/StackPanel&gt;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="cm">&lt;!-- Панель со слайдером и текстом --&gt;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">            </span><span class="nt">&lt;StackPanel</span><span class="w"> </span><span class="na">Grid.Row=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">Margin=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">                </span><span class="nt">&lt;TextBlock</span><span class="w"> </span><span class="na">Text=</span><span class="s">&quot;Температура&quot;</span><span class="w"> </span><span class="na">HorizontalAlignment=</span><span class="s">&quot;Center&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">                </span><span class="nt">&lt;Slider</span><span class="w"> </span><span class="na">Style=</span><span class="s">&quot;{StaticResource CustomSlider}&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">            </span><span class="nt">&lt;/StackPanel&gt;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">        </span><span class="nt">&lt;/Grid&gt;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="nt">&lt;/Border&gt;</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="nt">&lt;/UserControl&gt;</span>
+</code></pre></div></p>
+<p><a href="../styles#Описание_стилей_из_примера_UserControl">Стили, используемые в примере</a></p>
 <h3 id="d">Дизайнерский префикс <code>d:</code>.</h3>
 <p>В пользовательском элементе управления можно писать разметку практически точно также, как и в обычном окне.</p>
 <p>В разметке можно заметить следующие строки:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>d:DesignHeight=&quot;200&quot;<span class="w"> </span>d:DesignWidth=&quot;200&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>d:DesignHeight=&quot;200&quot;<span class="w"> </span>d:DesignWidth=&quot;200&quot;
 </code></pre></div></p>
 <p>Это <strong>статические</strong> свойства, которые предназначены исключительно для <strong>дизайнерского времени</strong> (в XAML-разметке для работы в Visual Studio или Blend для Visual Studio).</p>
 <p>Эти свойства задают размеры элемента в дизайнере и используются только для того, чтобы правильно отображать компоненты на дизайнерской панели. Они <strong>не влияют</strong> на фактический рендеринг во время выполнения приложения.</p>
@@ -533,13 +556,15 @@
 <p>До этого мы встречали только <code>Height</code> и <code>Width</code>. Это <strong>реальные</strong> свойства, которые определяют фактические размеры элемента во время работы приложения.
 Эти свойства задают физические размеры элемента на экране при его рендеринге, и <strong>они влияют</strong> на отображение пользовательского интерфейса в момент работы приложения.</p>
 <p>Эти свойства можно определить вместе: </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;UserControl</span><span class="w"> </span><span class="na">x:Class=</span><span class="s">&quot;lab3.RoomControl&quot;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">             </span><span class="err">&lt;!--тут</span><span class="w"> </span><span class="err">кое</span><span class="w"> </span><span class="err">чего</span><span class="w"> </span><span class="err">не</span><span class="w"> </span><span class="err">хватает</span><span class="w"> </span><span class="err">и</span><span class="w"> </span><span class="err">не</span><span class="w"> </span><span class="err">заработает--</span><span class="nt">&gt;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">             </span>d:DesignHeight=&quot;200&quot;<span class="w"> </span>d:DesignWidth=&quot;200&quot;
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">             </span>Height=&quot;300&quot;<span class="w"> </span>Width=&quot;300&quot;
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">         </span>...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;UserControl</span><span class="w"> </span><span class="na">x:Class=</span><span class="s">&quot;lab3.RoomControl&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">             </span><span class="err">#Внимание</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">             </span><span class="err">#тут</span><span class="w"> </span><span class="err">кое</span><span class="w"> </span><span class="err">чего</span><span class="w"> </span><span class="err">не</span><span class="w"> </span><span class="err">хватает</span><span class="w"> </span><span class="err">и</span><span class="w"> </span><span class="err">этот</span><span class="w"> </span><span class="err">пример</span><span class="w"> </span><span class="err">не</span><span class="w"> </span><span class="err">заработает</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">             </span><span class="na">d:DesignHeight=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">d:DesignWidth=</span><span class="s">&quot;200&quot;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">             </span><span class="na">Height=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;300&quot;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">             </span><span class="nt">/&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">         </span>...
 </code></pre></div>
 <p>В таком случае в дизайнерском окне Visual Studio размеры элементы будут 200 на 200 пикселей. Но во время запуска приложения - его размеры будут строго фиксированы и равны 300 на 300 пикселей.</p>
 <blockquote>
@@ -551,12 +576,12 @@
 </blockquote>
 <p>Все атрибуты с префиксом <code>d:</code> используются только для отображения информации в дизайнере, чтобы разработчики могли лучше видеть, как будет выглядеть интерфейс. В коде программы эти атрибуты не учитываются.</p>
 <p>Пример:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w"> </span><span class="nt">&lt;Grid</span><span class="w"> </span><span class="na">d:Background=</span><span class="s">&quot;Red&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">     </span><span class="nt">&lt;Border</span><span class="w"> </span><span class="na">BorderBrush=</span><span class="s">&quot;Black&quot;</span><span class="w"> </span><span class="na">BorderThickness=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">CornerRadius=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">     </span><span class="nt">&lt;StackPanel&gt;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">     </span><span class="nt">&lt;/StackPanel&gt;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w"> </span><span class="nt">&lt;/Grid&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w"> </span><span class="nt">&lt;Grid</span><span class="w"> </span><span class="na">d:Background=</span><span class="s">&quot;Red&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">     </span><span class="nt">&lt;Border</span><span class="w"> </span><span class="na">BorderBrush=</span><span class="s">&quot;Black&quot;</span><span class="w"> </span><span class="na">BorderThickness=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">CornerRadius=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">     </span><span class="nt">&lt;StackPanel&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">     </span><span class="nt">&lt;/StackPanel&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w"> </span><span class="nt">&lt;/Grid&gt;</span>
 </code></pre></div>
 Для <code>Grid</code> мы установили цвет фона на красный, но с префиксом <code>d:</code>. А <code>Border</code> без префикса. В дизайнере имеем такую "красоту":
 <img alt="Пример красного квадрата" src="../../img/usercontrol-dprefix-background-red.png" /></p>
@@ -611,9 +636,7 @@
     </div>
     
     
-    
-      
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
