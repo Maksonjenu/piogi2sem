@@ -1,0 +1,1328 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Базы данных. Основы SQL - Документация по предмету</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sql" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Документация по предмету" class="md-header__button md-logo" aria-label="Документация по предмету" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Документация по предмету
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Базы данных. Основы SQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Документация по предмету" class="md-nav__button md-logo" aria-label="Документация по предмету" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Документация по предмету
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Список тем
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Список заданий
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Список заданий
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sql_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Базы данных и SQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Базы данных и SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Реляционная база данных
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Реляционная база данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные характеристики реляционных баз данных:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-structured-query-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL (Structured Query Language)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      СУБД (система управления базами данных)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      MySQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLite
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQLite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sqlite_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные особенности SQLite:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Язык запросов и работа с БД
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Язык запросов и работа с БД">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание базы данных и таблиц
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlite_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типы данных в SQLite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Свойства колонок
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ключи и связи между таблицами
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ключи и связи между таблицами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Первичный ключ (Primary Key)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Первичный ключ (Primary Key)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные свойства первичного ключа:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Составной ключ (Composite Key)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Составной ключ (Composite Key)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные свойства составного ключа:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Уникальный ключ (Unique Key)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreign-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Внешний ключ (Foreign Key)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Внешний ключ (Foreign Key)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные свойства внешнего ключа:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Зачем нужны связи между таблицами?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Правила целостности данных
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные операции SQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Основные операции SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Добавление данных (INSERT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выборка данных (SELECT)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выборка данных (SELECT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distinct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оператор DISTINCT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where" class="md-nav__link">
+    <span class="md-ellipsis">
+      Условие WHERE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление данных (UPDATE)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление данных (DELETE)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      Объединение таблиц (JOIN)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Объединение таблиц (JOIN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#join_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типы JOIN:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-browser-sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      DB Browser для SQLite
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DB Browser для SQLite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные функции DB Browser:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-browser_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Работа с DB Browser
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-c-usercontrol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Работа с SQL в C# с использованием UserControl
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Работа с SQL в C# с использованием UserControl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sqlite_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подключение библиотеки SQLite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlite_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные классы для работы с SQLite
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Основные классы для работы с SQLite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sqliteconnection" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLiteConnection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlitecommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLiteCommand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlitedatareader" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLiteDataReader
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datagrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Компонент DataGrid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Компонент DataGrid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datagrid_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Привязка DataGrid к данным
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datagrid_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Настройка столбцов DataGrid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sql">Базы данных. Основы SQL</h1>
+<h2 id="sql_1">Базы данных и SQL</h2>
+<p>База данных (БД) - это организованная коллекция данных, которая обычно хранится и обрабатывается с помощью компьютерных систем. Она представляет собой структурированный набор информации, организованный таким образом, чтобы обеспечить эффективный доступ, управление и обновление данных.</p>
+<p>Базы данных могут быть различными по своей природе, структуре и использованию. Они могут быть реляционными, иерархическими, сетевыми, объектно-ориентированными и т.д., в зависимости от способа организации данных внутри них и способа доступа к этим данным.</p>
+<h3 id="_1">Реляционная база данных</h3>
+<p>Реляционная база данных - это тип базы данных, который организован на основе концепции реляционной модели данных. В реляционной модели данные представляются в виде таблиц, состоящих из строк и столбцов.</p>
+<h4 id="_2">Основные характеристики реляционных баз данных:</h4>
+<ul>
+<li><strong>Таблицы</strong>: Данные организованы в виде таблиц, где каждая строка представляет собой запись, а каждый столбец - атрибут или поле. Таблицы могут быть связаны между собой с помощью ключевых столбцов.</li>
+<li><strong>Ключи</strong>: Ключи используются для идентификации строк в таблицах. Ключевой столбец в таблице может быть определен как первичный ключ, который гарантирует уникальность каждой строки в таблице.</li>
+<li><strong>Отношения</strong>: Отношения между таблицами устанавливаются с помощью внешних ключей. Это позволяет связывать данные из разных таблиц и создавать сложные запросы для извлечения информации из базы данных.</li>
+<li><strong>Язык запросов</strong>: Для работы с данными в реляционных базах данных используется стандартизированный язык запросов, который предоставляет способы выполнения запросов к данным, вставки, обновления и удаления записей.</li>
+</ul>
+<h3 id="sql-structured-query-language">SQL (Structured Query Language)</h3>
+<p>SQL (Structured Query Language) - это специализированный язык программирования, который используется для управления данными в реляционных базах данных. Он предоставляет стандартизированный способ выполнения операций с данными, таких как запросы, вставки, обновления и удаления.</p>
+<p>SQL был разработан в IBM в конце 1970-х годов в ответ на необходимость стандартизированного языка запросов для управления данными в реляционных базах данных. С тех пор он стал стандартом ISO и ANSI, последняя версия стандарта - SQL:2023, принятая в июне 2023 года.</p>
+<h3 id="_3">СУБД (система управления базами данных)</h3>
+<p>СУБД (система управления базами данных) - это программное обеспечение, которое используется для создания и управления базами данных. СУБД предоставляют средства для хранения, организации, обновления и извлечения данных из базы данных.</p>
+<h3 id="mysql">MySQL</h3>
+<p><strong>MySQL Server</strong> — это <strong>промышленная система управления базами данных (СУБД), сопровождаемая компанией Oracle</strong>. Она позволяет пользователям создавать, модифицировать и управлять базами данных, а также обеспечивает безопасность и целостность данных.</p>
+<p><strong>Сервер MySQL</strong> — центральный компонент системы, который выполняет основную работу по обработке запросов, управлению данными и взаимодействию с клиентами. Он обрабатывает и исполняет SQL-запросы, отправляет ответы клиентам, управляет транзакциями и обеспечивает целостность информации. Также сервер отвечает за аутентификацию и авторизацию пользователей, контролируя доступ к базе данных.</p>
+<h3 id="sqlite">SQLite</h3>
+<p>SQLite — это быстрая и легкая встраиваемая однофайловая СУБД на языке C, которая не имеет сервера и позволяет хранить всю базу локально на одном устройстве.</p>
+<p>Понятие «встраиваемый» означает, что СУБД не использует парадигму клиент-сервер. Движок SQLite — не отдельно работающий процесс, с которым взаимодействует программа, а библиотека. Программа компонуется с ней, и движок служит составной частью программы.</p>
+<h4 id="sqlite_1">Основные особенности SQLite:</h4>
+<ul>
+<li><strong>Легкость</strong>: имеет небольшой размер и низкий уровень накладных расходов.</li>
+<li><strong>Отсутствие клиент-серверной архитектуры</strong>: не требует отдельного сервера базы данных. Он работает как библиотека, которая встраивается в приложение.</li>
+<li><strong>Поддержка SQL</strong>: поддерживает большинство стандартных операторов и функций SQL.</li>
+<li><strong>Транзакции</strong>: поддерживает транзакции для обеспечения целостности данных и безопасности операций.</li>
+<li><strong>Поддержка</strong>: может быть использован с различными языками программирования, включая C/C++, Python, Java, JavaScript и многие другие.</li>
+</ul>
+<h2 id="_4">Язык запросов и работа с БД</h2>
+<p>Запрос (Query) в контексте баз данных - это команда, отправляемая к базе данных с целью получения определенной информации или выполнения операций с данными. Запросы могут выполнять различные функции, такие как извлечение данных, добавление новых записей, обновление или удаление существующих записей, а также выполнение различных агрегатных операций.</p>
+<h3 id="_5">Создание базы данных и таблиц</h3>
+<p>Для создания новой базы данных в языке SQL используется запрос с ключевым словом CREATE с указателем DATABASE:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="err">имя</span><span class="n">_базы_данных</span><span class="p">;</span>
+</code></pre></div>
+<p>Создание новой таблицы используется указатель TABLE, после чего в скобке перечисляются столбцы таблицы, их тип данных и особенности поля:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="err">столбец</span><span class="mi">1</span><span class="w"> </span><span class="err">тип</span><span class="n">_данных</span><span class="w"> </span><span class="p">[</span><span class="err">ограничения</span><span class="p">],</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="err">столбец</span><span class="mi">2</span><span class="w"> </span><span class="err">тип</span><span class="n">_данных</span><span class="w"> </span><span class="p">[</span><span class="err">ограничения</span><span class="p">],</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">);</span>
+</code></pre></div>
+<p>Чтобы поддерживать максимальную гибкость, строки таблицы, по определению, не должны находиться в каком-то определенном порядке.</p>
+<h3 id="sqlite_2">Типы данных в SQLite</h3>
+<p>В SQLite каждая колонка в таблице имеет свой тип данных, который определяет тип значений, которые могут быть сохранены в этой колонке:</p>
+<ul>
+<li><strong>INTEGER</strong>: Хранит целочисленные значения. Может быть размером 1-8 байт, в зависимости от значения.</li>
+<li><strong>REAL</strong>: Используется для хранения значений с плавающей точкой.</li>
+<li><strong>TEXT</strong>: Хранит текстовые данные, представленные в виде строки.</li>
+<li><strong>BLOB</strong>: Этот тип данных используется для хранения двоичных данных, таких как изображения, аудио или другие неструктурированные данные.</li>
+<li><strong>NULL</strong>: Этот тип используется для хранения значений NULL.</li>
+<li><strong>BOOLEAN</strong>: SQLite не имеет явного типа BOOLEAN, но обычно значения BOOLEAN представляются как INTEGER, где 0 означает FALSE, а любое ненулевое значение означает TRUE.</li>
+</ul>
+<h3 id="_6">Свойства колонок</h3>
+<p>Каждая колонка может обладать рядом свойств:</p>
+<ul>
+<li><strong>Не пустое (NOT NULL)</strong>: Это ограничение гарантирует, что в столбце не будет NULL значений.</li>
+<li><strong>Первичный ключ (Primary Key)</strong>: Это поле уникально идентифицирует каждую запись в таблице. SQLite автоматически создает индекс для первичного ключа для обеспечения быстрого поиска.</li>
+<li><strong>Автоинкремент (AUTOINCREMENT)</strong>: Это позволяет автоматически увеличивать значение первичного ключа при добавлении новых записей. Оно часто используется с первичным ключом INTEGER.</li>
+<li><strong>Уникальный (Unique)</strong>: Это ограничение гарантирует, что все значения в столбце будут уникальными.</li>
+</ul>
+<h2 id="_7">Ключи и связи между таблицами</h2>
+<h3 id="primary-key">Первичный ключ (Primary Key)</h3>
+<p>Основная функция первичного ключа состоит в том, чтобы обеспечить уникальность записей в таблице и обеспечить быстрый доступ к каждой записи через этот уникальный идентификатор. Без первичного ключа в таблице может быть трудно или невозможно точно определить, на какую запись ссылаться или как ее обновить или удалить.</p>
+<h4 id="_8">Основные свойства первичного ключа:</h4>
+<ul>
+<li>Каждое значение в столбце первичного ключа должно быть уникальным в пределах таблицы.</li>
+<li>Значения первичного ключа не могут быть NULL.</li>
+<li>В таблице может быть только один первичный ключ.</li>
+<li>Индекс обычно кластеризован (сгруппирован) по умолчанию, что означает, что данные в таблице упорядочены в соответствии с первичным ключом, что ускоряет доступ к данным при выполнении запросов.</li>
+</ul>
+<p>Пример создания таблицы с первичным ключом:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">StudentID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">SurName</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">BirthDate</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">Group</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">);</span>
+</code></pre></div>
+<h3 id="composite-key">Составной ключ (Composite Key)</h3>
+<p>Составной ключ является разновидностью первичного ключа и состоит из двух или более столбцов, значения которых в комбинации обеспечивают уникальность записи.</p>
+<h4 id="_9">Основные свойства составного ключа:</h4>
+<ul>
+<li>Может быть несколько таких ключей, и комбинации, из которых они состоят, должны быть уникальными.</li>
+<li>Состоит из значений нескольких столбцов. Уникальность записи обеспечивается комбинацией значений этих столбцов.</li>
+<li>Значение каждого столбца в составном ключе не может быть NULL.</li>
+<li>Также зачастую имеет кластеризованный индекс: данные в таблице располагаются по порядку в соответствии с комбинацией значений столбцов составного ключа.</li>
+</ul>
+<p>Пример создания таблицы с составным первичным ключом:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Enrollments</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">StudentID</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">CourseID</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">EnrollmentDate</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">StudentID</span><span class="p">,</span><span class="w"> </span><span class="n">CourseID</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">);</span>
+</code></pre></div>
+<h3 id="unique-key">Уникальный ключ (Unique Key)</h3>
+<p>Так же, как и первичный ключ, связывает уникальное значение с определенными данными. Но есть отличия:</p>
+<ul>
+<li>Может быть несколько таких ключей, но каждый из них должен быть уникальным.</li>
+<li>Состоит либо из значения одного столбца, либо из значений нескольких столбцов. Отдельные значения и комбинации должны быть уникальными.</li>
+<li>Может содержать NULL, но уникальные ключи могут содержать пустое значение.</li>
+<li>Индекс не кластеризован по умолчанию. Строки могут храниться в таблице в произвольном порядке, а не в порядке значений ключа.</li>
+</ul>
+<p>Пример создания таблицы с уникальным ключом:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="n">StudentID</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">SurName</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">StudentID</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">);</span>
+</code></pre></div>
+<h3 id="foreign-key">Внешний ключ (Foreign Key)</h3>
+<p>Внешний ключ связывает записи в одной таблице с записями в другой через общее поле, которое является первичным ключом в другой таблице.</p>
+<h4 id="_10">Основные свойства внешнего ключа:</h4>
+<ul>
+<li>Может быть несколько таких ключей. В одной таблице может быть несколько внешних ключей, связывающих ее с другими таблицами.</li>
+<li>Может содержать NULL-значения, но только если это разрешено правилами целостности данных.</li>
+<li>Обычно не кластеризуется. Как правило, не определяет порядок хранения данных в таблице.</li>
+</ul>
+<p>Пример создания таблицы с внешним ключом:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Orders</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">OrderID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">CustomerID</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">OrderDate</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">TotalAmount</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">CustomerID</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Customers</span><span class="p">(</span><span class="n">CustomerID</span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">);</span>
+</code></pre></div>
+<p>В этом примере поле CustomerID в таблице Orders является внешним ключом, который ссылается на первичный ключ CustomerID в таблице Customers. Это означает, что каждая запись в таблице Orders будет иметь ссылку на определенного пользователя из таблицы Customers.</p>
+<h3 id="_11">Зачем нужны связи между таблицами?</h3>
+<p>Связи между таблицами помогают решить несколько важных задач:</p>
+<ol>
+<li>
+<p><strong>Избежать дублирования данных</strong>: Связанные данные будут распределены по разным таблицам без дублирования. Например, вместо хранения адреса клиента в каждой записи заказа можно создать отдельную таблицу «Клиенты» с адресами и связать ее с таблицей «Заказы».</p>
+</li>
+<li>
+<p><strong>Сделать данные целостными</strong>: Информация в базе данных будет корректна и согласована между собой. Например, если клиент отсутствует в таблице «Клиенты», он не сможет сделать заказ.</p>
+</li>
+<li>
+<p><strong>Оптимизировать запросы</strong>: Можно будет создавать сложные запросы для выборки данных, объединяя информацию из нескольких таблиц. Например, если связать таблицы «Клиенты» и «Заказы», можно с помощью одного запроса получить список всех клиентов вместе с заказанными ими товарами.</p>
+</li>
+<li>
+<p><strong>Повысить производительность</strong>: Разделение больших объемов данных на связанные таблицы ускорит поиск и управление информацией. Например, вместо хранения всех данных о клиентах и их заказах в одной огромной таблице данные можно разделить на отдельные связанные таблицы «Клиенты» и «Заказы». Запросы будут выполняться быстрее за счет меньшего объема данных в каждой таблице.</p>
+</li>
+</ol>
+<h3 id="_12">Правила целостности данных</h3>
+<p>В 1970 году математик и информатик Эдгар Ф. Кодд разработал правила целостности для реляционных баз данных. Они обеспечивают корректность и согласованность данных:</p>
+<ol>
+<li>
+<p><strong>Целостность сущностей</strong>: Каждая строка в таблице должна быть уникально идентифицирована (обычно с помощью первичного ключа).</p>
+</li>
+<li>
+<p><strong>Целостность ссылок</strong>: Если в таблице есть внешний ключ, то значение этого ключа должно либо соответствовать значению первичного ключа в связанной таблице, либо быть NULL (если это разрешено).</p>
+</li>
+<li>
+<p><strong>Целостность доменов</strong>: Все значения в столбце должны соответствовать определенному домену (типу данных и ограничениям).</p>
+</li>
+</ol>
+<h2 id="sql_2">Основные операции SQL</h2>
+<h3 id="insert">Добавление данных (INSERT)</h3>
+<p>Добавление новой записи в таблицу в SQL происходит с помощью оператора INSERT. После ключевого слова INTO передается название таблицы и полей. После ключевого слова VALUES идут значения, которые должны быть вставлены в поля. Последовательность полей соответствует последовательности передаваемых данных.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="w"> </span><span class="p">(</span><span class="err">столбец</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">столбец</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">значение</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">значение</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+</code></pre></div>
+<h3 id="select">Выборка данных (SELECT)</h3>
+<p>Запрос SELECT используется для извлечения данных из одной или нескольких таблиц базы данных. Для выбора из какой таблицы делать запрос используется ключевое слово FROM.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="p">;</span>
+</code></pre></div>
+<p>Звездочка ("*") означает выбор всех столбцов.</p>
+<p>Также можно выбирать конкретные столбцы, указав их имена в запросе SELECT:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">столбец</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">столбец</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="p">;</span>
+</code></pre></div>
+<p>Вывод данных будет в порядке, в котором были указаны столбцы в запросе.</p>
+<h4 id="distinct">Оператор DISTINCT</h4>
+<p>Оператор DISTINCT используется для выбора уникальных значений из столбца или комбинации столбцов в таблице. Это означает, что запрос SELECT DISTINCT вернет только уникальные строки в результирующем наборе, и дублирующиеся строки будут удалены.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="err">столбец</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">столбец</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="where">Условие WHERE</h4>
+<p>Запрос с условием WHERE используется для фильтрации строк в результирующем наборе на основе определенного условия. Это условие определяется после ключевого слова WHERE.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">столбец</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">столбец</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="err">условие</span><span class="p">;</span>
+</code></pre></div>
+<p>В запросе с ключевым словом WHERE могут использоваться реляционные операторы для сравнения (&gt;, &lt;, =, &gt;=, &lt;=, &lt;&gt;).</p>
+<p>Также используются логические операторы:
+- <strong>AND</strong> – для получения результата TRUE верными должны быть оба условия
+- <strong>OR</strong> – для получения результата TRUE верным должно быть хотя бы одно из условий
+- <strong>NOT</strong> – оператор инверсии</p>
+<h3 id="update">Обновление данных (UPDATE)</h3>
+<p>Чтобы изменить существующую запись в таблице базы данных, используется оператор UPDATE. Оператор UPDATE позволяет обновлять значения столбцов в одной или нескольких строках таблицы в соответствии с заданным условием. После ключевого слова SET перечисляются поля и значения, к которым они приравниваются.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">SET</span><span class="w"> </span><span class="err">столбец</span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">значение</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">столбец</span><span class="mi">2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">значение</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">условие</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="delete">Удаление данных (DELETE)</h3>
+<p>Чтобы удалить записи из таблицы базы данных, используется оператор DELETE. Оператор DELETE позволяет удалить одну или несколько строк из таблицы в соответствии с определенным условием.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="err">условие</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="join">Объединение таблиц (JOIN)</h3>
+<p>JOIN в SQL используется для объединения строк из двух или более таблиц на основе определенного условия, которое указывается в предложении ON или USING. JOIN позволяет использовать данные из нескольких таблиц в одном запросе и создавать связи между ними.</p>
+<h4 id="join_1">Типы JOIN:</h4>
+<ul>
+<li>
+<p><strong>INNER JOIN</strong>: Возвращает строки, которые имеют соответствующие значения в обеих таблицах.
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="p">.</span><span class="err">столбец</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="p">.</span><span class="err">столбец</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>LEFT JOIN</strong>: Возвращает все строки из левой таблицы и соответствующие строки из правой таблицы. Если в правой таблице нет соответствующих строк, то будут возвращены NULL значения для столбцов правой таблицы.
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="p">.</span><span class="err">столбец</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="p">.</span><span class="err">столбец</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>RIGHT JOIN</strong>: Возвращает все строки из правой таблицы и соответствующие строки из левой таблицы. Если в левой таблице нет соответствующих строк, то будут возвращены NULL значения для столбцов левой таблицы.
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="w"> </span><span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="p">.</span><span class="err">столбец</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="p">.</span><span class="err">столбец</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>FULL JOIN</strong>: Возвращает строки, которые имеют соответствующие значения в любой из таблиц. Если в одной из таблиц нет соответствующих строк, то будут возвращены NULL значения для столбцов этой таблицы.
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="w"> </span><span class="k">FULL</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="p">.</span><span class="err">столбец</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="p">.</span><span class="err">столбец</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>Для выбора столбца записывается имя таблицы и через точку передается имя столбца:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="p">.</span><span class="err">столбец</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="p">.</span><span class="err">столбец</span><span class="mi">2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="err">таблица</span><span class="mi">1</span><span class="p">.</span><span class="err">столбец</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">таблица</span><span class="mi">2</span><span class="p">.</span><span class="err">столбец</span><span class="p">;</span>
+</code></pre></div>
+<p>После ключевого слова ON пишется условие соединения вывода.</p>
+<h2 id="db-browser-sqlite">DB Browser для SQLite</h2>
+<p>Для упрощения работы и наглядной визуализации данных предлагается использование DB Browser.</p>
+<p>DB Browser for SQLite - это бесплатный инструмент с открытым исходным кодом для работы с базами данных SQLite. Это программное обеспечение предоставляет удобный и интуитивно понятный интерфейс для просмотра, редактирования и управления базами данных SQLite.</p>
+<h3 id="db-browser">Основные функции DB Browser:</h3>
+<ul>
+<li>Создание, открытие и редактирование баз данных SQLite</li>
+<li>Создание, определение, изменение и удаление таблиц</li>
+<li>Создание, определение и удаление индексов</li>
+<li>Просмотр, редактирование, добавление и удаление записей</li>
+<li>Выполнение SQL-запросов</li>
+<li>Импорт и экспорт данных в различных форматах</li>
+<li>Визуализация структуры базы данных</li>
+</ul>
+<h3 id="db-browser_1">Работа с DB Browser</h3>
+<p>Для создания новой базы данных или открытия уже существующей используются соответствующие кнопки в интерфейсе программы.</p>
+<p>После создания БД в программе можно работать с помощью встроенных инструментов либо через терминал SQL, в который можно писать запросы на соответствующем языке.</p>
+<p>Для создания новой таблицы встроенными инструментами нажмите кнопку «Создать таблицу». В открывшемся окне заполните необходимые данные о таблице.</p>
+<p>Для редактирования и создания новых записей выберите таблицу и перейдите во вкладку «Данные». Добавлять и удалять новые записи можно по нажатию соответствующих кнопок в меню под основными вкладками.</p>
+<h2 id="sql-c-usercontrol">Работа с SQL в C# с использованием UserControl</h2>
+<h3 id="sqlite_3">Подключение библиотеки SQLite</h3>
+<p>Для начала работы в проект требуется добавить библиотеку SQLite. Данный пакет можно загрузить из меню управления пакетами NuGet.</p>
+<p>NuGet - это менеджер пакетов для платформы .NET, который позволяет управлять зависимостями и добавлять сторонние библиотеки в проекты на языке C#.</p>
+<p>Для добавления пакета нажмите правой кнопкой по проекту -&gt; Управление пакетами NuGet -&gt; Выберите вкладку обзор и впишите название интересующего пакета. Выбрав пакет, нажмите кнопку установить.</p>
+<p>Для подключения библиотеки SQLite в окно проекта добавьте в поле зависимостей новую using с именем библиотеки:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Data.SQLite</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="sqlite_4">Основные классы для работы с SQLite</h3>
+<h4 id="sqliteconnection">SQLiteConnection</h4>
+<p>SQLiteConnection - это класс в пространстве имен System.Data.SQLite, который представляет подключение к базе данных SQLite в C#. Этот класс используется для установления соединения с базой данных SQLite и выполнения операций с ней.</p>
+<p>Для создания новой базы данных используется статический метод CreateFile класса SQLiteConnection. В качестве параметра команды передается полный путь до таблицы:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">SQLiteConnection</span><span class="p">.</span><span class="n">CreateFile</span><span class="p">(</span><span class="s">&quot;C:\\path\\to\\database.db&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Для подключения к существующей базе данных создается новый экземпляр SQLiteConnection с параметрами, указывающими источник и путь до данной БД:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">connectionString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Data Source=C:\\path\\to\\database.db;Version=3;&quot;</span><span class="p">;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">SQLiteConnection</span><span class="w"> </span><span class="n">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SQLiteConnection</span><span class="p">(</span><span class="n">connectionString</span><span class="p">);</span>
+</code></pre></div>
+<p>Для открытия и закрытия соединения с базой данных используются методы Open и Close:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">connection</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="c1">// Выполнение операций с базой данных</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="n">connection</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="sqlitecommand">SQLiteCommand</h4>
+<p>SQLiteCommand - это класс в пространстве имен System.Data.SQLite, который представляет команду SQL для выполнения в базе данных SQLite. Этот класс используется в C# для выполнения SQL-запросов к базе данных SQLite.</p>
+<p>В качестве параметра в конструктор класса передается строка с запросом на языке SQL и объект SQLiteConnection для указания, к какой таблице будет вызван запрос:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT * FROM Users&quot;</span><span class="p">;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">SQLiteCommand</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SQLiteCommand</span><span class="p">(</span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">connection</span><span class="p">);</span>
+</code></pre></div>
+<p>Прежде чем запрос будет выполнен, должно быть открыто соединение с БД.</p>
+<p>Для создания новой таблицы используется команда CREATE TABLE, которая записывается в строке со всеми параметрами. Далее создается новая команда с данными параметрами и связью с БД:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">createTableQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@&quot;CREATE TABLE Users (</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="s">                            UserID INTEGER PRIMARY KEY AUTOINCREMENT,</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="s">                            Username TEXT NOT NULL,</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="s">                            Email TEXT UNIQUE)&quot;</span><span class="p">;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="n">SQLiteCommand</span><span class="w"> </span><span class="n">createTableCommand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SQLiteCommand</span><span class="p">(</span><span class="n">createTableQuery</span><span class="p">,</span><span class="w"> </span><span class="n">connection</span><span class="p">);</span>
+</code></pre></div>
+<p>Выполнение команды вызывается методом ExecuteNonQuery() – метод выполняет запрос без возвращения данных:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">createTableCommand</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
+</code></pre></div>
+<p>Запросы на INSERT, UPDATE и DELETE также выполняются с помощью ExecuteNonQuery():</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">insertQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;INSERT INTO Users (Username, Email) VALUES (&#39;JohnDoe&#39;, &#39;john@example.com&#39;)&quot;</span><span class="p">;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">SQLiteCommand</span><span class="w"> </span><span class="n">insertCommand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SQLiteCommand</span><span class="p">(</span><span class="n">insertQuery</span><span class="p">,</span><span class="w"> </span><span class="n">connection</span><span class="p">);</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">insertCommand</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="sqlitedatareader">SQLiteDataReader</h4>
+<p>SQLiteDataReader - это класс, который предоставляет возможность последовательного чтения результатов запроса из базы данных SQLite. Он используется для выполнения операций выборки данных из базы данных SQLite.</p>
+<p>Для создания SQLiteDataReader требуется создать запрос и выполнить его методом ExecuteReader():</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">selectQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT * FROM Users&quot;</span><span class="p">;</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">SQLiteCommand</span><span class="w"> </span><span class="n">selectCommand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SQLiteCommand</span><span class="p">(</span><span class="n">selectQuery</span><span class="p">,</span><span class="w"> </span><span class="n">connection</span><span class="p">);</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">SQLiteDataReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">selectCommand</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
+</code></pre></div>
+<p>После этого в цикле можно считать данные, получаемые из таблицы, обращаясь по имени SQLiteDataReader и передавая требуемый столбец в квадратных скобках:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">Read</span><span class="p">())</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="p">{</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">userId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">GetInt32</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// или reader[&quot;UserID&quot;]</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// или reader[&quot;Username&quot;]</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// или reader[&quot;Email&quot;]</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;UserID: {userId}, Username: {username}, Email: {email}&quot;</span><span class="p">);</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="p">}</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="n">reader</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="datagrid">Компонент DataGrid</h3>
+<p>В WPF для отображения данных в табличном виде используется элемент управления DataGrid. Он позволяет отображать данные в виде таблицы с возможностью сортировки, фильтрации, редактирования и других операций.</p>
+<h4 id="datagrid_1">Привязка DataGrid к данным</h4>
+<p>Существует несколько способов связать существующую таблицу и DataGrid.</p>
+<p>Для начала требуется создать класс-структуру для хранения требуемых данных и создать список, состоящий из этой структуры:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">User</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="p">{</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">UserID</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Username</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Email</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="p">}</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="c1">// Заполнение списка данными</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="n">dataGrid</span><span class="p">.</span><span class="n">ItemsSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="datagrid_2">Настройка столбцов DataGrid</h4>
+<p>Первый способ требует привязки заранее созданных столбцов к данным структуры. Для этого, перейдя во вкладку столбцы в окне свойств компонента, выберите параметр Columns.</p>
+<p>В этом окне требуется создать новый DataGridTextColumn. В окне создания нужно добавить Binding.</p>
+<p>Последний этап – запись параметра, к которому будет привязан столбец. Для этого в окошке XAML в поле колонки требуется прописать параметр в {Binding}. Имя параметра соответствует переменной класса, к которому будет привязана таблица:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nt">&lt;DataGrid</span><span class="w"> </span><span class="na">x:Name=</span><span class="s">&quot;dataGrid&quot;</span><span class="w"> </span><span class="na">AutoGenerateColumns=</span><span class="s">&quot;False&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nt">&lt;DataGrid.Columns&gt;</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;ID&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding UserID}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Имя пользователя&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Username}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Email&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Email}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="nt">&lt;/DataGrid.Columns&gt;</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="nt">&lt;/DataGrid&gt;</span>
+</code></pre></div>
+<p>Альтернативно, можно установить свойство AutoGenerateColumns="True", и DataGrid автоматически создаст столбцы на основе свойств привязанных данных.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
