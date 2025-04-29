@@ -16,7 +16,7 @@
     
     
       
-        <title>Menuitem - Документация по предмету</title>
+        <title>Я в потоке - Документация по предмету</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#menu-menuitem" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Menuitem
+              Я в потоке
             
           </span>
         </div>
@@ -423,18 +423,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#menu-menuitem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Пример использования Menu и MenuItem
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Разбор кода:
+      Введение
     </span>
   </a>
   
@@ -443,9 +434,33 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Пример с несколькими заголовками меню:
+      Про поток в коде
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Про поток в коде">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Класс Thread
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Класс Task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -465,78 +480,51 @@
 
 
 
-  <h1>Menuitem</h1>
+  <h1>Я в потоке</h1>
 
-<h3 id="menu-menuitem">Пример использования <code>Menu</code> и <code>MenuItem</code></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="nt">&lt;Grid&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span><span class="nt">&lt;DockPanel</span><span class="w"> </span><span class="na">VerticalAlignment=</span><span class="s">&quot;Top&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">            </span><span class="nt">&lt;Menu</span><span class="w"> </span><span class="na">Height=</span><span class="s">&quot;20&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">                </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Комната&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">                    </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Новая комната&quot;</span><span class="w"> </span><span class="na">Click=</span><span class="s">&quot;Ваш_обработчик&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">                    </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Редактировать выбранную&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">                    </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Удалить выбранную&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">                </span><span class="nt">&lt;/MenuItem&gt;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="nt">&lt;/Menu&gt;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">&lt;/DockPanel&gt;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="cm">&lt;!--</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="cm">        Весь остальной контент</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm">        --&gt;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">&lt;/Grid&gt;</span>
+<h2 id="_1">Введение</h2>
+<p>Одним из ключевых аспектов в современном программировании является <strong>многопоточность</strong>. Ключевым понятием при работе с многоопоточностью является <strong>поток</strong>. </p>
+<p>Поток предствляет некоторую часть кода программы. </p>
+<p>При помощи многопоточности мы можем выделить в приложении несколько потоков, которые будут выполнять различные задачи одновременно. </p>
+<blockquote>
+<p>Если у нас, допустим, графическое приложение, которое посылает запрос к какому-нибудь серверу или считывает и обрабатывает большой файл, то без многопоточности у нас бы блокировался графический интерфейс на время выполнения задачи, потому что графический интерфейс "выполняется" в основном потоке. </p>
+<p>А благодаря потокам мы можем выделить отправку запроса или любую другую задачу, которая может долго обрабатываться, в отдельный поток, работающий параллельно. Поэтому, к примеру, клиент-серверные приложения (и не только они) практически не мыслимы без многопоточности.</p>
+</blockquote>
+<h2 id="_2">Про поток в коде</h2>
+<h3 id="1-thread"><strong>1. Класс <code>Thread</code></strong></h3>
+<ul>
+<li>Это базовый способ создания нового потока.</li>
+<li>Требует ручного управления: запуск, завершение, исключения, синхронизация.</li>
+<li>Используется, когда нужно полный контроль над потоком (например, установка приоритета, фонового режима и т.д.).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Thread</span><span class="w"> </span><span class="n">thread</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Работа в отдельном потоке&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">});</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">thread</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
 </code></pre></div>
-<h3 id="_1"><strong>Разбор кода:</strong></h3>
-<ol>
-<li>
-<p><strong><code>&lt;Grid&gt;</code></strong>: Это корневой элемент макета. <code>Grid</code> позволяет располагать элементы в строках и столбцах. В данном случае, он служит контейнером для всего содержимого, включая меню.</p>
-</li>
-<li>
-<p><strong><code>&lt;DockPanel VerticalAlignment="Top"&gt;</code></strong>: <code>DockPanel</code> - это контейнер, который позволяет располагать элементы по краям (верх, низ, лево, право). <code>VerticalAlignment="Top"</code> указывает, что содержимое <code>DockPanel</code> должно быть привязано к верхней части <code>Grid</code>.</p>
-</li>
-<li>
-<p><strong><code>&lt;Menu Height="20"&gt;</code></strong>: Это сам элемент меню. <code>Height="20"</code> задает высоту меню в 20 пикселей. <code>Menu</code> автоматически создает визуальное представление меню с выпадающими подменю.</p>
-</li>
-<li>
-<p><strong><code>&lt;MenuItem Header="Комната"&gt;</code></strong>: Это главный пункт меню, который называется "Комната". <code>Header</code> определяет текст, который отображается для этого пункта меню. Когда пользователь наводит курсор на этот пункт, появится выпадающее меню с подпунктами.</p>
-</li>
-<li>
-<p><strong><code>&lt;MenuItem Header="Новая комната" Click="Ваш_обработчик"/&gt;</code></strong>: Это подпункт меню, который называется "Новая комната". <code>Header</code> определяет текст, который отображается для этого пункта меню. <code>Click="Ваш_обработчик"</code> указывает, что при нажатии на этот пункт меню должен быть вызван обработчик события <code>Ваш_обработчик</code>. Этот обработчик должен быть определен в коде вашего приложения (например, в файле .cs). Он будет отвечать за создание новой комнаты.</p>
-</li>
-<li>
-<p><strong><code>&lt;MenuItem Header="Редактировать выбранную"/&gt;</code></strong>: Это подпункт меню, который называется "Редактировать выбранную". При нажатии на этот пункт меню, скорее всего, будет открыто окно или диалоговое окно для редактирования выбранной комнаты. В этом примере нет обработчика <code>Click</code>, поэтому при нажатии ничего не произойдет.</p>
-</li>
-<li>
-<p><strong><code>&lt;MenuItem Header="Удалить выбранную"/&gt;</code></strong>: Это подпункт меню, который называется "Удалить выбранную". При нажатии на этот пункт меню, скорее всего, будет удалена выбранная комната. В этом примере также нет обработчика <code>Click</code>, поэтому при нажатии ничего не произойдет.</p>
-</li>
-<li>
-<p><strong><code>&lt;!-- Весь остальной контент --&gt;</code></strong>: Это комментарий, указывающий на место, где будет располагаться остальной контент вашего приложения.</p>
-</li>
-</ol>
-<p>На форме меню будет выглядеть следующим образом.</p>
-<p><img alt="" src="../../img/menuitem-sample-1.png" /></p>
-<h3 id="_2">Пример с несколькими заголовками меню:</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w"> </span><span class="nt">&lt;Menu</span><span class="w"> </span><span class="na">Height=</span><span class="s">&quot;20&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">     </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Комната&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">         </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Новая комната&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">         </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Редактировать выбранную&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">         </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Удалить выбранную&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">     </span><span class="nt">&lt;/MenuItem&gt;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">     </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Второй пункт меню&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">         </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Заглушка&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">     </span><span class="nt">&lt;/MenuItem&gt;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">     </span><span class="nt">&lt;MenuItem</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Третий пункт меню&quot;</span><span class="w"> </span><span class="na">Click=</span><span class="s">&quot;Еще_один_ваш_обработчик&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w"> </span><span class="nt">&lt;/Menu&gt;</span>
+<h3 id="2-task"><strong>2. Класс <code>Task</code></strong></h3>
+<ul>
+<li>Это более высокоуровневая абстракция над потоками.</li>
+<li>Работает на основе пула потоков (ThreadPool).</li>
+<li>Упрощает работу с асинхронностью: легко использовать <code>async</code>/<code>await</code>, можно цеплять задачи (<code>ContinueWith</code>), обрабатывать исключения и отмену (<code>CancellationToken</code>).</li>
+<li>Используется для параллельных операций и асинхронного программирования.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Работа в задаче Task&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">});</span>
 </code></pre></div>
-<p><img alt="" src="../../img/menuitem-sample-2.png" /></p>
+<blockquote>
+<p>Класс <code>Task</code> можно сравнить с <code>Coroutines</code> в Unity.</p>
+</blockquote>
 
 
 
 
 
 
+
+  
+  
 
 
 
