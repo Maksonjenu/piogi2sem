@@ -547,10 +547,16 @@
 Здесь: 
 - <code>BoolToString</code> - название класса конвертора.
 - <code>x:Key</code> - название вашего конвертора для файлов <code>xaml</code>.</p>
-<p>Пример привязки данных и использование конвертора:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;Button</span><span class="w"> </span><span class="na">Click=</span><span class="s">&quot;ButtonBase_OnClick&quot;</span><span class="w"> </span><span class="na">Content=</span><span class="s">&quot;{Binding Path=IsLightOn, Converter={StaticResource myBoolConverter}}&quot;</span><span class="w"> </span><span class="na">d:Content=</span><span class="s">&quot;Тут будет состояние света&quot;</span><span class="w"> </span><span class="na">Style=</span><span class="s">&quot;{StaticResource GrayButton}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<p>Также в заголовок файла нужно прописать следующее:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;ResourceDictionary</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">                    </span><span class="na">xmlns:x=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span><span class="w"> </span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">                    </span><span class="na">xmlns:local=</span><span class="s">&quot;clr-namespace:ваш_проект&quot;</span><span class="nt">&gt;</span><span class="w"> </span>вот<span class="w"> </span>это<span class="w"> </span>прописать
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Content=&quot;{Binding Path=IsLightOn, Converter={StaticResource myBoolConverter}}&quot;
+<p>Пример привязки данных и использование конвертора:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;Button</span><span class="w"> </span><span class="na">Click=</span><span class="s">&quot;ButtonBase_OnClick&quot;</span><span class="w"> </span><span class="na">Content=</span><span class="s">&quot;{Binding Path=IsLightOn, Converter={StaticResource myBoolConverter}}&quot;</span><span class="w"> </span><span class="na">d:Content=</span><span class="s">&quot;Тут будет состояние света&quot;</span><span class="w"> </span><span class="na">Style=</span><span class="s">&quot;{StaticResource GrayButton}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Content=&quot;{Binding Path=IsLightOn, Converter={StaticResource myBoolConverter}}&quot;
 </code></pre></div>
 <ul>
 <li>Указываем свойство для привязки: <code>IsLightOn</code>;</li>
