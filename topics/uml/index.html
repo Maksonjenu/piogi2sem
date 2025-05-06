@@ -16,7 +16,7 @@
     
     
       
-        <title>Диаграммы UML - Документация по предмету</title>
+        <title>Uml - Документация по предмету</title>
       
     
     
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Диаграммы UML
+              Uml
             
           </span>
         </div>
@@ -425,17 +425,17 @@
         <li class="md-nav__item">
   <a href="#uml-unified-modeling-language" class="md-nav__link">
     <span class="md-ellipsis">
-      UML (Unified Modeling Language): Унифицированный Язык Моделирования
+      UML (Unified Modeling Language): Понимаем? Диаграммы Классов
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="UML (Unified Modeling Language): Унифицированный Язык Моделирования">
+    <nav class="md-nav" aria-label="UML (Unified Modeling Language): Понимаем? Диаграммы Классов">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Диаграмма Классов
+      Зачем нужны диаграммы классов?
     </span>
   </a>
   
@@ -444,7 +444,7 @@
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Структура диаграммы классов
+      Как читать диаграмму классов: Шаг за Шагом
     </span>
   </a>
   
@@ -453,33 +453,9 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Синтаксис элементов диаграммы классов
+      Пример на практике
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Синтаксис элементов диаграммы классов">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      Классы
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      Атрибуты и методы
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -504,62 +480,92 @@
 
 
 
-  <h1>Диаграммы UML</h1>
+  <h1>Uml</h1>
 
-<h2 id="uml-unified-modeling-language">UML (Unified Modeling Language): Унифицированный Язык Моделирования</h2>
-<p>UML (Unified Modeling Language) — это <strong>стандарт</strong> для графического представления структуры и поведения объектов в объектно-ориентированных системах.  Он позволяет визуализировать сложные системы, делая их более понятными и управляемыми.</p>
-<h3 id="_1">Диаграмма Классов</h3>
-<p>Одной из самых востребованных и мощных диаграмм в UML является <strong>диаграмма классов</strong>. Она служит своеобразным "чертежом" системы, демонстрируя её архитектуру и основные элементы:</p>
+<h2 id="uml-unified-modeling-language">UML (Unified Modeling Language): Понимаем? Диаграммы Классов</h2>
+<p>UML - <strong>стандартный графический язык</strong>, который помогает разработчикам "нарисовать" и понять, как устроена программа, особенно если она написана с использованием классов (объектно-ориентированное программирование).</p>
+<h3 id="_1">Зачем нужны диаграммы классов?</h3>
+<p>Одна из самых полезных диаграмм в UML — это <strong>диаграмма классов</strong>. Как бы представляет <strong>карту кода</strong>:</p>
 <ul>
-<li><strong>Классы:</strong>  Определяют типы объектов в системе, их функциональность и характеристики.</li>
-<li><strong>Атрибуты:</strong>  Описывают данные, которыми обладает класс (например, имя, возраст, вес).</li>
-<li><strong>Методы:</strong>  Определяют поведение класса, то есть действия, которые он может выполнять (например, <code>вычислитьСумму()</code>, <code>отобразитьДанные()</code>).</li>
-<li><strong>Взаимосвязи:</strong>  Отражают отношения между классами (наследование, агрегация, композиция, ассоциация).  Эти связи демонстрируют, как классы взаимодействуют друг с другом.</li>
+<li><strong>Показывает основные "строительные блоки"</strong> программы (классы).</li>
+<li><strong>Объясняет, из чего состоит каждый блок</strong> (его данные и возможности).</li>
+<li><strong>Демонстрирует, как эти блоки связаны</strong> между собой.</li>
 </ul>
-<h3 id="_2">Структура диаграммы классов</h3>
-<p>Диаграмма классов обычно состоит из следующих элементов:</p>
-<p><em><strong>Классы:</strong> прямоугольники, которые представляют собой сущности в системе.</em>
-<em><strong>Атрибуты:</strong> характеристики классов, которые обычно отображаются в средней части прямоугольника.</em>
-<em><strong>Методы (операции):</strong> функции или процедуры, которые определены в классе. Эти элементы располагаются в нижней части прямоугольника.</em>
-<em><strong>Связи между классами:</strong> линии, которые соединяют классы, показывая их взаимосвязь.</em></p>
-<p><strong>Каждый класс</strong> на диаграмме может быть представлен прямоугольником, который разделён на три части:</p>
+<p>Изучив диаграмму классов можно понять структуру части программы, даже не читая сам код.</p>
+<h3 id="_2">Как читать диаграмму классов: Шаг за Шагом</h3>
+<p>Диаграммы классов состоят в основном из прямоугольников (классов) и линий (связей между ними).</p>
+<p><strong>1. Прямоугольник = Класс</strong></p>
+<p>Каждый прямоугольник представляет собой <strong>класс</strong> — шаблон или "чертеж" для создания объектов в программе. Прямоугольник обычно разделен на три секции:</p>
+<ul>
+<li><strong>Верхняя секция:</strong> Название класса. Это имя "типа" объектов, которые мы описываем.</li>
+<li><strong>Средняя секция:</strong> Атрибуты (данные).</li>
+<li><strong>Нижняя секция:</strong> Методы (действия).</li>
+</ul>
+<p><strong>2. Средняя секция: Атрибуты (Что у класса <em>есть</em>)</strong></p>
+<p>Здесь перечислены <strong>атрибуты</strong> – характеристики или данные, которыми обладает каждый объект этого класса. Если взять класс "Человек", тогда атрибутами могут быть <code>имя</code>, <code>возраст</code>, <code>цвет глаз</code>.</p>
+<p>Как читать строку атрибута (например, <code>+ Name: string</code>):</p>
+<ul>
+<li><strong>Символ в начале (<code>+</code>, <code>-</code>, <code>#</code>):</strong> Это <strong>видимость</strong> или доступность – кто может получить доступ к этому атрибуту.<ul>
+<li><code>+</code> (public / публичный): Доступен всем (любой части программы).</li>
+<li><code>-</code> (private / приватный): Доступен только внутри самого этого класса. Частый вариант для данных.</li>
+<li><code>#</code> (protected / защищённый): Доступен внутри этого класса и его "наследникам" (классам, которые его расширяют).</li>
+</ul>
+</li>
+<li><strong>Имя атрибута (<code>Name</code>):</strong> Как называется эта характеристика.</li>
+<li><strong>Двоеточие (<code>:</code>)</strong></li>
+<li><strong>Тип данных (<code>string</code>):</strong> Какого типа информация хранится в атрибуте (текст, число, дата и т.д.). </li>
+</ul>
+<p><strong>Пример чтения атрибутов:</strong></p>
+<ul>
+<li><code>+ Name: string</code> — Публичный атрибут <code>Name</code>, хранит текст.</li>
+<li><code>- age: int</code> — Приватный атрибут <code>age</code>, хранит целое число.</li>
+<li><code># id: string</code> — Защищённый атрибут <code>id</code>, хранит текст.</li>
+</ul>
+<p><strong>3. Нижняя секция: Методы (Что класс <em>умеет делать</em>)</strong></p>
+<p>Здесь описаны <strong>методы</strong> (или операции) – действия, которые объект этого класса может выполнять. Если класс – "Телефон", то методы могут быть <code>позвонить()</code>, <code>отправитьСмс()</code>, <code>сделатьФото()</code>.</p>
+<p>Как читать строку метода (например, <code>+ GetTemperature(): double</code>):</p>
+<ul>
+<li><strong>Символ в начале (<code>+</code>, <code>-</code>, <code>#</code>):</strong> Та же <strong>видимость</strong>, что и у атрибутов – откуда мы можем "вызвать" этот метод.</li>
+<li><strong>Имя метода (<code>GetTemperature</code>):</strong> Название действия.</li>
+<li><strong>Скобки <code>()</code>:</strong> Внутри скобок перечисляются <strong>параметры</strong> – информация, которая нужна методу для работы. Если скобки пустые, метод не требует дополнительной информации.<ul>
+<li>Пример с параметрами: <code>setName(newName: string)</code> - метод <code>setName</code> требует на вход один параметр <code>newName</code> текстового типа.</li>
+</ul>
+</li>
+<li><strong>Двоеточие (<code>:</code>)</strong> (если метод что-то возвращает)</li>
+<li><strong>Возвращаемый тип (<code>double</code>):</strong> Какой тип данных метод вернет в результате своей работы. Если метод ничего не возвращает (просто выполняет действие), указывается <code>void</code>.</li>
+</ul>
+<p><strong>Пример чтения методов:</strong></p>
+<ul>
+<li><code>+ GetTemperature(): double</code> — Публичный метод <code>GetTemperature</code>. Не требует параметров. Возвращает число с дробной частью (<code>double</code>).</li>
+<li><code>+ TurnLight(): void</code> — Публичный метод <code>TurnLight</code>. Не требует параметров. Ничего не возвращает (<code>void</code>).</li>
+<li><code>- calculateInternal(a: int, b: int): int</code> — Приватный метод <code>calculateInternal</code>. Требует 2 параметра - целое число <code>a</code> и <code>b</code>. Возвращает целое число (<code>int</code>).</li>
+</ul>
+<p><strong>4. Линии между прямоугольниками: Связи</strong></p>
+<p>Линии, соединяющие разные классы, показывают, что эти классы как-то <strong>связаны</strong> или <strong>взаимодействуют</strong> друг с другом. Например, класс "Заказ" может быть связан с классом "Клиент". Существуют разные типы линий (наследование, ассоциация и т.д.), но для начала достаточно понимать: <strong>линия = связь</strong>.</p>
+<h3 id="_3">Пример на практике</h3>
+<p>Есть диаграмма:</p>
+<p><img alt="Kroki" src="https://kroki.io/mermaid/svg/eNpVjUsKwkAQRPdzikY3iswFshZEiG7UA4w6xIF8ZNJxI4Jx6w3ceIUBFcTfGXpu5CT-Yu-qXlU155yhwlB6QHu7pjPd6GTXMOr5nI5OGjo42zj7ZrdAF7qSsbnNyUCNdvRw4O6cDZka425sEoo0bSsRaBG9BPzHYMnAXQv6IpLgQYpaxUHpcUAZzaUWmOkCTZNsHMp3fJjp2FfBDBtNhxaJmr5BR-LwVytppViHgcRurFCJsBorPn2C38EVY09n73Ae?"></p>
+<p><strong>Читаем диаграмму "Комната":</strong></p>
 <ol>
-<li><em>Первая часть</em> — название класса.</li>
-<li><em>Вторая часть</em> — атрибуты (характеристиски объекта).</li>
-<li><em>Третья часть</em> — методы (поведение объекта).</li>
+<li><strong>Класс:</strong> Называется <code>Комната</code>.</li>
+<li><strong>Атрибуты:</strong><ul>
+<li><code>+ Name : string</code> — У комнаты есть публичное имя (текст). Любой может его узнать или изменить (если есть соответствующий метод).</li>
+<li><code>- temperature : double</code> — У комнаты есть приватная температура (число с дробной частью). Доступ к ней напрямую извне запрещен.</li>
+</ul>
+</li>
+<li><strong>Методы:</strong><ul>
+<li><code>+ TurnLight() : void</code> — Комната умеет публично выполнять действие "Включить свет", которое ничего не возвращает.</li>
+<li><code>+ GetTemperature() : double</code> — Комната умеет публично сообщать свою температуру (возвращает число).</li>
+<li><code># SetInitialTemperature(temp: double) : void</code> — У комнаты есть защищенный метод для установки начальной температуры; он требует на вход число (<code>temp</code>) и ничего не возвращает. Вероятно, используется только самой комнатой или её наследниками.</li>
+</ul>
+</li>
 </ol>
-<h3 id="_3">Синтаксис элементов диаграммы классов</h3>
-<h4 id="_4">Классы</h4>
-<p>Каждый класс отображается как прямоугольник, разделённый на три секции. Стандартный вид класса выглядит так:</p>
-<p><img alt="Kroki" src="https://kroki.io/mermaid/svg/eNpTUNDV1eUqySzJSbVSuDD_YsOFHRf2XNh6sUEh1NeHCySXnJNYXOySmZhelJgL4ShcmHVhH1DV3gsbLjZd2FDNpQAF2n6JuUBjikuKMvPSuTg5dfNQ-dohqbkFqUWJJaVFQOGU_NKknFSQshIswnAzQ0qL8nwy0zNKNDQVyvIzUxAy7qklSAYCpZG01nIBAAy3S1w=?"></p>
-<p>Здесь:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>`+` — публичный элемент (public).
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>`-` — приватный элемент (private).
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>`#` — защищённый элемент (protected).
-</code></pre></div></p>
-<h4 id="_5">Атрибуты и методы</h4>
-<p><strong><em>Атрибуты</em></strong> описывают данные, которые могут храниться в классе. <strong><em>Методы</em></strong> — это операции, которые выполняются с данными. </p>
-<p>Пример:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>+ name: string
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- age: int
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a># id: string
-</code></pre></div>
-<p><em>name</em> — публичный атрибут типа String.
-<strong>age</strong> — приватный атрибут типа int.
-<em>id</em> — защищённый атрибут типа String.</p>
-<p>Методы отображаются аналогично:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>+ getName(): string - публичный метод, возвращающий строку. Возвращаемое значение string указывается после названия метода.
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>- setName(name: String): void - приватный метод, устанавливающий значение. Указывается тип данных и название аргумента внутри скобок.
-</code></pre></div></p>
 
 
 
 
 
 
-
-  
-  
 
 
 

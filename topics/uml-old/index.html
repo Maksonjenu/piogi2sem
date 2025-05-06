@@ -16,7 +16,7 @@
     
     
       
-        <title>1 laba - Документация по предмету</title>
+        <title>Диаграммы UML - Документация по предмету</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#uml-unified-modeling-language" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1 laba
+              Диаграммы UML
             
           </span>
         </div>
@@ -187,7 +187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -423,29 +423,68 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#uml-unified-modeling-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      UML (Unified Modeling Language): Унифицированный Язык Моделирования
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UML (Unified Modeling Language): Унифицированный Язык Моделирования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      О чем эта лабораторная?
+      Диаграмма Классов
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Какой материал будет использоваться?
+      Структура диаграммы классов
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Первая часть задания.
+      Синтаксис элементов диаграммы классов
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Синтаксис элементов диаграммы классов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Классы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Атрибуты и методы
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -465,34 +504,62 @@
 
 
 
-  <h1>1 laba</h1>
+  <h1>Диаграммы UML</h1>
 
-<h3 id="_1">О чем эта лабораторная?</h3>
+<h2 id="uml-unified-modeling-language">UML (Unified Modeling Language): Унифицированный Язык Моделирования</h2>
+<p>UML (Unified Modeling Language) — это <strong>стандарт</strong> для графического представления структуры и поведения объектов в объектно-ориентированных системах.  Он позволяет визуализировать сложные системы, делая их более понятными и управляемыми.</p>
+<h3 id="_1">Диаграмма Классов</h3>
+<p>Одной из самых востребованных и мощных диаграмм в UML является <strong>диаграмма классов</strong>. Она служит своеобразным "чертежом" системы, демонстрируя её архитектуру и основные элементы:</p>
 <ul>
-<li>Данная лабораторная работа посвящена изучению основ написания графических интерфейсов, также основам языка разметки <code>Xaml</code>. Также мы изучим <a href="https://ru.wikipedia.org/wiki/Рикроллинг">о</a>сновы свойств и событий компонентов объектов в языке программирования <code>C#</code>. </li>
-<li>Мы рассмотрим основные компоненты графического фреймворка <code>WPF</code> и где и в каких случаях они могут применяться. </li>
-<li>Далее мы повторим основы синтаксиса языка и разберемся что такое <code>свойства</code> и <code>события</code>: в чем отличия и для чего используются эти понятия.</li>
+<li><strong>Классы:</strong>  Определяют типы объектов в системе, их функциональность и характеристики.</li>
+<li><strong>Атрибуты:</strong>  Описывают данные, которыми обладает класс (например, имя, возраст, вес).</li>
+<li><strong>Методы:</strong>  Определяют поведение класса, то есть действия, которые он может выполнять (например, <code>вычислитьСумму()</code>, <code>отобразитьДанные()</code>).</li>
+<li><strong>Взаимосвязи:</strong>  Отражают отношения между классами (наследование, агрегация, композиция, ассоциация).  Эти связи демонстрируют, как классы взаимодействуют друг с другом.</li>
 </ul>
-<hr />
-<h3 id="_2">Какой материал будет использоваться?</h3>
-<p>Список ссылок</p>
-<hr />
-<h3 id="_3">Первая часть задания.</h3>
-<p>Данная часть работы будет посвящена написанию разметки для графического интерфейса и базового функционала для трех программ:</p>
+<h3 id="_2">Структура диаграммы классов</h3>
+<p>Диаграмма классов обычно состоит из следующих элементов:</p>
+<p><em><strong>Классы:</strong> прямоугольники, которые представляют собой сущности в системе.</em>
+<em><strong>Атрибуты:</strong> характеристики классов, которые обычно отображаются в средней части прямоугольника.</em>
+<em><strong>Методы (операции):</strong> функции или процедуры, которые определены в классе. Эти элементы располагаются в нижней части прямоугольника.</em>
+<em><strong>Связи между классами:</strong> линии, которые соединяют классы, показывая их взаимосвязь.</em></p>
+<p><strong>Каждый класс</strong> на диаграмме может быть представлен прямоугольником, который разделён на три части:</p>
 <ol>
-<li>Калькулятор</li>
-<li>Календарь</li>
-<li>Погодный виджет</li>
+<li><em>Первая часть</em> — название класса.</li>
+<li><em>Вторая часть</em> — атрибуты (характеристиски объекта).</li>
+<li><em>Третья часть</em> — методы (поведение объекта).</li>
 </ol>
-<p>Рассмотрим шаг-за-шагом возможный вариант выполнения разметки...</p>
-<hr />
-<p>Далее про выполнение кода</p>
+<h3 id="_3">Синтаксис элементов диаграммы классов</h3>
+<h4 id="_4">Классы</h4>
+<p>Каждый класс отображается как прямоугольник, разделённый на три секции. Стандартный вид класса выглядит так:</p>
+<p><img alt="Kroki" src="https://kroki.io/mermaid/svg/eNpTUNDV1eUqySzJSbVSuDD_YsOFHRf2XNh6sUEh1NeHCySXnJNYXOySmZhelJgL4ShcmHVhH1DV3gsbLjZd2FDNpQAF2n6JuUBjikuKMvPSuTg5dfNQ-dohqbkFqUWJJaVFQOGU_NKknFSQshIswnAzQ0qL8nwy0zNKNDQVyvIzUxAy7qklSAYCpZG01nIBAAy3S1w=?"></p>
+<p>Здесь:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>`+` — публичный элемент (public).
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>`-` — приватный элемент (private).
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>`#` — защищённый элемент (protected).
+</code></pre></div></p>
+<h4 id="_5">Атрибуты и методы</h4>
+<p><strong><em>Атрибуты</em></strong> описывают данные, которые могут храниться в классе. <strong><em>Методы</em></strong> — это операции, которые выполняются с данными. </p>
+<p>Пример:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>+ name: string
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- age: int
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a># id: string
+</code></pre></div>
+<p><em>name</em> — публичный атрибут типа String.
+<strong>age</strong> — приватный атрибут типа int.
+<em>id</em> — защищённый атрибут типа String.</p>
+<p>Методы отображаются аналогично:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>+ getName(): string - публичный метод, возвращающий строку. Возвращаемое значение string указывается после названия метода.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>- setName(name: String): void - приватный метод, устанавливающий значение. Указывается тип данных и название аргумента внутри скобок.
+</code></pre></div></p>
 
 
 
 
 
 
+
+  
+  
 
 
 

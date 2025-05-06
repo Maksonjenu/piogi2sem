@@ -16,7 +16,7 @@
     
     
       
-        <title>1 laba - Документация по предмету</title>
+        <title>DB Browser скачать бесплатно - Документация по предмету</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#db-browser" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1 laba
+              DB Browser скачать бесплатно
             
           </span>
         </div>
@@ -187,7 +187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -423,29 +423,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#db-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Интерфейс DB Browser
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Интерфейс DB Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Structure (Красная стрелочка):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browse-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Browse Data (Зеленая стрелочка):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execute SQL (Синяя стрелочка):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-pragmas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Pragmas (Черная стрелочка):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      О чем эта лабораторная?
+      Создание базы данных
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Создание базы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Какой материал будет использоваться?
+      Типы данных полей.
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Первая часть задания.
+      Ограничения полей.
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-not-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      NULL и NOT NULL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -465,34 +549,80 @@
 
 
 
-  <h1>1 laba</h1>
+  <h1>DB Browser скачать бесплатно</h1>
 
-<h3 id="_1">О чем эта лабораторная?</h3>
+<h2 id="db-browser">Интерфейс DB Browser</h2>
+<p><img alt="Пример графического интерфейса DB Browser" src="../../img/6-laba-db-browser-ui.png" /></p>
 <ul>
-<li>Данная лабораторная работа посвящена изучению основ написания графических интерфейсов, также основам языка разметки <code>Xaml</code>. Также мы изучим <a href="https://ru.wikipedia.org/wiki/Рикроллинг">о</a>сновы свойств и событий компонентов объектов в языке программирования <code>C#</code>. </li>
-<li>Мы рассмотрим основные компоненты графического фреймворка <code>WPF</code> и где и в каких случаях они могут применяться. </li>
-<li>Далее мы повторим основы синтаксиса языка и разберемся что такое <code>свойства</code> и <code>события</code>: в чем отличия и для чего используются эти понятия.</li>
+<li><strong>New Database</strong> (Красная стрелочка): создает новый файл базы данных - <code>*.db</code>.</li>
+<li><strong>Open Database</strong> (Черная стрелочка): открывает готовую базу данных из <code>.db</code> файла.</li>
 </ul>
+<p>Далее рассмотрим вкладки ниже:</p>
+<h3 id="database-structure"><strong>Database Structure</strong> (Красная стрелочка):</h3>
+<p>Вкладка со структурой базы данных. Тут будет содержаться структура таблиц с данными.</p>
+<p><img alt="Структура базы данных" src="../../img/6-laba-database-struct.png" /></p>
 <hr />
-<h3 id="_2">Какой материал будет использоваться?</h3>
-<p>Список ссылок</p>
+<h3 id="browse-data"><strong>Browse Data</strong> (Зеленая стрелочка):</h3>
+<p>Вкладка, в которой можно посмотреть содержимое нужной таблицы.</p>
+<p><img alt="Содержимое таблицы" src="../../img/6-laba-browse-data.png" /></p>
 <hr />
-<h3 id="_3">Первая часть задания.</h3>
-<p>Данная часть работы будет посвящена написанию разметки для графического интерфейса и базового функционала для трех программ:</p>
+<h3 id="execute-sql"><strong>Execute SQL</strong> (Синяя стрелочка):</h3>
+<p>Вкладка для выполнения SQL запросов и вывода результатов запросов. Именно тут мы и будем создавать и заполнять таблицы.</p>
+<p><img alt="Выполнение скриптов" src="../../img/6-laba-execute-sql.png" /></p>
+<hr />
+<h3 id="edit-pragmas"><strong>Edit Pragmas</strong> (Черная стрелочка):</h3>
+<p>Вкладка, которая позволяет <strong>настраивать параметры базы данных</strong>.</p>
+<p><img alt="Настройка команд" src="../../img/6-laba-pragma-edit.png" /></p>
+<p><strong>PRAGMA</strong> в контексте SQLite — это специальные команды, которые позволяют контролировать различные аспекты работы системы баз данных SQLite.</p>
+<hr />
+<h2 id="_1">Создание базы данных</h2>
+<p>Для создания базы данных нужно нажать <code>New Database</code>.</p>
+<p><img alt="Создание базы данных" src="../../img/6-laba-create-db.gif" /></p>
+<p>Программа предложит сразу создать таблицу. Рассмотрим окно создания таблиц:</p>
+<p><img alt="Окно создания таблицы" src="../../img/6-laba-table-edit-window.png" /></p>
+<p>Нажмем на <code>Add</code> во вкладке <code>Поля</code>:</p>
+<p><img alt="Пример заполнения" src="../../img/6-laba-create-table-add-field.png" /></p>
+<p><em>Перенести в отдельный файл</em></p>
+<h3 id="_2">Типы данных полей.</h3>
+<p>Возможные типы данных:</p>
+<p><img alt="Типы данных для строки" src="../../img/6-laba-row-types.png" /></p>
 <ol>
-<li>Калькулятор</li>
-<li>Календарь</li>
-<li>Погодный виджет</li>
+<li><strong>NULL</strong> - В таблице не указан, но может быть. Указывает на отсутствие значения.</li>
+<li><strong>INTEGER</strong> - Представляет целое число, которое может быть положительным и отрицательным. В зависимости от своего значения может занимать 1, 2, 3, 4, 6 или 8 байт.</li>
+<li><strong>TEXT</strong> - Строка текста в <strong>одинарных</strong> кавычках, которая сохраняется в кодировке базы данных (UTF-8, UTF-16BE или UTF-16LE).</li>
+<li><strong>BLOB</strong> - Бинарные данные, такие как изображения, аудиофайлы и видеофайлы.</li>
+<li><strong>REAL</strong>. - Представляет число с плавающей точкой, занимает 8 байт в памяти.</li>
+<li><strong>NUMERIC</strong> - этот идентификатор не представляет отдельного типа данных. А фактически представляет столбец, который может хранить данные всех пяти выше перечисленных типов.</li>
 </ol>
-<p>Рассмотрим шаг-за-шагом возможный вариант выполнения разметки...</p>
-<hr />
-<p>Далее про выполнение кода</p>
+<p><a href="https://www.sqlitetutor.com/data-types/"><strong>Подробнее про типы данных в SQL.</strong></a></p>
+<h3 id="_3">Ограничения полей.</h3>
+<p>Рассмотрим ограничения полей:</p>
+<p><img alt="Ограничения строк" src="../../img/6-laba-propertis-of-row.png" /></p>
+<ul>
+<li>НП - <strong>Не Пустое</strong> (Not Null) - если включить, то мы должны будем всегда заполнять это значение в строке.</li>
+<li>ПК - <strong>Первичный Ключ</strong> (Primary Key) - указывает, что данное поле будет первичным ключом, уникальным значением. Первичный ключ уникально идентифицирует строку в таблице.</li>
+<li>АИ - <strong>Авто Инкремент</strong> (Auto Increment) - указывает, что значение столбца будет автоматически увеличиваться при добавлении новой строки. Данное ограничение работает для столбцов, которые представляют тип INTEGER с ограничением ПК.</li>
+<li>У - <strong>Уникальное</strong> (Unique) - указывает, что столбец может хранить только уникальные значения.</li>
+</ul>
+<h3 id="null-not-null">NULL и NOT NULL</h3>
+<p>По умолчанию любой столбец, если он не представляет первичный ключ, может принимать значение NULL, то есть фактически отсутствие формального значения. Но если мы хотим запретить подобное поведение и установить, что столбец обязательно должен иметь какое-либо значение, то для него следует установить ограничение NOT NULL.</p>
+<p><img alt="Пример Не Пусто" src="../../img/6-laba-notnull-sample.png" /></p>
+<h3 id="default">Default</h3>
+<p>Ограничение DEFAULT определяет значение по умолчанию для столбца. Если при добавлении данных для столбца не будет предусмотрено значение, то для него будет использоваться значение по умолчанию.</p>
+<p><img alt="Пример стандартного значения" src="../../img/6-laba-default-sample.png" /></p>
+<h3 id="check">Check</h3>
+<p>Ограничение CHECK задает ограничение для диапазона значений, которые могут храниться в столбце. Для этого после CHECK указывается в скобках условие, которому должен соответствовать столбец или несколько столбцов.</p>
+<p><img alt="Пример проверки значения 1" src="../../img/6-laba-check-sample-1.png" /></p>
+<p><img alt="Пример проверки значения 2" src="../../img/6-laba-check-sample-2.png" /></p>
 
 
 
 
 
 
+
+  
+  
 
 
 

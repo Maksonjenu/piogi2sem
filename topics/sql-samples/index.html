@@ -1,0 +1,1176 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>SQL запросы - Документация по предмету</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Документация по предмету" class="md-header__button md-logo" aria-label="Документация по предмету" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Документация по предмету
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SQL запросы
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Документация по предмету" class="md-nav__button md-logo" aria-label="Документация по предмету" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Документация по предмету
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Список тем
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Список заданий
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Список заданий
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Определение.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные компоненты таблицы.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-crud-create-read-update-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные команды SQL (CRUD - Create, Read, Update, Delete).
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Основные команды SQL (CRUD - Create, Read, Update, Delete).">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Синтаксис
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-from-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read from Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Базовый синтаксис
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Примеры
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where" class="md-nav__link">
+    <span class="md-ellipsis">
+      Фильтрация данных (WHERE)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Фильтрация данных (WHERE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Синтаксис
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Примеры
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сортировка результатов (ORDER BY)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Сортировка результатов (ORDER BY)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Синтаксис
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Примеры
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      Объединение таблиц (JOIN)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Объединение таблиц (JOIN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Базовый синтаксис
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Операции вставки и обновления
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Операции вставки и обновления">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert-into" class="md-nav__link">
+    <span class="md-ellipsis">
+      INSERT INTO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      UPDATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE FROM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drop-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Самая крутая штука: DROP TABLE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ключевые моменты и синтаксис.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>SQL запросы</h1>
+
+<h2 id="_1">Определение.</h2>
+<p>SQL (Structured Query Language - язык структурированных запросов) — это язык запросов для управления реляционными базами данных. 
+«Реляционные» означает, что все данные хранятся в виде взаимосвязанных таблиц. А SQL как раз используют для того, чтобы взаимодействовать с элементами внутри этих таблиц: добавлять, удалять, изменять и так далее.</p>
+<h2 id="_2">Основные компоненты таблицы.</h2>
+<ul>
+<li><strong>Таблица (Table):</strong> Основной объект хранения данных. Похожа на лист в Excel. Например, таблица Students (Студенты) или Books (Книги). Хранит <strong>столбцы</strong> и <strong>строки</strong>. Пересечение <strong>столбцов</strong> и <strong>строк</strong> - <strong>ячейка</strong>.</li>
+<li><strong>Столбец (Column / Attribute):</strong> Определяет тип данных, которые хранятся в таблице (например, FirstName, LastName, StudentID, EnrollmentYear). У каждого столбца есть имя и тип данных (текст, число, дата и т.д.).</li>
+<li><strong>Строка (Row / Record):</strong> Представляет собой одну запись в таблице (например, информация об одном конкретном студенте). <em>Можно представить, что это объект класса.</em></li>
+<li><strong>Ячейка (Cell):</strong> Пересечение строки и столбца, содержит конкретное значение (например, имя "Иван" в столбце FirstName для одной из строк).</li>
+</ul>
+<p><strong>Пример фрагмента таблицы Students:</strong></p>
+<table>
+<thead>
+<tr>
+<th>StudentID</th>
+<th>FirstName</th>
+<th>LastName</th>
+<th>Major</th>
+<th>EnrollmentYear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101</td>
+<td>Иван</td>
+<td>Иванов</td>
+<td>Информатика</td>
+<td>2022</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Мария</td>
+<td>Петрова</td>
+<td>История</td>
+<td>2023</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Алексей</td>
+<td>Сидоров</td>
+<td>Информатика</td>
+<td>2022</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Елена</td>
+<td>Смирнова</td>
+<td>Биология</td>
+<td>2021</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sql-crud-create-read-update-delete">Основные команды SQL (CRUD - Create, Read, Update, Delete).</h2>
+<h4 id="create-table"><strong>Create Table</strong></h4>
+<p>Прежде чем мы сможем добавлять (<code>INSERT</code>) или извлекать (<code>SELECT</code>) данные, нам нужна сама таблица! Команда <code>CREATE TABLE</code> используется для определения новой таблицы, ее столбцов и типов данных, которые эти столбцы будут хранить.</p>
+<ul>
+<li><strong>Основные компоненты:</strong><ul>
+<li><code>CREATE TABLE</code> имя_таблицы: Начинает определение таблицы.</li>
+<li>( ... ): В скобках перечисляются определения столбцов.</li>
+<li>имя_столбца <code>ТИП_ДАННЫХ</code> <code>[ограничения]</code>: Каждый столбец определяется своим именем, типом данных и необязательными ограничениями.</li>
+</ul>
+</li>
+<li><strong><a href="../../topics/db-browser-info#_2">Распространенные типы данных:</a></strong><ul>
+<li><code>INT</code> или <code>INTEGER</code>: Целые числа (например, 101, 2023).</li>
+<li><code>VARCHAR</code>(n): Текстовая строка переменной длины, где n — максимальное количество символов (например, VARCHAR(50) для имени).</li>
+<li><code>TEXT</code>: Длинный текст без фиксированного ограничения длины (зависит от СУБД).</li>
+<li><code>DATE</code>: Дата (например, '2023-10-27').</li>
+<li><code>DECIMAL</code>(p, s) или <code>NUMERIC</code>(p, s): Числа с фиксированной точностью (например, для цен), где p - общее число цифр, s - число цифр после запятой.</li>
+<li><code>BOOLEAN</code>: Логическое значение (Истина/Ложь).</li>
+</ul>
+</li>
+<li><strong><a href="../../topics/db-browser-info#_3">Распространенные ограничения (Constraints):</a></strong><ul>
+<li><code>NOT NULL</code>: Значение в этом столбце не может быть пустым (null).</li>
+<li><code>UNIQUE</code>: Все значения в этом столбце должны быть уникальными.</li>
+<li><code>PRIMARY KEY</code>: Комбинация NOT NULL и UNIQUE. Используется для однозначной идентификации каждой строки в таблице (как <code>StudentID</code> в нашем примере). Обычно у таблицы есть один первичный ключ.</li>
+</ul>
+</li>
+</ul>
+<h4 id="_3"><strong>Синтаксис</strong></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="err">столбец</span><span class="mi">1</span><span class="w"> </span><span class="err">ТИП</span><span class="n">_ДАННЫХ</span><span class="w"> </span><span class="p">[</span><span class="err">ограничения</span><span class="p">],</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="err">столбец</span><span class="mi">2</span><span class="w"> </span><span class="err">ТИП</span><span class="n">_ДАННЫХ</span><span class="w"> </span><span class="p">[</span><span class="err">ограничения</span><span class="p">],</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="err">столбец</span><span class="mi">3</span><span class="w"> </span><span class="err">ТИП</span><span class="n">_ДАННЫХ</span><span class="w"> </span><span class="p">[</span><span class="err">ограничения</span><span class="p">],</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">[</span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="err">имя</span><span class="n">_столбца_ключа</span><span class="p">)]</span><span class="w"> </span><span class="c1">-- Один из способов задать первичный ключ</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">);</span>
+</code></pre></div>
+<h3 id="_4"><strong>Пример</strong></h3>
+<p><strong>Создадим нашу таблицу Students:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">StudentID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">       </span><span class="c1">-- Целое число, первичный ключ (уникальный, не null)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">FirstName</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="c1">-- Длинный текст, не может быть пустой</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">LastName</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Длинный текст, не может быть пустой</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">Major</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">             </span><span class="c1">-- Длинный текст (может быть null, если студент еще не выбрал)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">EnrollmentYear</span><span class="w"> </span><span class="nb">INT</span><span class="w">              </span><span class="c1">-- Год поступления (целое число)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">);</span>
+</code></pre></div></p>
+<p>Теперь, когда у нас есть структура (<code>CREATE TABLE</code>), мы можем наполнять ее данными (<code>INSERT INTO</code>) и задавать ей вопросы (<code>SELECT</code>).</p>
+<h3 id="read-from-table">Read from Table</h3>
+<p>Мы начнем с самой часто используемой операции — <strong>чтения (Read)</strong> данных.</p>
+<ul>
+<li><strong>SELECT</strong>: Используется для <strong>выборки</strong> данных из одной или нескольких таблиц. Это ваш основной инструмент для "задавания вопросов" базе данных.</li>
+<li><strong>FROM</strong>: Указывает, <strong>из какой таблицы</strong> вы хотите получить данные.</li>
+</ul>
+<h3 id="_5"><strong>Базовый синтаксис</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">столбец</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">столбец</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="_6"><strong>Примеры</strong></h3>
+<ul>
+<li><strong>Выбрать ВСЕ столбцы и ВСЕ строки из таблицы Students:</strong><br />
+Звездочка * означает "все столбцы".</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="p">;</span>
+</code></pre></div>
+<p>Результат: Вся таблица <code>Students</code>, показанная выше.</p>
+<ul>
+<li><strong>Выбрать только Имена и Фамилии всех студентов:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">FirstName</span><span class="p">,</span><span class="w"> </span><span class="n">LastName</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="p">;</span>
+</code></pre></div>
+<p>Результат:  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">FirstName</th>
+<th style="text-align: left;">LastName</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Иван</td>
+<td style="text-align: left;">Иванов</td>
+</tr>
+<tr>
+<td style="text-align: left;">Мария</td>
+<td style="text-align: left;">Петрова</td>
+</tr>
+<tr>
+<td style="text-align: left;">Алексей</td>
+<td style="text-align: left;">Сидоров</td>
+</tr>
+<tr>
+<td style="text-align: left;">Елена</td>
+<td style="text-align: left;">Смирнова</td>
+</tr>
+</tbody>
+</table>
+<h2 id="where"><strong>Фильтрация данных (WHERE)</strong></h2>
+<p>Часто вам нужны не все строки, а только те, которые соответствуют определенному условию. Для этого используется WHERE.</p>
+<ul>
+<li><strong>WHERE</strong>: Фильтрует строки на основе заданного условия.</li>
+</ul>
+<h3 id="_7"><strong>Синтаксис</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">столбец</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">столбец</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="err">условие</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="_8"><strong>Примеры</strong></h3>
+<ul>
+<li><strong>Найти всех студентов специальности "Информатика":</strong> </li>
+</ul>
+<p><strong>Обратите внимание:</strong> текстовые значения (строки) обычно заключаются в одинарные кавычки <code>' '</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Major</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Информатика&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Результат:  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">StudentID</th>
+<th style="text-align: left;">FirstName</th>
+<th style="text-align: left;">LastName</th>
+<th style="text-align: left;">Major</th>
+<th style="text-align: left;">EnrollmentYear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">101</td>
+<td style="text-align: left;">Иван</td>
+<td style="text-align: left;">Иванов</td>
+<td style="text-align: left;">Информатика</td>
+<td style="text-align: left;">2022</td>
+</tr>
+<tr>
+<td style="text-align: left;">103</td>
+<td style="text-align: left;">Алексей</td>
+<td style="text-align: left;">Сидоров</td>
+<td style="text-align: left;">Информатика</td>
+<td style="text-align: left;">2022</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Найти студентов, поступивших после 2021 года:</strong> </li>
+</ul>
+<p>Числовые значения кавычек не требуют.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">FirstName</span><span class="p">,</span><span class="w"> </span><span class="n">LastName</span><span class="p">,</span><span class="w"> </span><span class="n">EnrollmentYear</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">EnrollmentYear</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2021</span><span class="p">;</span>
+</code></pre></div>
+<p>Результат: </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">FirstName</th>
+<th style="text-align: left;">LastName</th>
+<th style="text-align: left;">EnrollmentYear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Иван</td>
+<td style="text-align: left;">Иванов</td>
+<td style="text-align: left;">2022</td>
+</tr>
+<tr>
+<td style="text-align: left;">Мария</td>
+<td style="text-align: left;">Петрова</td>
+<td style="text-align: left;">2023</td>
+</tr>
+<tr>
+<td style="text-align: left;">Алексей</td>
+<td style="text-align: left;">Сидоров</td>
+<td style="text-align: left;">2022</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Комбинирование условий (AND, OR):</strong></p>
+<ul>
+<li><strong>AND</strong>: Оба условия должны быть истинными.</li>
+<li><strong>OR</strong>: Хотя бы одно из условий должно быть истинным.</li>
+</ul>
+<p><strong>Найти студентов-историков ИЛИ студентов, поступивших в 2022 году:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Major</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;История&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">EnrollmentYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2022</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="order-by"><strong>Сортировка результатов (ORDER BY)</strong></h2>
+<p>Чтобы представить результаты в определенном порядке (например, по алфавиту или по дате).</p>
+<ul>
+<li><strong>ORDER BY</strong>: Сортирует строки результата.</li>
+<li><strong>ASC</strong>: По возрастанию (Ascending) - используется по умолчанию, если не указано иное.</li>
+<li><strong>DESC</strong>: По убыванию (Descending).</li>
+</ul>
+<h3 id="_9"><strong>Синтаксис</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">столбец</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">столбец</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">имя</span><span class="n">_таблицы</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="err">условие</span><span class="w"> </span><span class="c1">-- (Необязательно) ORDER BY столбец_для_сортировки [ASC | DESC];</span>
+</code></pre></div>
+<h3 id="_10"><strong>Примеры</strong></h3>
+<ul>
+<li><strong>Вывести всех студентов, отсортированных по Фамилии в алфавитном порядке:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">LastName</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span><span class="w"> </span><span class="c1">-- ASC можно опустить, т.к. это по умолчанию</span>
+</code></pre></div>
+<ul>
+<li><strong>Вывести всех студентов, отсортированных по году поступления (сначала самые новые):</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">EnrollmentYear</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="join"><strong>Объединение таблиц (JOIN)</strong></h2>
+<p>Часто нужная информация хранится не в одной, а в <strong>нескольких связанных таблицах</strong>. Например, у нас может быть таблица <code>Students</code> и отдельная таблица <code>Enrollments</code> (Зачисления на курсы), где указано, какие студенты на какие курсы записаны.</p>
+<ul>
+<li><strong>Таблица Students (уже знакомая):</strong> </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">StudentID</th>
+<th style="text-align: left;">FirstName</th>
+<th style="text-align: left;">LastName</th>
+<th style="text-align: left;">...</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">101</td>
+<td style="text-align: left;">Иван</td>
+<td style="text-align: left;">Иванов</td>
+<td style="text-align: left;">...</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">102</td>
+<td style="text-align: left;">Мария</td>
+<td style="text-align: left;">Петрова</td>
+<td style="text-align: left;">...</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">103</td>
+<td style="text-align: left;">Алексей</td>
+<td style="text-align: left;">Сидоров</td>
+<td style="text-align: left;">...</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Пример таблицы Enrollments:</strong> </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">EnrollmentID</th>
+<th style="text-align: left;">StudentID</th>
+<th style="text-align: left;">CourseName</th>
+<th style="text-align: left;">Semester</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">101</td>
+<td style="text-align: left;">Введение в SQL</td>
+<td style="text-align: left;">Осень 2023</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">102</td>
+<td style="text-align: left;">История Др. Рима</td>
+<td style="text-align: left;">Осень 2023</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">101</td>
+<td style="text-align: left;">Алгоритмы</td>
+<td style="text-align: left;">Весна 2024</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">103</td>
+<td style="text-align: left;">Введение в SQL</td>
+<td style="text-align: left;">Осень 2023</td>
+</tr>
+</tbody>
+</table>
+<p>Видите столбец StudentID в обеих таблицах? Это <strong>ключ</strong>, по которому мы можем связать студента с его курсами.</p>
+<ul>
+<li><strong>JOIN</strong>: Оператор, который комбинирует строки из двух или более таблиц на основе связанного столбца между ними.</li>
+<li><strong>INNER JOIN</strong>: Возвращает только те строки, для которых <strong>есть совпадение</strong> в обеих таблицах по указанному условию связи.</li>
+</ul>
+<h3 id="_11"><strong>Базовый синтаксис</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="n">t1</span><span class="p">.</span><span class="err">столбец</span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">t1</span><span class="p">.</span><span class="err">столбец</span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="n">t2</span><span class="p">.</span><span class="err">столбец</span><span class="n">_a</span><span class="p">,</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="n">t2</span><span class="p">.</span><span class="err">столбец</span><span class="n">_b</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">FROM</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="err">таблица</span><span class="mi">1</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="c1">-- t1 - это псевдоним для краткости</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="err">таблица</span><span class="mi">2</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="c1">-- t2 - псевдоним</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="k">ON</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="n">t1</span><span class="p">.</span><span class="err">ключевой</span><span class="n">_столбец</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t2</span><span class="p">.</span><span class="err">ключевой</span><span class="n">_столбец</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Условие связи таблиц</span>
+</code></pre></div>
+<h3 id="_12"><strong>Пример</strong></h3>
+<p><strong>Вывести Имя, Фамилию студента и название курса, на который он записан:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">FirstName</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Берем FirstName из таблицы Students (псевдоним s)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">LastName</span><span class="p">,</span><span class="w">   </span><span class="c1">-- Берем LastName из таблицы Students</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">CourseName</span><span class="w">  </span><span class="c1">-- Берем CourseName из таблицы Enrollments (псевдоним e)</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">FROM</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="n">Students</span><span class="w"> </span><span class="n">s</span><span class="w">    </span><span class="c1">-- Наша первая таблица с псевдонимом s</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="n">Enrollments</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="c1">-- Присоединяем вторую таблицу с псевдонимом e</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="k">ON</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">StudentID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">StudentID</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Условие: ID студента должны совпадать</span>
+</code></pre></div>
+<p>Результат (примерный):  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">FirstName</th>
+<th style="text-align: left;">LastName</th>
+<th style="text-align: left;">CourseName</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Иван</td>
+<td style="text-align: left;">Иванов</td>
+<td style="text-align: left;">Введение в SQL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Мария</td>
+<td style="text-align: left;">Петрова</td>
+<td style="text-align: left;">История Др. Рима</td>
+</tr>
+<tr>
+<td style="text-align: left;">Иван</td>
+<td style="text-align: left;">Иванов</td>
+<td style="text-align: left;">Алгоритмы</td>
+</tr>
+<tr>
+<td style="text-align: left;">Алексей</td>
+<td style="text-align: left;">Сидоров</td>
+<td style="text-align: left;">Введение в SQL</td>
+</tr>
+</tbody>
+</table>
+<p><code>JOIN</code> позволяет собирать комплексную информацию из разных частей вашей базы данных. Это ключевой навык для работы с реляционными БД. Есть и другие типы <code>JOIN</code> (<code>LEFT JOIN</code>, <code>RIGHT JOIN</code>, <code>FULL OUTER JOIN</code>), но <code>INNER JOIN</code> — отличная точка для старта.</p>
+<h2 id="_13">Операции вставки и обновления</h2>
+<h3 id="insert-into"><strong>INSERT INTO</strong></h3>
+<ul>
+<li>Добавляет новые строки (записи) в таблицу.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span><span class="n">StudentID</span><span class="p">,</span><span class="w"> </span><span class="n">FirstName</span><span class="p">,</span><span class="w"> </span><span class="n">LastName</span><span class="p">,</span><span class="w"> </span><span class="n">Major</span><span class="p">,</span><span class="w"> </span><span class="n">EnrollmentYear</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Петр&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Петров&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Физика&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2023</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Обратите внимание:</strong> если у поля, отвечающего за <a href="../../topics/db-browser-info#_3">первичный ключ (Primary Key)</a> включено свойство <a href="../../topics/db-browser-info#_3">Авто Инкремент (Auto Increment)</a> - это поле в запросе нужно пропустить:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span><span class="n">FirstName</span><span class="p">,</span><span class="w"> </span><span class="n">LastName</span><span class="p">,</span><span class="w"> </span><span class="n">Major</span><span class="p">,</span><span class="w"> </span><span class="n">EnrollmentYear</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Петр&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Петров&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Физика&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2023</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="update"><strong>UPDATE</strong></h3>
+<ul>
+<li>Изменяет существующие данные в таблице. </li>
+<li><strong>Осторожно!</strong> Всегда используйте WHERE, чтобы не изменить лишнего.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">Major</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Прикладная информатика&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">StudentID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="delete-from"><strong>DELETE FROM</strong></h3>
+<ul>
+<li>Удаляет строки из таблицы. </li>
+<li><strong>Очень осторожно!</strong> Всегда используйте WHERE, чтобы не удалить все данные!
+<del>Даже Димка Фокин иногда роняет прод из-за этой команды.</del></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">StudentID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">105</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="drop-table"><strong>Самая крутая штука: DROP TABLE</strong></h3>
+<p>Она удаляет ВСЮ таблицу — структуру, данные, всё. Навсегда. Безвозвратно.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">-- ВЫПОЛНЯЙТЕ ЭТУ КОМАНДУ ТОЛЬКО ПЕРЕД СДАЧЕЙ ЛАБЫ </span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1">-- DROP TABLE Students;</span>
+</code></pre></div>
+<h2 id="_14"><strong>Ключевые моменты и синтаксис.</strong></h2>
+<ul>
+<li>SQL команды обычно пишут <strong>ЗАГЛАВНЫМИ БУКВАМИ</strong> (SELECT, FROM, WHERE), а имена таблиц и столбцов — как они определены (часто CamelCase или snake_case). Сам язык обычно нечувствителен к регистру, но это хорошее правило для читаемости.</li>
+<li>Строки запроса часто заканчиваются точкой с запятой <code>;</code>. Во многих инструментах она обязательна.</li>
+<li>Текстовые значения заключаются в одинарные кавычки (<code>'текст'</code>).</li>
+<li>Числа пишутся без кавычек (<code>123</code>, <code>2023</code>).</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
