@@ -1312,24 +1312,52 @@
 <a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="c1">// Закрываем соединение</span>
 <a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="p">}</span>
 </code></pre></div>
-<p>==ДОБАВИТЬ КАК ВЫЗЫВАТЬ ОБНОВЛЯТОР==</p>
+<p>Для вызова метода обновления данных в таблице можно:</p>
+<ul>
+<li>Добавить событие изменения данных в классе:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">Apartment</span><span class="o">&gt;</span><span class="w"> </span><span class="n">OnApartChanged</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>Вызывать его когда происходит изменение свойств в классе:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">set</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="p">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="n">OnPropertyChanged</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Id</span><span class="p">));</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="n">OnApartChanged</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"> </span><span class="c1">//Вызываем обработчик</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Обработчик в основной программе:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">SomeApartment</span><span class="p">.</span><span class="n">OnApartChanged</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">UpdateApartInDB</span><span class="p">;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1">///...</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="k">void</span><span class="w"> </span><span class="nf">UpdateApartInDB</span><span class="p">(</span><span class="n">Apartment</span><span class="w"> </span><span class="n">apart</span><span class="p">)</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="p">{</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="n">DatabaseManager</span><span class="p">.</span><span class="n">UpdateApartments</span><span class="p">(</span><span class="n">apart</span><span class="p">);</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="p">}</span>
+</code></pre></div>
 <h2 id="datagrid"><code>DataGrid</code> для работы с таблицами</h2>
 <p><code>DataGrid</code> в <code>WPF</code> похож на <code>ListBox</code>, используется для отображения данных в табличном виде. </p>
 <p>Пример <code>DataGrid</code> в приложении:</p>
 <p><img alt="Пример DataGrid" src="../../img/6-laba-datagrid-sample.png" /></p>
 <p>Пример создания элемента <code>DataGrid</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">&lt;DataGrid</span><span class="w"> </span><span class="na">ItemsSource=</span><span class="s">&quot;{Binding Ваш_список_откуда_брать_данные}&quot;</span><span class="w"> </span><span class="na">AutoGenerateColumns=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">&lt;DataGrid</span><span class="w"> </span><span class="na">ItemsSource=</span><span class="s">&quot;{Binding Ваш_список_откуда_брать_данные}&quot;</span><span class="w"> </span><span class="na">AutoGenerateColumns=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p>Свойство <code>AutoGenerateColumns</code> сгенерирует столбцы для вывода информации автоматически, основываясь на свойствах объекта из привязки данных. То есть, если мы привяжем список типа данных <code>Apartment</code> - программа сгенерирует столбцы <code>Id</code>, <code>Number</code>, <code>Description</code> - это свойства из класса <code>Apartment</code>.</p>
 <p>Также мы можем вручную определить необходимы столбцы, которые должны быть в <code>DataGrid</code>. </p>
 <p>Пример объявления столбцов для списка квартир:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">&lt;DataGrid</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;ApartDataGrid&quot;</span><span class="w"> </span><span class="na">ItemsSource=</span><span class="s">&quot;{Binding ApartList}&quot;</span><span class="w"> </span><span class="na">AutoGenerateColumns=</span><span class="s">&quot;False&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nt">&lt;DataGrid.Columns&gt;</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;ID&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;0.1*&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Id}&quot;</span><span class="w"> </span><span class="na">IsReadOnly=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Номер квартиры&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;0.25*&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Number}&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Описание&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;0.25*&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Description}&quot;</span><span class="nt">/&gt;</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="nt">&lt;/DataGrid.Columns&gt;</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nt">&lt;/DataGrid&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">&lt;DataGrid</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;ApartDataGrid&quot;</span><span class="w"> </span><span class="na">ItemsSource=</span><span class="s">&quot;{Binding ApartList}&quot;</span><span class="w"> </span><span class="na">AutoGenerateColumns=</span><span class="s">&quot;False&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nt">&lt;DataGrid.Columns&gt;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;ID&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;0.1*&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Id}&quot;</span><span class="w"> </span><span class="na">IsReadOnly=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Номер квартиры&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;0.25*&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Number}&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Описание&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;0.25*&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Description}&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span><span class="nt">&lt;/DataGrid.Columns&gt;</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nt">&lt;/DataGrid&gt;</span>
 </code></pre></div>
 <p>Для описания столбцов используется тег <code>DataGrid.Columns</code>, внутри которого описываются сами столбцы - <code>DataGridTextColumn</code>. </p>
 <ul>
