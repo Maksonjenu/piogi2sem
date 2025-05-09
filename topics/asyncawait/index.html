@@ -1,0 +1,769 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>Asyncawait - Документация по предмету</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-ui-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Документация по предмету" class="md-header__button md-logo" aria-label="Документация по предмету" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Документация по предмету
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Asyncawait
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Документация по предмету" class="md-nav__button md-logo" aria-label="Документация по предмету" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Документация по предмету
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Список тем
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Список заданий
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Список заданий
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 Лаба
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ui-" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Введение: Проблема синхронности в UI-приложениях
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-asyncawait" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Традиционные подходы (до async/await)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-async-await" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. async и await: Современный подход
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Asyncawait</h1>
+
+<h2 id="1-ui-"><strong>1. Введение: Проблема синхронности в UI-приложениях</strong></h2>
+<p>Представьте себе WPF-приложение. Пользователь нажимает кнопку, и приложение должно выполнить какую-то длительную операцию:
+*   Загрузить данные из сети (например, с веб-сервиса).
+*   Прочитать большой файл с диска.
+*   Выполнить сложные вычисления.</p>
+<p>Если эта операция выполняется <strong>синхронно</strong> на <strong>UI-потоке</strong> (поток, отвечающий за отрисовку интерфейса и обработку пользовательского ввода), то произойдет следующее:
+1.  UI-поток начнет выполнять длительную операцию.
+2.  Пока операция не завершится, UI-поток будет занят и не сможет:
+    *   Отрисовывать изменения в интерфейсе.
+    *   Реагировать на другие действия пользователя (нажатия кнопок, перемещение окна и т.д.).
+3.  В результате окно приложения "зависнет", перестанет отвечать, и пользователь увидит (в Windows) сообщение "Приложение не отвечает". </p>
+<p><strong>Это очень плохой пользовательский опыт.</strong></p>
+<p><strong>Цель асинхронности</strong> — позволить выполнять длительные операции без блокировки UI-потока, сохраняя отзывчивость приложения.</p>
+<h2 id="2-asyncawait"><strong>2. Традиционные подходы (до <code>async/await</code>)</strong></h2>
+<p>Раньше для решения этой проблемы использовались такие подходы, как:
+*   <strong><code>BackgroundWorker</code></strong>: Компонент, который позволял выполнять код в фоновом потоке и сообщать о прогрессе/результате в UI-поток.
+*   <strong><code>Thread</code></strong>: Прямое создание и управление потоками. Более низкоуровневый и сложный в правильном использовании (синхронизация, обработка исключений между потоками).
+*   <strong><code>Task Parallel Library (TPL)</code></strong>: <code>Task</code> и <code>Task&lt;TResult&gt;</code> появились в .NET 4.0 и стали основой для современного асинхронного программирования. Они представляют собой абстракцию над асинхронной операцией.</p>
+<p>Эти подходы работали, но код часто становился сложным для написания, чтения и поддержки, особенно при работе с колбэками (методами, вызываемыми по завершении операции) и необходимостью вручную маршалить вызовы обратно в UI-поток для обновления интерфейса (например, через <code>Dispatcher.Invoke</code> или <code>Dispatcher.BeginInvoke</code>).</p>
+<h2 id="3-async-await"><strong>3. <code>async</code> и <code>await</code>: Современный подход</strong></h2>
+<p>Ключевые слова <code>async</code> и <code>await</code>, введенные в C# 5.0, предоставляют синтаксический <em>сахар</em> поверх <code>Task Parallel Library (TPL)</code>, делая асинхронный код почти таким же простым для написания и чтения, как синхронный.</p>
+<ul>
+<li>
+<p><strong><code>async</code> (модификатор метода):</strong></p>
+<ul>
+<li>Указывает, что метод является асинхронным.</li>
+<li>Позволяет использовать оператор <code>await</code> внутри этого метода.</li>
+<li>Асинхронный метод обычно возвращает:<ul>
+<li><code>Task</code>: Если метод не возвращает значения (аналог <code>void</code> для синхронных методов).</li>
+<li><code>Task&lt;TResult&gt;</code>: Если метод возвращает значение типа <code>TResult</code> (<code>int</code>, <code>string</code>, <code>Ваш_класс</code>).</li>
+<li><code>void</code> (например, <code>async void MyEventHandler(...)</code>): <strong>Используется в основном для обработчиков событий.</strong> Следует избегать <code>async void</code> для других типов методов, так как их сложнее обрабатывать с точки зрения ошибок и композиции.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>await</code> (оператор):</strong></p>
+<ul>
+<li>Может использоваться только внутри метода, помеченного <code>async</code>.</li>
+<li>Применяется к операции, которая возвращает <code>Task</code> или <code>Task&lt;TResult&gt;</code> (обычно это вызов другого асинхронного метода).</li>
+<li><strong>Что происходит при <code>await</code>:</strong><ol>
+<li>Если ожидаемая задача (<code>Task</code>) еще не завершена, <code>await</code> "приостанавливает" выполнение текущего <code>async</code> метода.</li>
+<li><strong>Важно:</strong> Вместо блокировки потока, управление возвращается вызывающему коду. Если это UI-поток, он освобождается и может продолжать обрабатывать другие события, поддерживая отзывчивость интерфейса.</li>
+<li>Когда ожидаемая задача завершается, выполнение <code>async</code> метода возобновляется с места после <code>await</code>.</li>
+<li>Если задача завершилась успешно и возвращает результат (<code>Task&lt;TResult&gt;</code>), <code>await</code> вернет этот результат.</li>
+<li>Если задача завершилась с ошибкой, <code>await</code> перевыбросит это исключение, которое можно поймать стандартным блоком <code>try-catch</code> в <code>async</code> методе.</li>
+<li><strong>Для WPF (и других UI-фреймворков):</strong> По умолчанию, после <code>await</code> код продолжает выполняться в том же <em>контексте синхронизации</em> (SynchronizationContext), в котором он был до <code>await</code>. Для UI-потока это означает, что код после <code>await</code> автоматически вернется на UI-поток, что позволяет безопасно обновлять элементы интерфейса.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Теоретический пример</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Представим, что есть такой метод, имитирующий долгую операцию</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FetchDataFromServerAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">request</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="c1">// Task.Run используется здесь для имитации работы,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="c1">// которая не должна выполняться в UI потоке.</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="c1">// В реальном приложении это может быть HttpClient.GetStringAsync() и т.п.</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;[{Thread.CurrentThread.ManagedThreadId}] Начало загрузки данных для: {request}&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="m">2000</span><span class="p">);</span><span class="w"> </span><span class="c1">// Имитация задержки сети в 2 секунды</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;[{Thread.CurrentThread.ManagedThreadId}] Данные для {request} загружены.&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">$&quot;Результат для {request}&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">// Асинхронный метод, который использует FetchDataFromServerAsync</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ProcessDataAsync</span><span class="p">()</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="k">try</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;[{Thread.CurrentThread.ManagedThreadId}] ProcessDataAsync: Начало.&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="c1">// Вызываем асинхронный метод и &quot;ждем&quot; его результата</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="c1">// без блокировки текущего потока.</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">data1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">FetchDataFromServerAsync</span><span class="p">(</span><span class="s">&quot;запрос1&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="c1">// Когда FetchDataFromServerAsync завершится, его результат будет в data1,</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="c1">// и выполнение продолжится со следующей строки.</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;[{Thread.CurrentThread.ManagedThreadId}] ProcessDataAsync: Получены данные 1: {data1}&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">data2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">FetchDataFromServerAsync</span><span class="p">(</span><span class="s">&quot;запрос2&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;[{Thread.CurrentThread.ManagedThreadId}] ProcessDataAsync: Получены данные 2: {data2}&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;[{Thread.CurrentThread.ManagedThreadId}] ProcessDataAsync: Завершено.&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;[{Thread.CurrentThread.ManagedThreadId}] ProcessDataAsync: Произошла ошибка: {ex.Message}&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p">}</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="c1">// Пример вызова (например, из консольного приложения для демонстрации)</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="c1">// В WPF это будет, например, обработчик нажатия кнопки.</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="c1">// static async Task Main(string[] args) // C# 7.1+ позволяет async Main</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="c1">// {</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="c1">//     Console.WriteLine($&quot;[{Thread.CurrentThread.ManagedThreadId}] Main: Начало.&quot;);</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="c1">//     MyClass instance = new MyClass();</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="c1">//     await instance.ProcessDataAsync(); // Ожидаем завершения ProcessDataAsync</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="c1">//     Console.WriteLine($&quot;[{Thread.CurrentThread.ManagedThreadId}] Main: ProcessDataAsync завершен. Нажмите любую клавишу...&quot;);</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="c1">//     Console.ReadKey();</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="c1">// }</span>
+</code></pre></div>
+<p><strong>Ключевые моменты из примера:</strong>
+*   <code>FetchDataFromServerAsync</code> возвращает <code>Task&lt;string&gt;</code>. <code>Task.Run</code> используется для запуска кода в потоке из пула потоков. <code>await Task.Delay</code> не блокирует этот поток, а "отпускает" его на время задержки.
+*   В <code>ProcessDataAsync</code>, когда встречается <code>await FetchDataFromServerAsync(...)</code>, если <code>FetchDataFromServerAsync</code> еще не завершил свою работу, <code>ProcessDataAsync</code> приостанавливается, и управление возвращается к вызывающему коду (например, в <code>Main</code>). UI-поток (если бы это был он) остался бы свободным.
+*   После завершения <code>FetchDataFromServerAsync</code>, выполнение <code>ProcessDataAsync</code> возобновляется.
+*   <code>Console.WriteLine</code> с <code>Thread.CurrentThread.ManagedThreadId</code> помогает увидеть, в каком потоке выполняется код. Вы заметите, что части <code>FetchDataFromServerAsync</code> могут выполняться в потоке из пула, а код в <code>ProcessDataAsync</code> (после <code>await</code>) вернется в исходный контекст.</p>
+<p><strong>5. Практический пример для WPF</strong></p>
+<p>Давайте создадим простое WPF-приложение.</p>
+<p><strong>XAML (MainWindow.xaml):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;Window</span><span class="w"> </span><span class="na">x:Class=</span><span class="s">&quot;WpfAsyncAwaitExample.MainWindow&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="na">xmlns=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="na">xmlns:x=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="na">Title=</span><span class="s">&quot;Async/Await WPF Demo&quot;</span><span class="w"> </span><span class="na">Height=</span><span class="s">&quot;250&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;400&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&lt;StackPanel</span><span class="w"> </span><span class="na">Margin=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">&lt;Button</span><span class="w"> </span><span class="na">x:Name=</span><span class="s">&quot;LoadDataButton&quot;</span><span class="w"> </span><span class="na">Content=</span><span class="s">&quot;Загрузить данные&quot;</span><span class="w"> </span><span class="na">Click=</span><span class="s">&quot;LoadDataButton_Click&quot;</span><span class="w"> </span><span class="na">Margin=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&lt;Button</span><span class="w"> </span><span class="na">x:Name=</span><span class="s">&quot;DoOtherWorkButton&quot;</span><span class="w"> </span><span class="na">Content=</span><span class="s">&quot;Другая работа UI&quot;</span><span class="w"> </span><span class="na">Click=</span><span class="s">&quot;DoOtherWorkButton_Click&quot;</span><span class="w"> </span><span class="na">Margin=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&lt;TextBlock</span><span class="w"> </span><span class="na">Text=</span><span class="s">&quot;Статус:&quot;</span><span class="w"> </span><span class="na">Margin=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">&lt;TextBox</span><span class="w"> </span><span class="na">x:Name=</span><span class="s">&quot;StatusTextBox&quot;</span><span class="w"> </span><span class="na">IsReadOnly=</span><span class="s">&quot;True&quot;</span><span class="w"> </span><span class="na">Height=</span><span class="s">&quot;80&quot;</span><span class="w"> </span><span class="na">TextWrapping=</span><span class="s">&quot;Wrap&quot;</span><span class="w"> </span><span class="na">Margin=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">&lt;/StackPanel&gt;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nt">&lt;/Window&gt;</span>
+</code></pre></div>
+<p><strong>C# (MainWindow.xaml.cs):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Net.Http</span><span class="p">;</span><span class="w"> </span><span class="c1">// Для HttpClient, добавьте NuGet пакет System.Net.Http если нужно</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Threading</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Windows</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">WpfAsyncAwaitExample</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainWindow</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Window</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">HttpClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">();</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">otherWorkCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MainWindow</span><span class="p">()</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="n">InitializeComponent</span><span class="p">();</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="c1">// Обработчик события нажатия кнопки - должен быть async void</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">LoadDataButton_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">            </span><span class="c1">// Сообщаем пользователю, что процесс начался</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">            </span><span class="n">StatusTextBox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">$&quot;[{DateTime.Now:HH:mm:ss}] Начало загрузки данных...\n&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">            </span><span class="n">LoadDataButton</span><span class="p">.</span><span class="n">IsEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Деактивируем кнопку на время загрузки</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">            </span><span class="k">try</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">                </span><span class="c1">// Вызываем асинхронный метод и ждем его результата</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">                </span><span class="c1">// UI-поток НЕ будет заблокирован во время await</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">                </span><span class="kt">string</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">SimulateLongRunningOperationAsync</span><span class="p">();</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">                </span><span class="c1">// string result = await DownloadPageAsync(&quot;https://www.microsoft.com&quot;);</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">                </span><span class="c1">// Обновляем UI с результатом.</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">                </span><span class="c1">// Этот код выполнится в UI-потоке автоматически после завершения await.</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">                </span><span class="n">StatusTextBox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">$&quot;[{DateTime.Now:HH:mm:ss}] Данные успешно загружены:\n{result.Substring(0, Math.Min(result.Length, 100))}...\n&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">            </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">                </span><span class="c1">// Обрабатываем возможные ошибки</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">                </span><span class="n">StatusTextBox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">$&quot;[{DateTime.Now:HH:mm:ss}] Ошибка при загрузке: {ex.Message}\n&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">            </span><span class="k">finally</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">                </span><span class="n">LoadDataButton</span><span class="p">.</span><span class="n">IsEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Активируем кнопку обратно</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">        </span><span class="c1">// Асинхронный метод, имитирующий длительную операцию</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">SimulateLongRunningOperationAsync</span><span class="p">()</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">            </span><span class="n">StatusTextBox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">$&quot;[{DateTime.Now:HH:mm:ss}] Simulate: Операция выполняется в потоке {Thread.CurrentThread.ManagedThreadId}\n&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="w">            </span><span class="c1">// Task.Delay асинхронно ожидает указанное время, не блокируя поток.</span>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">            </span><span class="c1">// Используйте его для имитации I/O-связанных операций (например, сетевой запрос).</span>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="m">3000</span><span class="p">);</span><span class="w"> </span><span class="c1">// Имитируем работу на 3 секунды</span>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">            </span><span class="c1">// Если нужно выполнить CPU-bound работу в фоновом потоке, можно использовать Task.Run:</span>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="w">            </span><span class="c1">// await Task.Run(() =&gt;</span>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="w">            </span><span class="c1">// {</span>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="w">            </span><span class="c1">//    // Здесь код, который интенсивно использует процессор</span>
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="w">            </span><span class="c1">//    for (int i = 0; i &lt; 100_000_000; i++) { /* Do nothing */ }</span>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="w">            </span><span class="c1">// });</span>
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a><span class="w">            </span><span class="n">StatusTextBox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">$&quot;[{DateTime.Now:HH:mm:ss}] Simulate: Операция завершена в потоке {Thread.CurrentThread.ManagedThreadId}\n&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Это результат длительной операции.&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="w">        </span><span class="c1">// Пример реальной асинхронной операции - загрузка веб-страницы</span>
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">DownloadPageAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">url</span><span class="p">)</span>
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a><span class="w">            </span><span class="n">StatusTextBox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">$&quot;[{DateTime.Now:HH:mm:ss}] Download: Загрузка {url} в потоке {Thread.CurrentThread.ManagedThreadId}\n&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="w">            </span><span class="c1">// HttpClient.GetStringAsync является асинхронным по своей природе</span>
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a><span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">GetStringAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="w">            </span><span class="n">StatusTextBox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">$&quot;[{DateTime.Now:HH:mm:ss}] Download: Загрузка {url} завершена в потоке {Thread.CurrentThread.ManagedThreadId}\n&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">content</span><span class="p">;</span>
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a>
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DoOtherWorkButton_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a><span class="w">            </span><span class="n">otherWorkCounter</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a><span class="w">            </span><span class="n">StatusTextBox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">$&quot;[{DateTime.Now:HH:mm:ss}] UI все еще работает! Счетчик: {otherWorkCounter}\n&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Как это работает в WPF примере:</strong></p>
+<ol>
+<li><strong><code>LoadDataButton_Click</code> помечен <code>async void</code></strong>: Это стандарт для обработчиков событий.</li>
+<li>При нажатии кнопки <code>LoadDataButton</code>:<ul>
+<li><code>StatusTextBox</code> обновляется, кнопка деактивируется. Это происходит в UI-потоке.</li>
+<li>Вызывается <code>await SimulateLongRunningOperationAsync();</code>.</li>
+</ul>
+</li>
+<li>Внутри <code>SimulateLongRunningOperationAsync</code>:<ul>
+<li><code>await Task.Delay(3000);</code> "приостанавливает" <code>SimulateLongRunningOperationAsync</code>.</li>
+<li><strong>Ключевой момент:</strong> Управление возвращается из <code>SimulateLongRunningOperationAsync</code> и из <code>LoadDataButton_Click</code> обратно в систему обработки сообщений WPF. UI-поток освобождается!</li>
+</ul>
+</li>
+<li><strong>Пока <code>Task.Delay(3000)</code> "ждет"</strong>:<ul>
+<li>Вы можете нажимать кнопку "Другая работа UI", и ее обработчик <code>DoOtherWorkButton_Click</code> будет выполняться, обновляя <code>StatusTextBox</code>. Это доказывает, что UI не завис.</li>
+</ul>
+</li>
+<li>Через 3 секунды <code>Task.Delay(3000)</code> завершается.</li>
+<li>Система автоматически планирует продолжение <code>SimulateLongRunningOperationAsync</code> (код после <code>await Task.Delay</code>) <strong>в UI-потоке</strong>.</li>
+<li><code>SimulateLongRunningOperationAsync</code> возвращает строку.</li>
+<li>Управление возвращается к <code>LoadDataButton_Click</code>, к строке после <code>await SimulateLongRunningOperationAsync();</code>. Эта часть также выполняется <strong>в UI-потоке</strong>.</li>
+<li><code>StatusTextBox</code> обновляется результатом, кнопка активируется.</li>
+<li>Обработка исключений с <code>try-catch</code> работает интуитивно.</li>
+</ol>
+<p><strong>6. Ключевые выводы и лучшие практики:</strong></p>
+<ul>
+<li><strong><code>async</code> не создает новый поток сам по себе.</strong> Он позволяет методу быть приостановленным и возобновленным позже. Работа в другом потоке обычно инициируется операциями, которые по своей природе асинхронны (как <code>HttpClient.GetStringAsync</code>) или явно запускаются через <code>Task.Run()</code>.</li>
+<li><strong><code>await</code> освобождает текущий поток</strong> (обычно UI-поток), пока ожидаемая задача не завершится.</li>
+<li><strong>Используйте <code>async Task</code> или <code>async Task&lt;TResult&gt;</code></strong> для методов, которые не являются обработчиками событий. Это позволяет вызывающему коду ожидать их завершения и обрабатывать исключения.</li>
+<li><strong><code>async void</code> – в основном для обработчиков событий.</strong> Исключения из <code>async void</code> методов сложнее перехватить централизованно (они могут "уронить" приложение, если не обработаны внутри самого <code>async void</code> метода).</li>
+<li><strong>Соглашение об именовании:</strong> Асинхронные методы принято называть с суффиксом <code>Async</code> (например, <code>DownloadDataAsync</code>).</li>
+<li><strong><code>ConfigureAwait(false)</code></strong>: Иногда (особенно в библиотечном коде, не привязанном к UI) вы можете увидеть <code>await someTask.ConfigureAwait(false);</code>. Это говорит, что продолжение после <code>await</code> может выполняться в любом потоке из пула, а не обязательно возвращаться в исходный контекст синхронизации. Для UI-приложений обычно это не нужно, так как мы хотим вернуться в UI-поток. Для студентов 1 курса это может быть избыточной информацией на начальном этапе.</li>
+<li><strong>Отмена операций (<code>CancellationToken</code>)</strong>: Для длительных операций важно предоставлять возможность их отмены. Это делается с помощью <code>CancellationTokenSource</code> и <code>CancellationToken</code>, которые передаются в асинхронные методы.</li>
+</ul>
+<p><code>async</code> и <code>await</code> значительно упрощают написание отзывчивых и производительных приложений, особенно с графическим интерфейсом. Главное — понять, что они не столько про параллелизм (одновременное выполнение нескольких задач), сколько про неблокирующее ожидание завершения операций.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

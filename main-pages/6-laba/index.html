@@ -633,11 +633,71 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sql-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Работа с SQL в C#.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_16" class="md-nav__link">
     <span class="md-ellipsis">
       Класс для работы с БД
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Класс для работы с БД">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример кода для подключения к существующей базе данных:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apartment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример получения данных из базы данных и создания объектов класса на примере Apartment:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример записи данных в БД
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример добавления комнаты в 2 этапа
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пример обновления записи в таблице по ID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -651,20 +711,80 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      Методы для работы с базой данных в приложении
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       Итоговое приложение
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Итоговое приложение">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подключение базы данных
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Добавление квартиры
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Добавление комнаты
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение квартиры
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение комнаты
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление квартиры
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление комнаты
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -825,9 +945,9 @@
 <p><img alt="Пример заполненной таблицы" src="../../img/6-laba-simple-init.png" /></p>
 <h3 id="3_1">Только 3% студентов читают этот пост... (Сброс счетчика автоинкремента)</h3>
 <p>При <strong>проектировании</strong> базы данных (в нашем случае это попытки сделать все таблицы и связи и не поломать связь между таблицами) мы часто будем удалять записи в базе данных (не путайте с DROP TABLE). </p>
-<p>Ограничение <a href="../../topics/db-browser-info/#_3">АвтоИнкремент</a> автоматически делает +1 к первичному ключу в таблице. Может случится такая ситуация, что вы добавили запись в таблицу <code>Комната</code>, в <code>Информация_о_комнате</code> - нет. И тогда первичные ключи могут отличаться в этих таблицах.</p>
-<p>И даже если вы удалите все записи в таблицах, допустим, их было у вас 10, и начнете добавлять записи - их первичные ключи будут продолжать отсчет от 10. </p>
-<p>Для решения этой проблемы на этапе <strong>проектирования</strong> базы данных можно использовать следующие скрипты:</p>
+<p>Ограничение <a href="../../topics/db-browser-info/#_3">АвтоИнкремент</a> автоматически делает +1 к первичному ключу в таблице. Может случится ситуация, что вы добавили запись в таблицу <code>Комната</code>, в <code>Информация_о_комнате</code> - нет. И тогда первичные ключи могут отличаться в этих таблицах.</p>
+<p>И даже если вы удалите все записи в таблицах, допустим, их было у вас 10, и начнете добавлять новые записи - их первичные ключи будут продолжать отсчет от 10. </p>
+<p>Для решения этой <em>проблемы</em> на этапе <strong>проектирования</strong> базы данных можно использовать следующие скрипты:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">Table_name</span><span class="p">;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">-- Удаляем ВСЕ записи в таблице.</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
@@ -862,7 +982,7 @@
 </code></pre></div>
 <h2 id="join">Примеры запросов с JOIN</h2>
 <p><a href="../../topics/sql-samples">Про основные запросы в SQL</a></p>
-<p>При получении данных с <a href="../../topics/sql-samples/#join">помощью оператора JOIN</a> мы можем давать названия возвращаемым столбцам:
+<p>При получении данных с <a href="../../topics/sql-samples/#join">помощью оператора JOIN</a> мы можем давать названия (алиас, псевдоним) возвращаемым столбцам:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">R</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">RoomId</span><span class="p">,</span><span class="w">          </span><span class="c1">-- Id комнаты с алиасом (псевдонимом) RoomId</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">R</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">As</span><span class="w"> </span><span class="n">RoomName</span><span class="p">,</span>
@@ -924,76 +1044,353 @@
 <li>Добавим событие <code>OnRoomChanged&lt;Room&gt;</code> - будем передавать в обработчик объект, вызвавший это событие. Нужно для обновления записи в БД при изменении в программе.</li>
 </ol>
 <p>Также <a href="../../main-pages/5-laba#inotifypropertychanged">необходимо реализовать <code>INotifyPropertyChanged</code></a> для всех свойств, так как мы будем использовать привязку данных к <code>DataGrid</code> для отображения данных.</p>
+<h2 id="sql-c">Работа с <code>SQL</code> в <code>C#</code>.</h2>
+<p>Для работы с <code>SQL</code> в <code>C#</code> нужно установить <a href="../../topics/whoisnuget">NuGet пакет</a> <code>Microsoft.Data.Sqlite</code>.</p>
+<p><img alt="Пример установки пакета" src="../../img/6-laba-how-install-nuget.gif" /></p>
+<p>Для этого нужно:
+1. Правой кнопкой мыши нажать по названию проекта (<code>SQLDataBaseWorker</code> в примере);
+2. Перейти в <code>Управление пакетами NuGet</code>;
+3. В новом окне <code>NuGet: Project_name</code> перейти во вкладку <code>обзор</code>;
+4. Найти пакет с названием <code>Microsoft.Data.SqlClient</code>;
+5. Выбрать его и нажать установить.</p>
+<p>Теперь мы можем использовать:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Data.Sqlite</span><span class="p">;</span>
+</code></pre></div></p>
 <h2 id="_16">Класс для работы с БД</h2>
-<p>Для работы с базой данных мы создадим </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>classDiagram
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    %% External/Helper Classes used by DatabaseManager
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    class SqliteConnection {
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        &lt;&lt;external&gt;&gt;
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        +Open() void
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        +Close() void
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        +Dispose() void
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        % ... other members ...
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    }
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    class ObservableCollection~T~ {
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        &lt;&lt;generic collection&gt;&gt;
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>        +Add(T item) void
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>        % ... other members ...
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>    }
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>    class Room {
-<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>       &lt;&lt;data&gt;&gt;
-<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>       +Id: int
-<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>       +ApartId: int
-<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>       +Name: string
-<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>       +Temperature: sbyte
-<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>       +IsLightOn: bool
-<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>       +Area: float
-<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>       % ... methods/events ...
-<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>    }
-<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>
-<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>    class Apartment {
-<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>       &lt;&lt;data&gt;&gt;
-<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>       +Id: int
-<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>       +Number: int
-<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>       +Description: string
-<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>       % ... methods/events ...
-<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>    }
-<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>
-<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>    class Task~T~ {
-<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>        &lt;&lt;async result&gt;&gt;
-<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>        % Represents an asynchronous operation
-<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>    }
-<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>
-<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>    %% The static DatabaseManager class
-<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>    class DatabaseManager {
-<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>        &lt;&lt;static&gt;&gt;
-<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>        +SqliteConnection ConnectionDB$  // Static field
-<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>        +InitDBConnection(string pathToDBFile)$ void // Static method
-<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>        +GetAllRooms()$ Task~ObservableCollection~Room~~ // Static async method
-<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>        +GetCurrentRoom(Room room)$ Task~ObservableCollection~Room~~ // Static async method
-<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>        +GetAllApartments()$ Task~ObservableCollection~Apartment~~ // Static async method
-<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>        +GetCurrentApartment(Apartment apart)$ Task~ObservableCollection~Apartment~~ // Static async method
-<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>        +AddApart(Apartment apart)$ void // Static method
-<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>        +UpdateApartments(Apartment apart)$ void // Static method
-<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>        +DeleteApartments(Apartment apart)$ void // Static method
-<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>        +AddRoom(Room room)$ void // Static method
-<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>        +UpdateRoom(Room room)$ void // Static method
-<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>        +DeleteRoom(Room room)$ void // Static method
-<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>    }
-<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>
-<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>    %% Dependencies (Usage)
-<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>    DatabaseManager ..&gt; SqliteConnection : uses
-<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>    DatabaseManager ..&gt; ObservableCollection~Room~ : creates/returns
-<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>    DatabaseManager ..&gt; ObservableCollection~Apartment~ : creates/returns
-<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>    DatabaseManager ..&gt; Room : uses/manipulates
-<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>    DatabaseManager ..&gt; Apartment : uses/manipulates
-<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>    DatabaseManager ..&gt; Task~T~ : uses (for async)
+<p>Для работы с базой данных мы создадим <a href="../../topics/static">статический</a> класс <code>DatabaseManager.cs</code>.</p>
+<p>Диаграмма класса:</p>
+<p><img alt="Kroki" src="https://kroki.io/mermaid/svg/eNqVkMFOhDAQhu88xRzYBOJTwDYaD2YTxQcYYMI2lhbbcS9Gnt0WDGUXza49TCb9v_n_aRuFzgmJncU-AX92O6iOBI6RZQMCGWt09IQaO7LQBHzipm6jf05aOHcv70oy7Y3W1LA0GmIryjRyj1qyKKOYObZSdzAgHysjynupKF_xD8SFUs_G9C7LU6jQvY2H2pE9Ya18nlKzzxiQcTwb3H9YS5qDkoUC1pcbTOAyvhjQcu-truywcJceP5sserZ0gKHL05tMo2fRttP91ghORrar9NehRabVC36fiAOCFP1rwO-y-eJzYt7hCjTn_g19Jck3QPzkzA==?"></p>
+<p>Пример в Visual Studio:</p>
+<p><img alt="Пример класса в Visual Studio" src="../../img/6-laba-db-class-sample.png" /></p>
+<h3 id="_17">Пример кода для подключения к существующей базе данных:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">pathToDBFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/path/to/database.db&quot;</span><span class="w"> </span><span class="c1">//Ваш путь до файла .db</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">SqliteConnection</span><span class="w"> </span><span class="n">ConnectionDB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqliteConnection</span><span class="p">(</span><span class="s">$&quot;Data Source={pathToDBFile}&quot;</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1">//Создаем объект базы данных ConnectionDB, именно через него мы и будем выполять команды.</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1">//Открываем подключение к БД</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1">//Создать Подключение (SqliteConnection) можно 1 раз в начале работы,</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1">//но открывать и закрывать подключение рекомендуется при выполнении операций</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1">//Именно тут мы можем выполнять команды: select, insert, update и тд</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="c1">//Закрываем подключение к БД</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="c1">//Именно при закрытии БД результат сохраняется</span>
 </code></pre></div>
+<p><a href="../../topics/openfiledialog">Использование OpenFileDialog для открытия файла</a></p>
+<h3 id="apartment">Пример получения данных из базы данных и создания объектов класса на примере <code>Apartment</code>:</h3>
+<p>Для получения строк из таблицы используется оператор <a href="../../topics/sql-samples#read-from-table"><code>SELECT</code></a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">ObservableCollection</span><span class="o">&lt;</span><span class="n">Apartment</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetAllApartments</span><span class="p">()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="n">ObservableCollection</span><span class="o">&lt;</span><span class="n">Apartment</span><span class="o">&gt;</span><span class="w"> </span><span class="n">aparts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObservableCollection</span><span class="o">&lt;</span><span class="n">Apartment</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="c1">//Список Квартир, который существует только в области функции.</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="c1">//Этот список мы вернем в основную программу</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT * FROM Apartments;&quot;</span><span class="p">;</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="c1">//Формируем строку запроса в БД</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="n">SqliteCommand</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqliteCommand</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span><span class="w"> </span><span class="n">ConnectionDB</span><span class="p">);</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="c1">//Создаем переменную команды, в качестве аргументов передается:</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="c1">//sql - строка команды, описанная выше</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="c1">//ConnectionDB - файл базы данных</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="n">SqliteDataReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ExecuteReaderAsync</span><span class="p">();</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="c1">// Асинхронно выполняем команду и получаем SqliteDataReader</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="c1">// Используем &#39;await&#39;, чтобы дождаться завершения задачи ExecuteReaderAsync()</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span><span class="c1">// и получить сам ридер, а не задачу.</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">    </span><span class="c1">// Проверяем, есть ли вообще строки для чтения</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">HasRows</span><span class="p">)</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">        </span><span class="c1">// Цикл выполняется, пока reader.ReadAsync() возвращает true,</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="w">        </span><span class="c1">// что означает успешное чтение следующей строки.</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">ReadAsync</span><span class="p">())</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="w">            </span><span class="c1">// Получаем данные из текущей строки ридера.</span>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="w">            </span><span class="c1">// Нужно использовать методы Get* соответствующего типа.</span>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">            </span><span class="c1">// Индексы столбцов начинаются с 0.</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="w">            </span><span class="c1">//long id = reader.GetInt64(0); // Id (INTEGER PRIMARY KEY обычно long)</span>
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="w">            </span><span class="c1">//long apartmentId = reader.GetInt64(1); // ApartmentId (INTEGER -&gt; long)</span>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="w">            </span><span class="c1">//string name = reader.GetString(2); // Name (TEXT -&gt; string)</span>
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="w">            </span><span class="c1">// Или можно получать по имени столбца (надежнее, если порядок изменится):</span>
+<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">GetInt32</span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">GetOrdinal</span><span class="p">(</span><span class="s">&quot;Id&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">//Названия из ТАБЛИЦЫ, не из класса.</span>
+<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">apartmentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">GetInt32</span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">GetOrdinal</span><span class="p">(</span><span class="s">&quot;ApartmentNumber&quot;</span><span class="p">));</span>
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">descrip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">GetOrdinal</span><span class="p">(</span><span class="s">&quot;Description&quot;</span><span class="p">));</span>
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a><span class="w">            </span><span class="n">aparts</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Apartment</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">apartmentId</span><span class="p">,</span><span class="n">descrip</span><span class="p">));</span>
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>
+<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a><span class="w">            </span><span class="c1">// Выводим полученные данные</span>
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a><span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Room - ID: {id}, ApartmentId: {apartmentId}, Name: {descrip}&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;No aparts found in the database.&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a><span class="w">    </span><span class="c1">// &#39;using&#39; для reader автоматически вызовет reader.Dispose()</span>
+<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a>
+<a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a>
+<a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a>
+<a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a><span class="w">    </span><span class="c1">// Закрываем соединение</span>
+<a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a><span class="w">    </span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+<a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a>
+<a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">aparts</span><span class="p">;</span>
+<a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a><span class="p">}</span>
+</code></pre></div>
+<p><a href="../../topics/asyncawait">Подробно про await и async</a></p>
+<h3 id="_18">Пример записи данных в БД</h3>
+<p>Для добавления новых строк в таблицу используется оператор <a href="../../topics/sql-samples#insert-into"><code>INSERT</code></a></p>
+<p>Так как наша база данных отвечает за присваивание <code>Id</code> каждой записи (использование <code>Auto Increment</code> ограничения для столбца) и мы НЕ сможем задавать <code>Id</code> в базе данных самостоятельно, алгоритм добавления новой записи может выглядеть следующим образом:</p>
+<ul>
+<li>Создаем объект класса (квартира) в основной программе, задаем ей <code>id</code> = 0:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">Apartment</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Apartment</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">ApartList</span><span class="p">.</span><span class="n">Count</span><span class="o">+</span><span class="m">1</span><span class="p">);</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">//Обратите внимание, что в моем примере базы данных</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">//номер квартиры является уникальным.</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">//Если попытаться задать номер квартиры (НЕ ID)</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1">//равный существующему - БД выдаст ошибку.</span>
+</code></pre></div>
+<p>Пример обхода данной ошибки:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">Apartment</span><span class="w"> </span><span class="n">existApart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ApartList</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Number</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ApartList</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">);</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="c1">//Один из вариантов проверить уникальность номера квартиры:</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="c1">//Ищем квартиру x, где номер квартир равен количеству квартир + 1</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1">//записываем результат в existApart</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">//Если не найдется такой объект - existApart будет null</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="n">Apartment</span><span class="w"> </span><span class="n">newApart</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1">//Объявляем переменную newApart которую и будем добавлять в список и бд</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">existApart</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="c1">//Проверяем, нашлась ли в списке квартира, где номер равен количеству квартир + 1</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">{</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="n">newApart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Apartment</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">ApartList</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">);</span><span class="w"> </span><span class="c1">//если не нашлась (значение null) - новой квартире даем номер количества квартир + 1</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="c1">//TODO: Здесь нужно обязательно сказать про уникальность значения и способ как то это чинить</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="p">}</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="k">else</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="p">{</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span><span class="n">newApart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Apartment</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">existApart</span><span class="p">.</span><span class="n">Number</span><span class="o">+</span><span class="m">1</span><span class="p">);</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="c1">//Если нашлась (не null) делаем значение, равное номер этой квартиры + 1</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Вызовем функцию из класса для работы с базой данных для добавления записи в БД:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">AddApart</span><span class="p">(</span><span class="n">Apartment</span><span class="w"> </span><span class="n">apart</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="c1">//Открываем подключение</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="c1">//Формируем команду на вставку данных, полученных из переданного аргумента</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="n">SqliteCommand</span><span class="w"> </span><span class="n">insertCommand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqliteCommand</span><span class="p">(</span><span class="s">$&quot;INSERT INTO Apartments (ApartmentNumber, Description) VALUES ({apart.Number},&#39;{apart.Description}&#39;)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ConnectionDB</span><span class="p">);</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="c1">// Выполняем команду</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="n">insertCommand</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="n">SqliteCommand</span><span class="w"> </span><span class="n">selectIdCommand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqliteCommand</span><span class="p">(</span><span class="s">&quot;SELECT last_insert_rowid()&quot;</span><span class="p">,</span><span class="n">ConnectionDB</span><span class="p">);</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">    </span><span class="c1">//После выполнения команды для добавление записи нужно выполнить команду выше.</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">    </span><span class="c1">//Данная команда вернет нам ID последней вставленной строки, </span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">    </span><span class="c1">//который мы сможем записать в наш объект.</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="c1">//ExecuteScalar возвращает первое поле первой строки результата</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">    </span><span class="kt">object</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">selectIdCommand</span><span class="p">.</span><span class="n">ExecuteScalar</span><span class="p">();</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">lastId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Инициализируем переменную для ID</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">DBNull</span><span class="p">.</span><span class="n">Value</span><span class="p">)</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">        </span><span class="n">lastId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">result</span><span class="p">;</span><span class="w"> </span><span class="c1">// ROWID в SQLite это 64-битное целое</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Успешно вставлена квартира с ID: {lastId}&quot;</span><span class="p">);</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="w">    </span><span class="n">apart</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">lastId</span><span class="p">;</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">    </span><span class="c1">//Здесь мы присваиваем lastId переменной apart.Id для того</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">    </span><span class="c1">//Эти изменения перенесутся в основную программу</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">    </span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">    </span><span class="c1">// Закрываем соединение</span>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>В основной программе просто добавляем объект в список:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">ApartList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1">//здесь у a.Id будет равен lastId из предыдущего блока кода</span>
+</code></pre></div></li>
+</ul>
+<h3 id="2">Пример добавления комнаты в 2 этапа</h3>
+<p>Для хранения комнат в нашей Базе Данных используются 2 связные таблицы: <code>Room</code> и <code>RoomInfo</code>.
+В таблице <code>Room</code> для <code>Id</code> также включено ограничение <code>Auto Increment</code>. 
+Для добавления записи в таблицу мы используем аналогичных подход, как в примере с Квартирой.</p>
+<p>Также важно, чтобы в нашем списке Квартир была хотя бы одна квартира, так как поле <code>ApartmentId</code> (для связи с квартирой, в которой хранится комната) должно быть НЕ ПУСТОЕ (<code>NOT NULL</code>).</p>
+<ul>
+<li>В основной программе создадим объект комнаты:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">//Проверяем наличие Квартир в списке. </span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1">//Если их нет - программа скажет об этом.</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ApartList</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="c1">//Создаем новый объект комнаты</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="n">Room</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Room</span><span class="p">(</span><span class="s">&quot;Новая комната&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">        </span><span class="n">ApartId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ApartList</span><span class="p">.</span><span class="n">Last</span><span class="p">().</span><span class="n">Id</span><span class="w"> </span><span class="c1">//Для комнаты назначим айди последней добавленной квартиры</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="c1">//Выполним код для вставки нашего объекта в базу данных.</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="n">DatabaseManager</span><span class="p">.</span><span class="n">AddRoom</span><span class="p">(</span><span class="n">r</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">    </span><span class="c1">//Добавим объект в список.</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">    </span><span class="n">RoomList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="p">}</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="k">else</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="p">{</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Нет квартир, куда можно добавить комнату.&quot;</span><span class="p">,</span><span class="s">&quot;Йоу&quot;</span><span class="p">);</span>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Код функции <code>AddRoom(r)</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">AddRoom</span><span class="p">(</span><span class="n">Room</span><span class="w"> </span><span class="n">room</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="p">{</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="c1">//Открываем подключение к базе данных.</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="c1">//Команда вставки данных в таблицы разделена на 2:</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="c1">//Для таблицы Room - Id, ApartId, Name;</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="c1">//Для таблицы RoomInfo - RoomId, Area, Temperature, IsLightOn.</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="n">SqliteCommand</span><span class="w"> </span><span class="n">insertRoom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqliteCommand</span><span class="p">(</span><span class="s">$&quot;INSERT INTO Rooms (ApartmentId, Name) VALUES ({room.ApartId},&#39;{room.Name}&#39;)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ConnectionDB</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="c1">//Тут мы вставляем комнату, в таблице ей автоматически дается ID, например 1 или 2 или 3</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span><span class="n">SqliteCommand</span><span class="w"> </span><span class="n">insertRoomInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqliteCommand</span><span class="p">(</span><span class="s">$&quot;INSERT INTO RoomInfo (RoomId, Area, Temperature, IsLightOn) VALUES ({room.Id}, {room.Area}, {room.Temperature}, {room.IsLightOn})&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ConnectionDB</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">    </span><span class="c1">//Строка выше оставлена тут для проверки того, как вы читаете</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">    </span><span class="c1">//И для описания возможной ошибки.</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">    </span><span class="c1">//При формировании данной строки команды, RoomId (id) в объекте (room) еще не установлен, он равен 0</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">    </span><span class="c1">//И если мы выполним эту строку сразу - мы получим ошибку, так как в таблице Room нет строки с id = 0</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">    </span><span class="c1">// Выполняем команду для вставки Room</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">    </span><span class="n">insertRoom</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="w">    </span><span class="c1">//Получаем ID последней вставленной строки для записи его в RoomId (room.id).</span>
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="w">    </span><span class="n">SqliteCommand</span><span class="w"> </span><span class="n">selectIdCommand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqliteCommand</span><span class="p">(</span><span class="s">&quot;SELECT last_insert_rowid()&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ConnectionDB</span><span class="p">);</span>
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="w">    </span><span class="c1">// ExecuteScalar возвращает первое поле первой строки результата</span>
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a><span class="w">    </span><span class="kt">object</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">selectIdCommand</span><span class="p">.</span><span class="n">ExecuteScalar</span><span class="p">();</span>
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">lastId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Инициализируем переменную для ID</span>
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">DBNull</span><span class="p">.</span><span class="n">Value</span><span class="p">)</span>
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a><span class="w">        </span><span class="n">lastId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">result</span><span class="p">;</span><span class="w"> </span><span class="c1">// ROWID в SQLite это 64-битное целое</span>
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>
+<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a><span class="w">    </span><span class="n">room</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">lastId</span><span class="p">;</span>
+<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a><span class="w">    </span><span class="c1">//Важно собрать команду именно после присвоения Id, иначе значение останется старым.</span>
+<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a><span class="w">    </span><span class="c1">//Поэтому пересобираем строку тут, после того как room.id установлено значение из таблицы.</span>
+<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">State</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ConnectionState</span><span class="p">.</span><span class="n">Closed</span><span class="p">)</span><span class="w"> </span><span class="c1">//Проверим на всякий случай соединение</span>
+<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a><span class="w">        </span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a><span class="w">    </span><span class="n">insertRoomInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqliteCommand</span><span class="p">(</span><span class="s">$&quot;INSERT INTO RoomInfo (RoomId, Area, Temperature, IsLightOn) VALUES ({room.Id}, {room.Area}, {room.Temperature}, {room.IsLightOn})&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ConnectionDB</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a>
+<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a><span class="w">    </span><span class="n">insertRoomInfo</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span><span class="w"> </span><span class="c1">//Выполним вторую команду, теперь она выполнится корректно.</span>
+<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a>
+<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a>
+<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a>
+<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a><span class="w">    </span><span class="c1">// Закрываем соединение</span>
+<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a><span class="w">    </span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+<a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="id">Пример обновления записи в таблице по ID</h3>
+<p>Для обновления существующих данных в таблице используется ключевое слово <a href="../../topics/sql-samples#update"><code>UPDATE</code></a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">UpdateApartments</span><span class="p">(</span><span class="n">Apartment</span><span class="w"> </span><span class="n">apart</span><span class="p">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p">{</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="c1">//Как обычно открываем подключение к базе данных.</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="n">SqliteCommand</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqliteCommand</span><span class="p">(</span><span class="s">$&quot;UPDATE Apartments SET ApartmentNumber = {apart.Number}, Description = &#39;{apart.Description}&#39; WHERE Id = {apart.Id};&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ConnectionDB</span><span class="p">);</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="c1">//Формируем строку команды: в таблице Apartments устанавливаем все значения равными новым значения</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="c1">//из объекта apart, где Id в таблице и Id в объекте apart совпадают</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="c1">//(если вы сделали все правильно, то только одна строка в таблице будет подходить)</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="n">command</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="c1">// Выполняем команду</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">    </span><span class="n">ConnectionDB</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="c1">// Закрываем соединение</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>==ДОБАВИТЬ КАК ВЫЗЫВАТЬ ОБНОВЛЯТОР==</p>
 <h2 id="datagrid"><code>DataGrid</code> для работы с таблицами</h2>
-<h2 id="_17">Методы для работы с базой данных в приложении</h2>
-<h2 id="_18">Итоговое приложение</h2>
+<p><code>DataGrid</code> в <code>WPF</code> похож на <code>ListBox</code>, используется для отображения данных в табличном виде. </p>
+<p>Пример <code>DataGrid</code> в приложении:</p>
+<p><img alt="Пример DataGrid" src="../../img/6-laba-datagrid-sample.png" /></p>
+<p>Пример создания элемента <code>DataGrid</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">&lt;DataGrid</span><span class="w"> </span><span class="na">ItemsSource=</span><span class="s">&quot;{Binding Ваш_список_откуда_брать_данные}&quot;</span><span class="w"> </span><span class="na">AutoGenerateColumns=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Свойство <code>AutoGenerateColumns</code> сгенерирует столбцы для вывода информации автоматически, основываясь на свойствах объекта из привязки данных. То есть, если мы привяжем список типа данных <code>Apartment</code> - программа сгенерирует столбцы <code>Id</code>, <code>Number</code>, <code>Description</code> - это свойства из класса <code>Apartment</code>.</p>
+<p>Также мы можем вручную определить необходимы столбцы, которые должны быть в <code>DataGrid</code>. </p>
+<p>Пример объявления столбцов для списка квартир:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">&lt;DataGrid</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;ApartDataGrid&quot;</span><span class="w"> </span><span class="na">ItemsSource=</span><span class="s">&quot;{Binding ApartList}&quot;</span><span class="w"> </span><span class="na">AutoGenerateColumns=</span><span class="s">&quot;False&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nt">&lt;DataGrid.Columns&gt;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;ID&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;0.1*&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Id}&quot;</span><span class="w"> </span><span class="na">IsReadOnly=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Номер квартиры&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;0.25*&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Number}&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">        </span><span class="nt">&lt;DataGridTextColumn</span><span class="w"> </span><span class="na">Header=</span><span class="s">&quot;Описание&quot;</span><span class="w"> </span><span class="na">Width=</span><span class="s">&quot;0.25*&quot;</span><span class="w"> </span><span class="na">Binding=</span><span class="s">&quot;{Binding Description}&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="nt">&lt;/DataGrid.Columns&gt;</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nt">&lt;/DataGrid&gt;</span>
+</code></pre></div>
+<p>Для описания столбцов используется тег <code>DataGrid.Columns</code>, внутри которого описываются сами столбцы - <code>DataGridTextColumn</code>. </p>
+<ul>
+<li><code>Header</code> - название столбца для отображения.</li>
+<li><code>Binding</code> - название свойства из класса для привязки. </li>
+<li><code>IsReadOnly</code> - свойство, ограничивающее\разрешающее редактирование столбца.</li>
+</ul>
+<p>Для редактирование ячейки нужно кликнуть по ней 2 раза левой кнопкой мыши. Привязка данных обеспечивает корректную обработку изменений.</p>
+<p>Пример редактирование столбцов в <code>DataGrid</code>:</p>
+<p><img alt="Пример редактирования ячейки" src="../../img/6-laba-datagrid-edit-cell.gif" /></p>
+<p>При нажатии на клавишу <code>Enter</code> срабатывает <code>setter</code> у измененного свойства. Если бы мы попытались изменить <code>Номер квартиры</code> и сделать его содержащим символы, ячейка окрасилась бы в красный, показывая, что мы не можем записать это значение в переменную. Это происходит, так как номер квартиры в нашей программе <code>int</code>:</p>
+<p><img alt="Пример предупреждения о другом типе данных" src="../../img/6-laba-datagrid-parse-error.gif" /></p>
+<p>Свойство <code>AutoGenerateColumns</code> нужно отключить (<code>False</code>). Иначе программа добавит еще столбцы, данные будут просто дублироваться:</p>
+<p><img alt="Пример включенного свойства" src="../../img/6-laba-autogeneratecolums-true.png" /></p>
+<p>Причем можно задать также и другой тип столбца, отличный от текстового. DataGrid поддерживает следующие варианты столбцов:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DataGridTextColumn</td>
+<td>Отображает элемент TextBlock или TextBox при редактировании</td>
+</tr>
+<tr>
+<td>DataGridHyperlinkColumn</td>
+<td>Представляет гиперссылку и позволяет переходить по указанному адресу</td>
+</tr>
+<tr>
+<td>DataGridCheckBoxColumn</td>
+<td>Отображает элемент CheckBox</td>
+</tr>
+<tr>
+<td>DataGridComboBoxColumn</td>
+<td>Отображает выпадающий список - элемент ComboBox</td>
+</tr>
+<tr>
+<td>DataGridTemplateColumn</td>
+<td>Позволяет задать специфичный шаблон для отображения столбца</td>
+</tr>
+</tbody>
+</table>
+<p><code>DataGridCheckBoxColumn</code> используется в <code>DataGrid</code> для комнат, для свойства <code>IsLighOn</code>.</p>
+<h2 id="_19">Итоговое приложение</h2>
+<h3 id="_20">Подключение базы данных</h3>
+<p><img alt="Пример подключения" src="../../img/6-laba-done-connect-to-db.gif" /></p>
+<h3 id="_21">Добавление квартиры</h3>
+<p><img alt="Пример добавления квартиры" src="../../img/6-laba-done-add-apart.gif" /></p>
+<h3 id="_22">Добавление комнаты</h3>
+<p><img alt="Пример добавления комнаты" src="../../img/6-laba-done-add-room.gif" /></p>
+<h3 id="_23">Изменение квартиры</h3>
+<p><img alt="Пример изменения квартиры" src="../../img/6-laba-done-edit-apart.gif" /></p>
+<h3 id="_24">Изменение комнаты</h3>
+<p><img alt="Пример изменения комнаты" src="../../img/6-laba-done-edit-room.gif" /></p>
+<h3 id="_25">Удаление квартиры</h3>
+<p><img alt="Пример удаления квартиры" src="../../img/6-laba-done-remove-apart.gif" /></p>
+<h3 id="_26">Удаление комнаты</h3>
+<p><img alt="Пример удаления комнаты" src="../../img/6-laba-done-remove-room.gif" /></p>
 
 
 
